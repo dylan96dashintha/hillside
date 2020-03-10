@@ -169,26 +169,26 @@
 		<div class="container">
 			<div class="row">
 				<div id="availability">
-					<form action="moneyTransfer" method="post" >
+					<form action="index" method="post" >
 
 						<div class="a-col">
 							<section>
-								<select class="cs-select cs-skin-border">
+								<select class="cs-select cs-skin-border" name="type">
 									<option value="" disabled selected>Select Room</option>
-									<option id='type' value='fl1'>Deluxe </option>
-									<option id='type' value='fm1'>Deluxe Hotel</option>
-									<option id='type' value='fm2'>Five Star Hotel</option>
+									<option id='type'  value='fl1'>Deluxe </option>
+									<option id='type'  value='fm1'>Deluxe Hotel</option>
+									<option id='type'  value='fm2'>Five Star Hotel</option>
 								</select>
 							</section>
 						</div>
 						
 						<div class="a-col" >
-							<input type="text" name="daterange" value="01/01/2018 - 01/15/2018" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+							<input type="text" name="daterange"  value="01/01/2018 - 01/15/2018" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
 							
 						</div>
 						
 						<div class="a-col" >
-							<button  type="button" class="btn btn-outline-dark">Check Availability</button>
+							<button  type="submit" class="btn btn-outline-dark">Check Availability</button>
 						</div>
 
 					</form>

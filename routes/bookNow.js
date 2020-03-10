@@ -7,7 +7,14 @@ router.get('/', function (req, res, next) {
     res.render('bookNow');
 });
 
+router.post('/',function(req,res){
     
+    console.log("sdsdsds");
+  
+     
+  });
+  
+  
     
     
      
