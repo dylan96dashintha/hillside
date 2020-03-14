@@ -10,6 +10,7 @@ var bookNowRouter = require('./routes/bookNow');
 
 var app = express();
 
+require("firebase/firestore");
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
