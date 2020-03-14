@@ -26,7 +26,6 @@ router.get('/', function (req, res, next) {
   res.render('index')
 });
 router.post('/',function(req,res){
-    console.log("okay");
     let type = req.body.type;
     let date = req.body.daterange;
 
