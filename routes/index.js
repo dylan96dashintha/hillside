@@ -15,7 +15,7 @@ router.post('/',function(req,res){
     console.log(checkIn(date));
     console.log(checkOut(date));
     
-});
+}); 
 //TODO- input validation
 
 
