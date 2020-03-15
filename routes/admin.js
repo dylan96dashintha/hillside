@@ -21,7 +21,6 @@ router.get('/' , function(req,res,err){
         if (err) {
             console.log(err);
         }else {
-            console.log(result);
         }
     
     
@@ -34,16 +33,24 @@ router.get('/' , function(req,res,err){
         addressList.push(response[x].address);
         mobileList.push(response[x].mobilenum);
         pavementList.push(response[x].pavement);
-        console.log(orderIdList);
      
      }
 
      res.render('admin' , {count:count[0].num,orderId : orderIdList,firstname :firstNameList , lastname :lastNameList , address : addressList , mobilenum : mobileList , pavement :pavementList});
+
     });
 });
 });
 
 router.post('/' , function(req,res){
-    
+    let delId = req.body.del;
+    conn.query(`DELETE FROM customerdet where orderId = '${delId}'` , function(err,result){
+        if (err) {
+            console.log(err);
+        }else{
+            console.log('success!')
+            res.redirect('/admin');
+        }
+    });
 });
 module.exports = router;

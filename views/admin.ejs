@@ -28,6 +28,12 @@
                           <td><%= address[i] %></td>
                           <td><%= mobilenum[i] %></td>
                           <td><%=pavement[i] %></td>
+                          <td>
+                            <form action="/admin" method="POST">
+                                <button type="submit" class="btn btn-danger" value="<%= orderId[i] %>" name="del">Delete</button>
+                            </form>
+                        </td>
+                          
                           
                           
                         </tr>
