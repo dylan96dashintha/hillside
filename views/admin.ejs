@@ -22,23 +22,58 @@
                 <tbody>
                     <% for(var i=0; i <count; i++) { %>
                         <tr>
-                          <td><%= orderId[i] %></td>  
-                          <td><%= firstname[i] %></td>
-                          <td><%= lastname[i] %></td>
-                          <td><%= address[i] %></td>
-                          <td><%= mobilenum[i] %></td>
-                          <td><%=pavement[i] %></td>
-                          <td>
-                            <form action="/admin" method="POST">
-                                <button type="submit" class="btn btn-danger" value="<%= orderId[i] %>" name="del">Delete</button>
-                            </form>
-                        </td>
-                          
+                           
+                            <td><%= orderId[i] %></td>  
+                            <td><%= firstname[i] %></td>
+                            <td><%= lastname[i] %></td>
+                            <td><%= address[i] %></td>
+                            <td><%= mobilenum[i] %></td>
+                            <td><%=pavement[i] %></td>
+                            <td>  
+                                <form action="/pavement" method="POST">
+                                    <button type="submit" class="btn btn-success" value="<%= orderId[i] %>" name="pay">Pay</button>
+                                </form>
+                            </td>
+                            
+                            <td>
+                                <form action="/deleteRecord" method="POST">
+                                    <button type="submit" class="btn btn-danger" value="<%= orderId[i] %>" name="del">Delete</button>
+                                </form>
+                            </td>
+                            
                           
                           
                         </tr>
                      <% } %>                </tbody>
-              </table>
-        </body>
+                </table>
+
+            
+                <table class="table table-striped ">
+                    <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>  
+                                <td></td>
+                                <td></td>  
+                                <td></td>
+                                <td></td>  
+                                
+                                <td></td>
+                                <td></td>  
+                                <td>
+                                    <form action="/createNewRecord" method="POST">
+                                        <button type="submit" class="btn btn-primary btn-lg">Create a New Order</button>
+                                    </form>
+                                </td>
+                                <td></td>
+                                
+                            </tr>
+                    </tbody>
+                </table>
+    
+                
+
+
+            </body>
     
     </html>
