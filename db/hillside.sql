@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 14, 2020 at 05:52 PM
+-- Generation Time: Mar 15, 2020 at 07:32 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -21,6 +21,28 @@ SET time_zone = "+00:00";
 --
 -- Database: `hillside`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customerdet`
+--
+
+CREATE TABLE `customerdet` (
+  `orderId` varchar(20) NOT NULL,
+  `firstname` varchar(20) DEFAULT NULL,
+  `lastname` varchar(30) DEFAULT NULL,
+  `address` varchar(200) DEFAULT NULL,
+  `mobilenum` varchar(15) DEFAULT NULL,
+  `pavement` tinyint(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `customerdet`
+--
+
+INSERT INTO `customerdet` (`orderId`, `firstname`, `lastname`, `address`, `mobilenum`, `pavement`) VALUES
+('1', 'dilan', 'dashintha', 'no.07,mihindu mawatha,mampitiya,galle', '0711810983', 1);
 
 -- --------------------------------------------------------
 
@@ -59,6 +81,12 @@ CREATE TABLE `roomdet` (
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `customerdet`
+--
+ALTER TABLE `customerdet`
+  ADD PRIMARY KEY (`orderId`);
 
 --
 -- Indexes for table `orderdetails`
