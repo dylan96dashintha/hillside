@@ -8,7 +8,9 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var bookNowRouter = require('./routes/bookNow');
 var adminRouter = require('./routes/admin');
-
+var pavementRouter = require('./routes/pavement');
+var deleteRecordRouter = require('./routes/deleteRecord');
+var createNewRecordrouter = require('./routes/createNewRecord');
 var app = express();
 
 require("firebase/firestore");
@@ -26,7 +28,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/index', indexRouter);
 app.use('/users', usersRouter);
 app.use('/bookNow' , bookNowRouter);
-app.use('/admin' , adminRouter)
+app.use('/admin' , adminRouter);
+app.use('/pavement' , pavementRouter);
+app.use('/deleteRecord' , deleteRecordRouter);
+app.use('/createNewRecord' , createNewRecordrouter);
+
 app.use(function(req, res, next) {
   next(createError(404));
 });
