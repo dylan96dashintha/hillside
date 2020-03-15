@@ -2,7 +2,7 @@ var util = require('util')
 var mysql = require('mysql')
 
 //create connection
-const pool = mysql.createPool({
+var pool = mysql.createPool({
   connectionLimit: 10,
   host: 'localhost',
   user: 'root',

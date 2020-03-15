@@ -31,12 +31,6 @@ router.post('/',function(req,res){
     let type = req.body.type;
     let date = req.body.daterange;
 
-    console.log(checkIn('01/02/2020'));
-    console.log(checkIn('01/02/2020'));
-    console.log(checkIn('1/2/2020'));
-    console.log(new Date(checkIn('10/22/2020')));
-
-
 conn.query(`SELECT orderId  from orderdetails where  ('${checkIn(date)}' NOT BETWEEN checkIn AND checkOut) AND ('${checkOut(date)}' NOT BETWEEN checkIn AND checkOut) AND roomId = '${type}' `,function(err,result){
   if (err){
     console.log(err);

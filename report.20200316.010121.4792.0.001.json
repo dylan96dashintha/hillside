@@ -1,0 +1,150 @@
+
+{
+  "header": {
+    "reportVersion": 1,
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20200316.010121.4792.0.001.json",
+    "dumpEventTime": "2020-03-16T01:01:21Z",
+    "dumpEventTimeStamp": "1584300681969",
+    "processId": 4792,
+    "cwd": "D:\\Projects\\hillside",
+    "commandLine": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "./bin/www"
+    ],
+    "nodejsVersion": "v12.13.0",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "win32",
+    "componentVersions": {
+      "node": "12.13.0",
+      "v8": "7.7.299.13-node.12",
+      "uv": "1.32.0",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "72",
+      "nghttp2": "1.39.2",
+      "napi": "5",
+      "llhttp": "1.1.4",
+      "http_parser": "2.8.0",
+      "openssl": "1.1.1d",
+      "cldr": "35.1",
+      "icu": "64.2",
+      "tz": "2019a",
+      "unicode": "12.1"
+    },
+    "release": {
+      "name": "node",
+      "lts": "Erbium",
+      "headersUrl": "https://nodejs.org/download/release/v12.13.0/node-v12.13.0-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v12.13.0/node-v12.13.0.tar.gz",
+      "libUrl": "https://nodejs.org/download/release/v12.13.0/win-x64/node.lib"
+    },
+    "osName": "Windows_NT",
+    "osRelease": "10.0.18362",
+    "osVersion": "Windows 10 Pro",
+    "osMachine": "x86_64",
+    "cpus": [
+      {
+        "model": "Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz",
+        "speed": 2712,
+        "user": 3279500,
+        "nice": 0,
+        "sys": 3449203,
+        "idle": 32556531,
+        "irq": 763531
+      },
+      {
+        "model": "Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz",
+        "speed": 2712,
+        "user": 2443625,
+        "nice": 0,
+        "sys": 1627625,
+        "idle": 35213609,
+        "irq": 167218
+      },
+      {
+        "model": "Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz",
+        "speed": 2712,
+        "user": 3839328,
+        "nice": 0,
+        "sys": 2413890,
+        "idle": 33031640,
+        "irq": 37281
+      },
+      {
+        "model": "Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz",
+        "speed": 2712,
+        "user": 3198671,
+        "nice": 0,
+        "sys": 1593125,
+        "idle": 34493062,
+        "irq": 23250
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "name": "WiFi",
+        "internal": false,
+        "mac": "30:e3:7a:51:d9:ca",
+        "address": "2402:4000:10c2:f799:a401:37f9:9f13:76f5",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "WiFi",
+        "internal": false,
+        "mac": "30:e3:7a:51:d9:ca",
+        "address": "2402:4000:10c2:f799:bcbf:90f0:43ae:79be",
+        "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "WiFi",
+        "internal": false,
+        "mac": "30:e3:7a:51:d9:ca",
+        "address": "fe80::a401:37f9:9f13:76f5",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 6
+      },
+      {
+        "name": "WiFi",
+        "internal": false,
+        "mac": "30:e3:7a:51:d9:ca",
+        "address": "192.168.43.25",
+        "netmask": "255.255.255.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "::1",
+        "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "127.0.0.1",
+        "netmask": "255.0.0.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "vEthernet (Default Switch)",
+        "internal": false,
+        "mac": "00:15:5d:ee:51:aa",
+        "address": "fe80::6d00:6657:4103:719d",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 24
+      },
+      {
+        "name": "vEthernet (Default Switch)",
