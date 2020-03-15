@@ -3,6 +3,7 @@ var router = express.Router();
 var conn = require('./connection');
 var checkIn = require('../Modules/checkInOut').getCheckInDate;
 var checkOut = require('../Modules/checkInOut').getCheckOutDate;
+var tes = require('../Modules/checkAvailableRooms');
 /* GET home page. */
 var firebase = require("firebase/app");
 // Get a reference to the database service
@@ -23,11 +24,18 @@ var firebase = require("firebase/app");
 
 
 router.get('/', function (req, res, next) {
+  tes();
   res.render('index')
 });
 router.post('/',function(req,res){
     let type = req.body.type;
     let date = req.body.daterange;
+
+    console.log(checkIn('01/02/2020'));
+    console.log(checkIn('01/02/2020'));
+    console.log(checkIn('1/2/2020'));
+    console.log(new Date(checkIn('10/22/2020')));
+
 
 conn.query(`SELECT orderId  from orderdetails where  ('${checkIn(date)}' NOT BETWEEN checkIn AND checkOut) AND ('${checkOut(date)}' NOT BETWEEN checkIn AND checkOut) AND roomId = '${type}' `,function(err,result){
   if (err){

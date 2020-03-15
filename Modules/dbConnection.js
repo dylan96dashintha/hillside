@@ -7,7 +7,7 @@ const pool = mysql.createPool({
   host: 'localhost',
   user: 'root',
   password: '',
-  database: 'hill_side_testing'
+  database: 'hillside'
 })
 
 // Ping database to check for common exception errors.
