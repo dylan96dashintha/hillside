@@ -1,7 +1,7 @@
 var conn= require('./connection');
 
 //return awailable room ids, acording to time period;
-function getNotBookedRooms(sDate,eDate,callback){
+function getNotBookedRooms(type,sDate,eDate,callback){
     var startDate = Date.parse(sDate);
     var endDate = Date.parse(eDate);
     var today = Date.parse(new Date());
@@ -10,7 +10,11 @@ function getNotBookedRooms(sDate,eDate,callback){
         if(err){callback(err,false)}
         else{
             var orderDetails = result;
-            conn.query(`SELECT roomId FROM roomdet`,function(err,result){
+            if(type=='All'){var q = `SELECT roomId FROM roomdet`;}
+            if(type=='F'){var q= `SELECT roomId FROM roomdet WHERE roomId LIKE 'F%'` ;}
+            if(type=='T'){var q= `SELECT roomId FROM roomdet WHERE roomId LIKE 'T%'` ;}
+            if(type=='D'){var q= `SELECT roomId FROM roomdet WHERE roomId LIKE 'D%'` ;} 
+            conn.query(q,function(err,result){
                 if(err){callback(err,false)}
                 else{
                     var rooms = result;
@@ -58,7 +62,13 @@ function getRoomsDetails(rooms,callback){
             var roomDetails = result;
             var details=[];
             for(var j=0; j<roomDetails.length; j++){
-                details.push({ image: roomDetails[j].img, roomName : roomDetails[j].roomName, description: roomDetails[j].des});
+                details.push({ 
+                    image: roomDetails[j].img,
+                    roomName : roomDetails[j].roomName,
+                    description: roomDetails[j].des,
+                    fullDescription: roomDetails[j].fulldescription,
+                    price: roomDetails[j].price 
+                 });
             }
             callback(null,details);
         }

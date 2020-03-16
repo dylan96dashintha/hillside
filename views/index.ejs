@@ -59,7 +59,7 @@
 	<script type="text/javascript">
 		$(function() {
   $('input[name="daterange"]').daterangepicker({
-    opens: 'left'
+    opens: 'center'
   }, function(start, end, label) {
     console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
   });
@@ -174,16 +174,16 @@
 						<div class="a-col">
 							<section>
 								<select class="cs-select cs-skin-border" name="type">
-									<option value="" disabled selected>Select Room</option>
-									<option id='type'  value='a'>Double Room </option>
-									<option id='type'  value='b'>Triple Room</option>
-									<option id='type'  value='c'>Family Room</option>
+									<option value="All"  selected>Select Room</option>
+									<option id='type'  value='D'>Double Room </option>
+									<option id='type'  value='T'>Triple Room</option>
+									<option id='type'  value='F'>Family Room</option>
 								</select>
 							</section>
 						</div>
 						
 						<div class="a-col" >
-							<input type="text" name="daterange"  value="01/01/2018 - 01/15/2018" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+							<input type="text" name="daterange"  value=<%=date%> class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
 							
 						</div>
 						
