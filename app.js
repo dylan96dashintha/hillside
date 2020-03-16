@@ -11,6 +11,7 @@ var adminRouter = require('./routes/admin');
 var pavementRouter = require('./routes/pavement');
 var deleteRecordRouter = require('./routes/deleteRecord');
 var createNewRecordrouter = require('./routes/createNewRecord');
+var addUserDetailsRouter = require('./routes/addUserDetailsAdmin');
 var app = express();
 
 require("firebase/firestore");
@@ -32,6 +33,7 @@ app.use('/admin' , adminRouter);
 app.use('/pavement' , pavementRouter);
 app.use('/deleteRecord' , deleteRecordRouter);
 app.use('/createNewRecord' , createNewRecordrouter);
+app.use('/addUserDetails' , addUserDetailsRouter);
 
 app.use(function(req, res, next) {
   next(createError(404));
