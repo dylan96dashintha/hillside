@@ -61,7 +61,11 @@ router.post('/',function(req,res){
       availableRooms(type,checkInDate,checkOutDate,function(err,result){
         roomDetails(result,function(err,result){
           console.log(result);
-          res.render('rooms',{roomDetails: result, msg:null})
+          let orderDetails = {
+            ciD : Date.parse(checkInDate),
+            coD : Date.parse(checkOutDate)
+          };
+          res.render('rooms',{roomDetails: result, od:orderDetails, msg:null})
         });
       });
     }
