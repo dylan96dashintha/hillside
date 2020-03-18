@@ -36,8 +36,11 @@ router.get('/' , function(req,res,err){
      
      }
 
-     res.render('admin' , {count:count[0].num,orderId : orderIdList,firstname :firstNameList , lastname :lastNameList , address : addressList , mobilenum : mobileList , pavement :pavementList});
-
+     //let flag = req.session.flg;
+     //console.log(flag);
+     if (true) {
+        res.render('admin' , {count:count[0].num,orderId : orderIdList,firstname :firstNameList , lastname :lastNameList , address : addressList , mobilenum : mobileList , pavement :pavementList});
+     }
     });
 });
 });
