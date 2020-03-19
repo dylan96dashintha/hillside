@@ -6,16 +6,18 @@ var availableRooms = require('../Modules/rooms').getNotBookedRooms;
 
 router.get('/',function(req,res){
 
-  if(req.session.psw == 'hill'){
     availableRooms('All','0','0',function(err,result){
         roomDetails(result,function(err,result){
             // console.log(result);
-          res.render('createNewBookingAdmin',{details: true, roomDetails: result, str:false});
+          var flag = req.session.flag;
+            if(flag) {
+              res.render('createNewBookingAdmin',{details: true, roomDetails: result, str:false});
+              }else{
+                 res.status(401);
+                 res.send("Authorization could be granted by 4NoteFour.co");
+             } 
         });
       });
-  }else{
-    res.redirect('/adminAuth');
-  }
 });
 
 router.post('/' , function(req,res){
