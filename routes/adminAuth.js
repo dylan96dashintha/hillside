@@ -12,6 +12,7 @@ router.get('/', function (req, res, next) {
 router.post('/' ,function(req,res){
     let psw = req.body.inputPsw;
     if(psw == "hill") {
+        req.session.psw = "hill";
         getAdmin();
     }else{
         res.redirect('/adminAuth');

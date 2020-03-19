@@ -5,12 +5,17 @@ var roomDetails = require('../Modules/rooms').getRoomsDetails;
 var availableRooms = require('../Modules/rooms').getNotBookedRooms;
 
 router.get('/',function(req,res){
+
+  if(req.session.psw == 'hill'){
     availableRooms('All','0','0',function(err,result){
         roomDetails(result,function(err,result){
             // console.log(result);
           res.render('createNewBookingAdmin',{details: true, roomDetails: result, str:false});
         });
       });
+  }else{
+    res.redirect('/adminAuth');
+  }
 });
 
 router.post('/' , function(req,res){
