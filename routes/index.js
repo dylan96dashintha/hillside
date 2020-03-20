@@ -3,10 +3,17 @@ var router = express.Router();
 var conn = require('./connection');
 var checkIn = require('../Modules/checkInOut').getCheckInDate;
 var checkOut = require('../Modules/checkInOut').getCheckOutDate;
+// var freeRoomsList = require('../Modules/checkAvailableRooms').getNotBookedRooms;
+var roomDetails = require('../Modules/rooms').getRoomsDetails;
+var availableRooms = require('../Modules/rooms').getNotBookedRooms;
 /* GET home page. */
 var firebase = require("firebase/app");
 // Get a reference to the database service
 // var database = firebase.database();
+
+var day = new Date();
+var dateRange = (day.getMonth()+1)+'/'+day.getDate()+'/'+day.getFullYear()+' - '+(day.getMonth()+1)+'/'+(day.getDate()+7)+'/'+day.getFullYear();
+console.log(dateRange);
 
 
 // var firebaseConfig = {
@@ -23,19 +30,48 @@ var firebase = require("firebase/app");
 
 
 router.get('/', function (req, res, next) {
-  res.render('index')
+
+  // (async ()=>{
+  //   console.log(await freeRoomsList());
+  // })
+
+  // var freeRooms = freeRoomsList();
+  // var roomDetail = ;
+  // availableRooms('3/5/2020','6/5/2020',function(err,result){
+  //   roomDetails(result,function(err,result){
+  //     console.log(result);
+  //   });
+  // });
+ 
+  res.render('index',{date: dateRange, msg: null});
+
 });
+
 router.post('/',function(req,res){
+
     let type = req.body.type;
     let date = req.body.daterange;
 
-conn.query(`SELECT orderId  from orderdetails where  ('${checkIn(date)}' NOT BETWEEN checkIn AND checkOut) AND ('${checkOut(date)}' NOT BETWEEN checkIn AND checkOut) AND roomId = '${type}' `,function(err,result){
-  if (err){
-    console.log(err);
-  }else {
-    console.log(result[0].orderId);
-  }
-})
+    var checkInDate = date.split('-')[0];
+    var checkOutDate = date.split('-')[1];
+
+    if(Date.parse(checkInDate) < Date.parse(day)){
+      res.render('index',{date: dateRange, msg: 'Please input valid date.'});
+    }else{
+      availableRooms(type,checkInDate,checkOutDate,function(err,result){
+        roomDetails(result,function(err,result){
+          console.log(result);
+          res.render('rooms',{roomDetails: result, msg:null})
+        });
+      });
+    }
+
+
+
+
+
+// res.send('ok');
+
   
   
 
