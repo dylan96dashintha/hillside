@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Hotel Hill Paradise &mdash; </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/css/createRecord.css'>
+
+
+    
+
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown link
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="forms">
+      <form action="createNewRecord" method="POST">
+        <div class="form-row align-items-center">
+            <!-- <div class="col-sm-3 my-1">
+              <label class="sr-only" for="inlineFormInputGroupUsername">Username</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">@</div>
+                </div>
+                <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Username">
+              </div>
+            </div> -->
+            <div class="col-sm-3 my-1">
+                <select name="type" id="inputState" class="form-control">
+                  <option value="All" selected>Room type</option>
+                  <option value="All">Any</option>
+                  <option value="F">Family</option>
+                  <option value="T">Triple</option>
+                  <option value="D">Double</option>
+                </select>
+              </div>
+
+          <div class="col-sm-2 my-1">
+            <label class="sr-only" for="inlineFormInputName">Name</label>
+            <input type="text" name="daterange"  class="form-control text-center" value="04/01/2020 - 04/15/2020" >
+          </div>
+
+          
+          <div class="col-auto my-1">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <%if(details){%>
+
+        <%for(var i=0; i<roomDetails.length; i+=4){%>
+    <div class="card-group card-padding">
+        <%if(i<roomDetails.length){%>
+        <div class="card card-width">
+          <img class="card-img-top" src="images/<%=roomDetails[i].image%>" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><%=roomDetails[i].description%></h5>
+            <p class="card-text"><small class="text-muted"><%=roomDetails[i].fullDescription%></small></p>
+            <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+            <h4 class="card-title">LKR <%=roomDetails[i].price%></h4>
+            <%if(str){%>
+            <a href="addUserDetails/<%=roomDetails[i].rid+str%>" type="button" class="btn btn-outline-success">Book</a><%}%>
+          </div>
+        </div>
+        <%}%>
+        <%if(i+1<roomDetails.length){%>
+        <div class="card card-width">
+          <img class="card-img-top" src="images/<%=roomDetails[i+1].image%>" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><%=roomDetails[i+1].description%></h5>
+            <p class="card-text"><small class="text-muted"><%=roomDetails[i+1].fullDescription%></small></p>
+            <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+            <h4 class="card-title">LKR <%=roomDetails[i+1].price%></h4>
+            <%if(str){%>
+            <a href="addUserDetails/<%=roomDetails[i+1].rid+str%>" type="button" class="btn btn-outline-success">Book</a><%}%>
+          </div>
+        </div>
+        <%}%>
+        <%if(i+2<roomDetails.length){%>
+        <div class="card card-width">
+          <img class="card-img-top" src="images/<%=roomDetails[i+2].image%>" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><%=roomDetails[i+2].description%></h5>
+            <p class="card-text"><small class="text-muted"><%=roomDetails[i+2].fullDescription%></small></p>
+            <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+            <h4 class="card-title">LKR <%=roomDetails[i+2].price%></h4>
+            <%if(str){%>
+            <a href="addUserDetails/<%=roomDetails[i+2].rid+str%>" type="button" class="btn btn-outline-success">Book</a><%}%>
+          </div>
+        </div>
+        <%}%>
+        <%if(i+3<roomDetails.length){%>
+        <div class="card card-width">
+          <img class="card-img-top" src="images/<%=roomDetails[i+3].image%>" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><%=roomDetails[i+3].description%></h5>
+            <p class="card-text"><small class="text-muted"><%=roomDetails[i+3].fullDescription%></small></p>
+            <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+            <h4 class="card-title">LKR <%=roomDetails[i+3].price%></h4>
+            <%if(str){%>
+            <a href="addUserDetails/<%=roomDetails[i+3].rid+str%>" type="button" class="btn btn-outline-success">Book</a><%}%>
+          </div>
+        </div>
+        <%}%>
+        
+    </div>
+    <%}%>
+
+
+      
+
+    <%}%>
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script>
+    $(function() {
+    $('input[name="daterange"]').daterangepicker({
+        opens: 'center'
+    }, function(start, end, label) {
+        console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+    });
+    });
+    </script>
+
+  </body>
+</html>
