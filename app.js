@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var session = require('express-session');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -11,6 +12,8 @@ var adminRouter = require('./routes/admin');
 var pavementRouter = require('./routes/pavement');
 var deleteRecordRouter = require('./routes/deleteRecord');
 var createNewRecordrouter = require('./routes/createNewRecord');
+var registeruser = require('./routes/register');
+// var verifyuser = require('./routes/verify');
 var app = express();
 
 require("firebase/firestore");
@@ -24,6 +27,20 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+//session configuration
+app.use(session(
+  {
+    name: 'sid',
+    secret: 'secretkey',
+    resave: false,
+    saveUninitialized: false,
+    cookie:{
+      maxAge: 1000*60*30,
+      sameSite: true,
+      secure:true
+    }
+  }
+))
 
 app.use('/index', indexRouter);
 app.use('/users', usersRouter);
@@ -32,6 +49,8 @@ app.use('/admin' , adminRouter);
 app.use('/pavement' , pavementRouter);
 app.use('/deleteRecord' , deleteRecordRouter);
 app.use('/createNewRecord' , createNewRecordrouter);
+app.use('/register', registeruser);
+app.use('/verify',registeruser);
 
 app.use(function(req, res, next) {
   next(createError(404));
