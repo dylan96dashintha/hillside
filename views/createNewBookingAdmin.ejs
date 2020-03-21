@@ -85,6 +85,12 @@
       </form>
     </div>
 
+    <%if(bookingDet.availabal){%>
+      <div class="alert alert-secondary text-center" role="alert">
+        FROM <b><%=bookingDet.cid%></b> TO <b><%=bookingDet.cod%></b> , ROOM TYPE <b><%=bookingDet.type%></b>
+      </div>
+    <%}%>
+
     <%if(details){%>
 
         <%for(var i=0; i<roomDetails.length; i+=4){%>
