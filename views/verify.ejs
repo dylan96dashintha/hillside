@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>verification</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+	<link rel="stylesheet" href="/stylesheets/css/material-design-iconic-font.min.css">
+		
+		<!-- STYLE CSS -->
+    <link rel="stylesheet" href="/stylesheets/css/registerstyle.css">
+	</head>
+
+	<body>
+
+	<div class="wrapper" 
+		style="background-image: url('images/rm.jpg');
+			height:100%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;">
+				<div class="inner">
+					<form action="/verify" method="POST">
+                        <h3>verification</h3>
+                        <h5><span style="color:brown"><%= sent %></span></h5>
+                        <p>Please check email address that you have entered and enter the Verification key that have been sent and make sure entered details are correct.
+                        </p>
+                        <div class="form-wrapper">
+							<label for="verify">Verification Key</label>
+							<input type="text" class="form-control" name="verify">
+							<p id="invalidverify"><span style="color:brown"><%= message %></span></p>
+						</div>
+                        <button type="submit">Confirm identity</button>
+                    </form>
+				</div>
+		</div>
+		
+	</body>
+</html>

@@ -16,6 +16,8 @@ var createNewRecordrouter = require('./routes/createNewRecord');
 var addUserDetailsRouter = require('./routes/addUserDetailsAdmin');
 var adminAuthRouter = require('./routes/adminAuth');
 var adminRouter = require('./routes/admin');
+var registeruser = require('./routes/register');
+var verifyuser = require('./routes/verify');
 var app = express();
 
 require("firebase/firestore");
@@ -36,6 +38,20 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+//session configuration
+app.use(session(
+  {
+    name: 'sid',
+    secret: 'secretkey',
+    resave: false,
+    saveUninitialized: false,
+    cookie:{
+      maxAge: 1000*60*30,
+      sameSite: true,
+      secure:false
+    }
+  }
+))
 
 app.use('/index', indexRouter);
 app.use('/users', usersRouter);
@@ -50,9 +66,11 @@ app.use('/admin' , adminRouter);
 app.use(bodyparser.json());
 
 
+app.use('/register', registeruser);
+app.use('/verify',verifyuser);
 
 app.use(function(req, res, next) {
-  next(createError(404));
+  // next(createError(404));
 });
 
 // error handler
