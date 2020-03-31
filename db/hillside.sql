@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 16, 2020 at 05:00 PM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.3.1
+-- Generation Time: Mar 31, 2020 at 01:22 PM
+-- Server version: 10.4.10-MariaDB
+-- PHP Version: 7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `customerdet` (
-  `orderId` varchar(20) NOT NULL,
+  `orderId` int(20) NOT NULL,
   `firstname` varchar(20) DEFAULT NULL,
   `lastname` varchar(30) DEFAULT NULL,
   `address` varchar(200) DEFAULT NULL,
@@ -42,7 +42,7 @@ CREATE TABLE `customerdet` (
 --
 
 INSERT INTO `customerdet` (`orderId`, `firstname`, `lastname`, `address`, `mobilenum`, `pavement`) VALUES
-('1', 'dilan', 'dashintha', 'no.07,mihindu mawatha,mampitiya,galle', '0711810983', 1);
+(1000, 'dilan', 'dashintha', 'no.07,mihindu mawatha,mampitiya,galle', '0711810983', 1);
 
 -- --------------------------------------------------------
 
@@ -120,6 +120,12 @@ ALTER TABLE `orderdetails`
 --
 ALTER TABLE `roomdet`
   ADD PRIMARY KEY (`roomId`);
+
+--
+-- AUTO_INCREMENT for table `customerdet`
+--
+ALTER TABLE `customerdet`
+  MODIFY `orderId` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1001;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

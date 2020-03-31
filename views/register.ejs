@@ -4,10 +4,19 @@
 		<meta charset="utf-8">
 		<title>RegistrationForm</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+		<script>
+			function showPassword() {
+				var x = document.getElementById("password");
+				if (x.type === "password") {
+				  x.type = "text";
+				} else {
+				  x.type = "password";
+				}
+			  }
+			</script>
 		<!-- MATERIAL DESIGN ICONIC FONT -->
 	<link rel="stylesheet" href="/stylesheets/css/material-design-iconic-font.min.css">
-		
+
 		<!-- STYLE CSS -->
     <link rel="stylesheet" href="/stylesheets/css/registerstyle.css">
 	</head>
@@ -15,13 +24,13 @@
 	<body>
 
 	<div class="wrapper" 
-		style="background-image: url('images/tree.jpg');
+		style="background-image: url('images/rm2.jpg');
 			height:100%;
 			background-position: center;
 			background-repeat: no-repeat;
 			background-size: cover;">
 				<div class="inner">
-					<form action="/register" method="POST">
+					<form action="/register" id="register" method="POST">
 						<h3>Registration Form</h3>
 						<div class="form-group">
 							<div class="form-wrapper">
@@ -35,26 +44,47 @@
 						</div>
 						<div class="form-wrapper">
 							<label for="email">Email</label>
-							<input type="text" class="form-control" name="email">
+							<input type="text" class="form-control" id="email" name="email" required>
+							<p id="invalidemail"><span style="color:brown"><%= mailmessage %></span></p>
+						</div>
+						<div class="form-wrapper">
+							<label for="address">Address</label>
+							<textarea class="form-control" id="address" name="address" required></textarea>
+						</div>
+						<div class="form-wrapper">
+							<label for="mobile">Mobile Number</label>
+							<input type="text" class="form-control" id="mobile" name="mobile" required>
+							<p id="invalidemail"><span style="color:brown"><%= mobilemessage %></span></p>
 						</div>
 						<div class="form-wrapper">
 							<label for="pass">Password</label>
-							<input type="password" class="form-control" name="password">
+							<input type="password" class="form-control" id="password" name="password" required>
+							<p id="invalidpass" ><span style="color:brown"></span><%= passmessage %></span></p>
 						</div>
-						<div class="form-wrapper">
+						<div class = "checkbox">
+							<label>
+								<input type="checkbox" onclick="showPassword()">Show Password
+								<span class="checkmark"></span>
+							</label>
+						</div>
+						<!-- <div class="form-wrapper">
 							<label for="confirmpass">Confirm Password</label>
-							<input type="password" class="form-control" name = confirmpass>
-						</div>
+							<input type="password" class="form-control" name = confirmpass required>
+						</div> -->
 						<!-- <div class="checkbox">
 							<label>
 								<input type="checkbox"> I caccept the Terms of Use & Privacy Policy.
 								<span class="checkmark"></span>
 							</label>
 						</div> -->
-						<button type="submit">Register Now</button>
+						<button type="submit" name="submit" id="submit">Register Now</button>
 					</form>
 				</div>
 		</div>
 		
 	</body>
-</html>
+	</html>
+	
+
+
+

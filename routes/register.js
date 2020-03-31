@@ -1,23 +1,27 @@
 const router = require('express').Router()
 const bodyParser = require('body-parser')
-const nodemailer = require('nodemailer')
-const jwt = require('jsonwebtoken')
-const jwtconfig = require('../config/jwt')
 const provider = require('../config/provider')
 const randomize = require('randomatic')
-const responseimpl = require('../config/responses')
-const customer = require('../Modules/customer')
-const validation = require('../config/middleware')
-
+const Validation = require('../config/middleware')
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-router.post('/',urlencodedParser,validation,(req,res) =>{
+
+router.get('/',(req,res) => {
+    output = {mailmessage: '',
+             passmessage: '',
+             mobilemessage:''}
+    res.render('register',output);
+})
+
+router.post('/',urlencodedParser,(req,res,next) =>{
     //create random verification key
     var code = randomize('A0',6)
-
+    
     var firstname = req.body.fname
     var lastname = req.body.lname
     var email = req.body.email
+    var address = req.body.address
+    var mobile = req.body.mobile
     var password = req.body.password
     // var confirmpassword = req.body.confirmpass
 
@@ -26,82 +30,49 @@ router.post('/',urlencodedParser,validation,(req,res) =>{
     sess.fname = firstname;
     sess.lname = lastname;
     sess.email = email;
+    sess.address = address;
+    sess.mobile = mobile;
     sess.password = password;
     sess.code = code;
+    next()
+},Validation, (req,res) => {
 
-    //html format of the sending mail
-    const output = '<p>You are Welcome to Visit HILLSIDE Resort</p>' 
-        + '<h3>Confirm your contact details</h3>'
+    // html format of the sending mail
+    const output =  
+        + '<h3> Hi ' + req.session.fname + ' '+ req.session.lname +',</h3>'
+        + '<p>You are Welcome to Visit HILLSIDE Resort</p><br>'
+        + 'Please confirm details you have entered<p>'
         +'<ul>'
-            +'<li>Name : '+ name + '</li>'
-            +'<li>Email : '+ email + '</li>'
-            +'<li>Phone Number : '+ phone + '</li>'
+            +'<li>Address : '+ req.session.address +'</li>'
+            +'<li>Mobile Number : '+ req.session.mobile + '</li>'
         +'</ul>'
-        +'<h4>Your Verification Key is '+ code
+        +'<p>Your verification key is <h4>' + req.session.code + '</h4><p>'
     
-
-    //provider details
-    let transporter = nodemailer.createTransport({
-        host: "smtp.gmail.com",
-        port: 465, //587
-        secure: true, // true for 465, false for other ports
-        auth: {
-            user: 'rashnanayakkara96@gmail.com', // generated ethereal user
-            pass: '1Ahangama' // generated ethereal password
-        },
-        tls: {
-            rejectUnauthorized: false
-        }
-        });
-
+    
     let mailOptiions = {
         from: '"Administrator" <rashnanayakkara96@gmail.com>', // sender address
-        to: "nanayakkararash19@gmail.com", // list of receivers
-        subject: "TRY HILLSIDE", // Subject line
-        text: "TESTING",// plain text body
+        to: req.session.email, // list of receivers
+        subject: "HILLSIDE RESORT", // Subject line
+        // text: "TESTING",// plain text body
         html: output // html body
     }
     
     // send mail with defined transport object
-    transporter.sendMail(mailOptiions,(error,info) => {
+    provider.transporter.sendMail(mailOptiions,(error,info) => {
         if(error){
-            return console.log(error);
+            // return console.log(error);
+            outputt = {mailmessage: 'Email is Invalid',
+                      passmessage: '',
+                      mobilemessage:''}
+            res.render('register',outputt);
         }
-
-        console.log("Message sent: %s", info.messageId);
-        console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-    });
     
-    return res.redirect('/verify')
+    });
+    outputt = {message: '',
+              sent: 'Email has been sent..!'}
+    res.render('verify',outputt);
 })
 
 
-
-router.post('/verify', (req,res) => {
-    console.log('***************************************');
-    // if (decoded.code == req.body.code){
-    //     customer.regcustomer(decoded.username, decoded.email, decoded.password)
-    //     .then(result =>{
-    //         if(!result){
-    //             return responseimpl.error(res,401,'unauthorized','user authondication failed.')
-    //         }
-
-    //     })
-    //     .catch(error => {
-    //         responseimpl.error(res, 500, 'server_error', 'Server Error', error)
-    //     })
-    // }
-
-    // responseimpl.error(res, 408, 'request timeout', 'please resend verification code', error)
-})
-
-
-router.get('/',(req,res) => {
-    res.render('register');
-})
-
-router.get('/',(req,res) => {
-    res.render('verify');
-})
 
 module.exports = router

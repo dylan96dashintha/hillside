@@ -54,7 +54,7 @@ a:hover {
   padding-bottom: 48px;
   text-shadow: 5px 5px 5px rgb(3, 3, 7);
   box-shadow: 20px 20px 5px rgba(27, 29, 27, 0.541);
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/images/F1.jpeg');}
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/images/gray.jpg');}
   .inner h3 {
     text-transform: uppercase;
     font-size: 28px;

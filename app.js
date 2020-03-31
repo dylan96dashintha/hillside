@@ -13,7 +13,7 @@ var pavementRouter = require('./routes/pavement');
 var deleteRecordRouter = require('./routes/deleteRecord');
 var createNewRecordrouter = require('./routes/createNewRecord');
 var registeruser = require('./routes/register');
-// var verifyuser = require('./routes/verify');
+var verifyuser = require('./routes/verify');
 var app = express();
 
 require("firebase/firestore");
@@ -37,7 +37,7 @@ app.use(session(
     cookie:{
       maxAge: 1000*60*30,
       sameSite: true,
-      secure:true
+      secure:false
     }
   }
 ))
@@ -50,10 +50,10 @@ app.use('/pavement' , pavementRouter);
 app.use('/deleteRecord' , deleteRecordRouter);
 app.use('/createNewRecord' , createNewRecordrouter);
 app.use('/register', registeruser);
-app.use('/verify',registeruser);
+app.use('/verify',verifyuser);
 
 app.use(function(req, res, next) {
-  next(createError(404));
+  // next(createError(404));
 });
 
 // error handler
