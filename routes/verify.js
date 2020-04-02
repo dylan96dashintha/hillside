@@ -14,15 +14,16 @@ router.post('/', (req,res) => {
     if(sess.code == req.body.verify){
         const hash = bcrypt.hashSync(sess.password, 10);
 
-        conn.query('INSERT INTO `customerdet` (`orderid`,`firstname`, `lastname`, `address`, `email`, `mobilenum`, `password`) VALUES (?,?,?,?,?,?,?)',['19',sess.fname, sess.lname, sess.address, sess.email, sess.mobile, hash],(error,result) =>{
+        conn.query('INSERT INTO `customerdet` (`firstname`, `lastname`, `address`, `email`, `mobilenum`, `password`) VALUES (?,?,?,?,?,?)',[sess.fname, sess.lname, sess.address, sess.email, sess.mobile, hash],(error,result) =>{
             if(error){
                 output = {mailmessage: 'Email is Invalid',
                          passmessage: 'Recheck the Password',
                          mobilemessage:'Mobile Number is Invalid'}
                 res.render('register', output);
+            }else{
+                console.log('task is done')
+                // res.render();  //set the next view page
             }
-            console.log('task is done')
-            // res.render();  //set the next view page
         })
     }
     else{
