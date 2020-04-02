@@ -15,6 +15,7 @@ var deleteRecordRouter = require('./routes/deleteRecord');
 var createNewRecordrouter = require('./routes/createNewRecord');
 var addUserDetailsRouter = require('./routes/addUserDetailsAdmin');
 var adminAuthRouter = require('./routes/adminAuth');
+var adminRouter = require('./routes/admin');
 var app = express();
 
 require("firebase/firestore");
@@ -44,7 +45,7 @@ app.use('/deleteRecord' , deleteRecordRouter);
 app.use('/createNewRecord' , createNewRecordrouter);
 app.use('/addUserDetails' , addUserDetailsRouter);
 app.use('/adminAuth' , adminAuthRouter);
-
+app.use('/admin' , adminRouter);
 //Jwt configuration
 app.use(bodyparser.json());
 
