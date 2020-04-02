@@ -63,6 +63,7 @@ function getRoomsDetails(rooms,callback){
             var details=[];
             for(var j=0; j<roomDetails.length; j++){
                 details.push({ 
+                    rid: roomDetails[j].roomId,
                     image: roomDetails[j].img,
                     roomName : roomDetails[j].roomName,
                     description: roomDetails[j].des,
