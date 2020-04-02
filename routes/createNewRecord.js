@@ -13,7 +13,7 @@ router.get('/',function(req,res){
           console.log(flag)
             if(flag) {
               console.log(flag)
-              res.render('createNewBookingAdmin',{details: true, roomDetails: result, str:false});
+              res.render('createNewBookingAdmin',{details: true, roomDetails: result, str:false, bookingDet:{availabal:false}});
               }else{
                  res.status(401);
                  res.send("Authorization could be granted by 4NoteFour.co");
@@ -34,7 +34,7 @@ router.post('/' , function(req,res){
     availableRooms(type,checkInDate,checkOutDate,function(err,result){
         roomDetails(result,function(err,result){
             // console.log(result);
-          res.render('createNewBookingAdmin',{details: true, roomDetails: result, str:str});
+          res.render('createNewBookingAdmin',{details: true, roomDetails: result, str:str, bookingDet:{availabal:true,cid:checkInDate,cod:checkOutDate,type:type}});
         });
       });
     
