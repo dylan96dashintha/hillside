@@ -27,11 +27,11 @@ app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 
-app.use(session({
-  secret :'ssshhhhh',
-  resave : false,
-  saveUninitialized : true,
-  }));
+// app.use(session({
+//   secret :'ssshhhhh',
+//   resave : false,
+//   saveUninitialized : true,
+//   }));
 
 app.use(express.json());
 
@@ -46,7 +46,7 @@ app.use(session(
     resave: false,
     saveUninitialized: false,
     cookie:{
-      maxAge: 1000*60*30,
+      maxAge: 1000*60*30, //30min
       sameSite: true,
       secure:false
     }
