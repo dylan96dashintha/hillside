@@ -8,9 +8,11 @@ router.get('/',function(req,res){
 
     availableRooms('All','0','0',function(err,result){
         roomDetails(result,function(err,result){
-            // console.log(result);
+            console.log(result);
           var flag = req.session.flag;
+          console.log(flag)
             if(flag) {
+              console.log(flag)
               res.render('createNewBookingAdmin',{details: true, roomDetails: result, str:false});
               }else{
                  res.status(401);
