@@ -35,6 +35,7 @@ router.post('/',urlencodedParser,(req,res,next) =>{
     sess.password = password;
     sess.code = code;
     next()
+
 },Validation, (req,res) => {
 
     // html format of the sending mail
@@ -45,6 +46,8 @@ router.post('/',urlencodedParser,(req,res,next) =>{
         +'<ul>'
             +'<li>Address : '+ req.session.address +'</li>'
             +'<li>Mobile Number : '+ req.session.mobile + '</li>'
+            +'<li>Check in date : '+ req.session.checkinDate + '</li>'
+            +'<li>Check out date : '+ req.session.checkoutDate + '</li>'
         +'</ul>'
         +'<p>Your verification key is <h4>' + req.session.code + '</h4><p>'
     

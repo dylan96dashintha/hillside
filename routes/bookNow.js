@@ -18,7 +18,16 @@ router.get('/:od', function (req, res, next) {
     // cod = new Date(checkoutDate);
     console.log(rid,checkinDate,checkoutDate);
     // res.send(rid+cid+cod);
-    res.send(rid);
+    
+    const sess = req.session
+    sess.checkinDate = checkinDate;
+    sess.checkoutDate = checkoutDate;
+    sess.rid = rid;
+    
+    output = {mailmessage: '',
+             passmessage: '',
+             mobilemessage:''}
+    res.render('register',output);
 
 });
 
