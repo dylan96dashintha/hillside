@@ -16,6 +16,8 @@ var createNewRecordrouter = require('./routes/createNewRecord');
 var addUserDetailsRouter = require('./routes/addUserDetailsAdmin');
 var adminAuthRouter = require('./routes/adminAuth');
 var adminRouter = require('./routes/admin');
+var registeruser = require('./routes/register');
+var verifyuser = require('./routes/verify');
 var app = express();
 
 require("firebase/firestore");
@@ -25,13 +27,27 @@ app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 
-app.use(session({
-  secret :'ssshhhhh',
-  resave : false,
-  saveUninitialized : true,
-  }));
-
+// app.use(session({
+//   secret :'ssshhhhh',
+//   resave : false,
+//   saveUninitialized : true,
+//   }));
 app.use(express.json());
+
+//session configuration
+app.use(session(
+  {
+    name: 'sid',
+    secret: 'secretkey',
+    resave: false,
+    saveUninitialized: false,
+    cookie:{
+      maxAge: 1000*60*30,
+      sameSite: true,
+      secure:false
+    }
+  }
+))
 
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -46,6 +62,8 @@ app.use('/createNewRecord' , createNewRecordrouter);
 app.use('/addUserDetails' , addUserDetailsRouter);
 app.use('/adminAuth' , adminAuthRouter);
 app.use('/admin' , adminRouter);
+app.use('/register', registeruser);
+app.use('/verify',verifyuser);
 //Jwt configuration
 app.use(bodyparser.json());
 
