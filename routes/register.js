@@ -8,8 +8,8 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 router.get('/',(req,res) => {
     output = {mailmessage: '',
-             passmessage: '',
-             mobilemessage:''}
+            passmessage: '',
+            mobilemessage:''}
     res.render('register',output);
 })
 
@@ -22,7 +22,7 @@ router.post('/',urlencodedParser,(req,res,next) =>{
     var email = req.body.email
     var address = req.body.address
     var mobile = req.body.mobile
-    var password = req.body.password
+    // var password = req.body.password
     // var confirmpassword = req.body.confirmpass
 
     //create session
@@ -32,8 +32,8 @@ router.post('/',urlencodedParser,(req,res,next) =>{
     sess.email = email;
     sess.address = address;
     sess.mobile = mobile;
-    sess.password = password;
     sess.code = code;
+    // sess.password = password;
     next()
 },Validation, (req,res) => {
 

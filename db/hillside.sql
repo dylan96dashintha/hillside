@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 03, 2020 at 10:58 AM
+-- Generation Time: Apr 06, 2020 at 11:38 PM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -35,7 +35,6 @@ CREATE TABLE `customerdet` (
   `address` varchar(200) DEFAULT NULL,
   `email` varchar(50) NOT NULL,
   `mobilenum` varchar(15) DEFAULT NULL,
-  `password` varchar(100) NOT NULL,
   `pavement` varchar(5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -43,8 +42,8 @@ CREATE TABLE `customerdet` (
 -- Dumping data for table `customerdet`
 --
 
-INSERT INTO `customerdet` (`orderId`, `firstname`, `lastname`, `address`, `email`, `mobilenum`, `password`, `pavement`) VALUES
-(1000, 'dilan', 'dashintha', 'no.07,mihindu mawatha,mampitiya,galle', '', '0711810983', '', '1');
+INSERT INTO `customerdet` (`orderId`, `firstname`, `lastname`, `address`, `email`, `mobilenum`, `pavement`) VALUES
+(1000, 'dilan', 'dashintha', 'no.07,mihindu mawatha,mampitiya,galle', '', '0711810983', '1');
 
 -- --------------------------------------------------------
 

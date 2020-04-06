@@ -12,7 +12,7 @@ router.get('/',(req,res) =>{
 router.post('/', (req,res) => {
     var sess = req.session;
     if(sess.code == req.body.verify){
-        const hash = bcrypt.hashSync(sess.password, 10);
+        // const hash = bcrypt.hashSync(sess.password, 10);
 
         connection.connect(function(err) {
             if (err) {
@@ -25,7 +25,8 @@ router.post('/', (req,res) => {
           /* Begin transaction */
         connection.beginTransaction(function(err) {
             if (err) { throw err; }
-            connection.query('INSERT INTO `customerdet` (`firstname`, `lastname`, `address`, `email`, `mobilenum`, `password`) VALUES (?,?,?,?,?,?)',[sess.fname, sess.lname, sess.address, sess.email, sess.mobile, hash], function(err, result) {
+            // connection.query('INSERT INTO `customerdet` (`firstname`, `lastname`, `address`, `email`, `mobilenum`,`password`) VALUES (?,?,?,?,?,?)',[sess.fname, sess.lname, sess.address, sess.email, sess.mobile,hash], function(err, result) {
+            connection.query('INSERT INTO `customerdet` (`firstname`, `lastname`, `address`, `email`, `mobilenum`) VALUES (?,?,?,?,?)',[sess.fname, sess.lname, sess.address, sess.email, sess.mobile], function(err, result) {
                 if (err) { 
                     connection.rollback(function() {
                     throw err;
