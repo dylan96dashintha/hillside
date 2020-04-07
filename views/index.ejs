@@ -95,7 +95,7 @@
 	<aside id="fh5co-hero" class="js-fullheight">
 		<div class="flexslider js-fullheight">
 			<ul class="slides">
-		   	<li style="background-image: url(images/img1.jpg);">
+		   	<li style="background-image: url(images\D1.jpeg);">
 		   		<div class="overlay-gradient"></div>
 		   		<div class="container">
 		   			<div class="col-md-12 col-md-offset-0 text-center slider-text">
@@ -104,7 +104,7 @@
 		   						<p><span>Hill Side Guesthouse</span></p>
 		   						<h2>Reserve Room for Family Vacation</h2>
 			   					<p>
-			   						<a href='bookNow' class="btn btn-primary btn-lg">Book Now</a>
+			   						<a href='#book' class="btn btn-primary btn-lg">Book Now</a>
 			   					</p>
 		   					</div>
 		   				</div>
@@ -121,7 +121,7 @@
 		   						<p><span>Hill Side Guesthouse</span></p>
 		   						<h2>Make Your Vacation Comfortable</h2>
 			   					<p>
-			   						<a href='bookNow'class="btn btn-primary btn-lg">Book Now</a>
+			   						<a href='#book'class="btn btn-primary btn-lg">Book Now</a>
 			   					</p>
 		   					</div>
 		   				</div>
@@ -137,7 +137,7 @@
 		   						<p><span>Hill Side Guesthouse</span></p>
 		   						<h2>A Best Place To Enjoy Your Life</h2>
 			   					<p>
-			   						<a href='bookNow' class="btn btn-primary btn-lg">Book Now</a>
+			   						<a href='#book' class="btn btn-primary btn-lg">Book Now</a>
 			   					</p>
 		   					</div>
 		   				</div>
@@ -166,15 +166,15 @@
 	
 	
 	
-	<div class="wrap">
+	<div id="book" class="wrap">
 		<div class="container">
 			<div class="row">
 				<div id="availability">
-					<form action="index" method="post" >
+					<form action="index" method="post" class="inline">
 
 						<div class="a-col">
 							<section>
-								<select class="cs-select cs-skin-border" name="type">
+								<select class="cs-select cs-skin-border" name="type" >
 									<option value="All"  selected>Select Room</option>
 									<option id='type'  value='D'>Double Room </option>
 									<option id='type'  value='T'>Triple Room</option>
@@ -184,8 +184,9 @@
 						</div>
 						
 						<div class="a-col" >
-							<input type="text" name="daterange"  value=<%=date%> class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-							
+							<div class="cs-options">
+								<input type="text" name="daterange"  value=<%=date%> class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+							</div>
 						</div>
 						
 						<div class="a-col" >
@@ -406,7 +407,7 @@
 						<div class="container">
 							<div class="row">
 								<div class="col-md-6">
-									<img src="images/tab_img_6.jpg" class="img-responsive" alt="Image">
+									<img src="images\D1.jpeg" class="img-responsive" alt="Image">
 								</div>
 								<div class="col-md-6">
 									<span class="super-heading-sm">World Class</span>
@@ -425,6 +426,9 @@
 			</div>
 		</div>
 	</div>
+
+
+	
 
 	
 
@@ -470,6 +474,9 @@
 
 	</div>
 	<!-- END fh5co-wrapper -->
+
+
+	
 	
 	<!-- Javascripts -->
 	<!-- <script src='/javascripts/js/jquery-2.1.4.min.js'></script> -->
