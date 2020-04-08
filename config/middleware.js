@@ -7,8 +7,6 @@ const Validation = (req,res,next) =>{
     // pass = req.session.password
     mail = req.session.email
     mobile = req.session.mobile
-    mobilebool = false;
-    console.log(req.session)
     // var schema = new passwordValidator();
  
     // //  Add properties to it

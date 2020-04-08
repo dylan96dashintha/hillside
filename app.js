@@ -18,6 +18,7 @@ var adminAuthRouter = require('./routes/adminAuth');
 var adminRouter = require('./routes/admin');
 var registeruser = require('./routes/register');
 var verifyuser = require('./routes/verify');
+var error = require('./routes/error');
 var app = express();
 
 require("firebase/firestore");
@@ -64,6 +65,7 @@ app.use('/adminAuth' , adminAuthRouter);
 app.use('/admin' , adminRouter);
 app.use('/register', registeruser);
 app.use('/verify',verifyuser);
+app.use('/error',error);
 //Jwt configuration
 app.use(bodyparser.json());
 

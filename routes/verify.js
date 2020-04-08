@@ -17,7 +17,7 @@ router.post('/', (req,res) => {
         connection.connect(function(err) {
             if (err) {
               console.error('error connecting: ' + err.stack);
-              return;
+              return res.render('error'); 
             }
             console.log('connected as id ' + connection.threadId);
           });
@@ -29,7 +29,8 @@ router.post('/', (req,res) => {
             connection.query('INSERT INTO `customerdet` (`firstname`, `lastname`, `address`, `email`, `mobilenum`) VALUES (?,?,?,?,?)',[sess.fname, sess.lname, sess.address, sess.email, sess.mobile], function(err, result) {
                 if (err) { 
                     connection.rollback(function() {
-                    throw err;
+                        res.render('error');
+                        throw err;
                     });
                 }else{
                     var orderid = result.insertId;
@@ -38,12 +39,14 @@ router.post('/', (req,res) => {
                     connection.query('INSERT INTO `orderdetails` (`checkin`, `checkout`, `orderid`, `roomid`) VALUES (?,?,?,?)',[sess.checkinDate, sess.checkoutDate, orderid, sess.rid], function(err, result) {
                         if (err) { 
                         connection.rollback(function() {
+                            res.render('error');
                             throw err;
                         });
                         }else{
                             connection.commit(function(err) {
                             if (err) { 
                                 connection.rollback(function() {
+                                res.render('error');
                                 throw err;
                                 });
                             }
