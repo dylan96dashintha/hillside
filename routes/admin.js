@@ -45,7 +45,7 @@ router.get('/' , function(req,res,err){
      res.render('admin' , {count:count[0].num,orderId : orderIdList,firstname :firstNameList , lastname :lastNameList , address : addressList , mobilenum : mobileList , pavement :pavementList});
      }else{
         res.status(401);
-        res.send("Authorization could be granted by 4NoteFour.co");
+        res.render('error401');
     }
     });
 });
