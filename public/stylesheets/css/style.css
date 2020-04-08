@@ -8219,6 +8219,12 @@ div.cs-select span {
   margin-top: -107px;
   background-color: #d4dae0;
 }
+#room-models {
+  float: left;
+  width: 100%;
+  margin-top: 85px;
+  background-color: #d4dae0;
+}
 
 .feature-full-1col {
   display: -webkit-box;
@@ -8376,6 +8382,7 @@ div.cs-select span {
   right: 0;
 }
 
+#room-models,
 #featured-hotel,
 #hotel-facilities,
 #testimonial,
@@ -8384,6 +8391,7 @@ div.cs-select span {
 #fh5co-services-section,
 #fh5co-contact-section,
 #footerdetails
+
 #footer {
   padding: 7em 0em;
 }
