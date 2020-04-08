@@ -57,19 +57,85 @@
 </head>
 <body>
 
+	<div id="fh5co-wrapper">
+		<div id="fh5co-page">
+					<div id="fh5co-header">
+						<header id="fh5co-header-section">
+							<div class="container">
+								<div class="nav-header">
+									<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+									<h1 id="fh5co-logo"><a href="index">Hill Paradise Guest House</a></h1>
+									<nav id="fh5co-menu-wrap" role="navigation">
+										<ul class="sf-menu" id="fh5co-primary-menu">
+											<li><a class="active" href="index">Home</a></li>
+											
+											<li><a href="services.html">Services</a></li>
+											<li><a href="blog.html">Blog</a></li>
+											<li><a href="contact.html">Contact</a></li>
+										</ul>
+									</nav>
+								</div>
+							</div>
+						</header>
+						
+					</div>
+		
+						<aside id="fh5co-hero" class="js-fullheight">
+							<div class="flexslider js-fullheight">
+								<ul class="slides">
+								<li style="background-image: url(images/room1.jpg);">
+									<div class="overlay-gradient"></div>
+									<div class="container">
+										<div class="col-md-12 col-md-offset-0 text-center slider-text">
+											<div class="slider-text-inner js-fullheight">
+												<div class="desc">
+													<p><span>Hill Side Guesthouse</span></p>
+													<h2>Available Rooms</h2>
+													</div>
+											</div>
+										</div>
+									</div>
+								</li>
+								
+								<li style="background-image: url(images/room2.jpg);">
+									<div class="overlay-gradient"></div>
+									<div class="container">
+										<div class="col-md-12 col-md-offset-0 text-center slider-text">
+											<div class="slider-text-inner js-fullheight">
+												<div class="desc">
+													<p><span>Hill Side Guesthouse</span></p>
+													<h2>Available Rooms</h2>
+													
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li style="background-image: url(images/room3.jpg);">
+									<div class="overlay-gradient"></div>
+									<div class="container">
+										<div class="col-md-12 col-md-offset-0 text-center slider-text">
+											<div class="slider-text-inner js-fullheight">
+												<div class="desc">
+													<p><span>Hill Side Guesthouse</span></p>
+													<h2>Available Rooms</h2>
+													
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+								
+								</ul>
+							</div>
+						</aside>
+						
 	
-	
+
 	<div id="featured-hotel" class="fh5co-bg-color">
 		<div class="container">
 			
-			<div class="row">
-				<div class="col-md-12">
-					<div class="section-title text-center">
-						<h12>Available Rooms</h2>
-					</div>
-				</div>
-			</div>
-
+			
 			<div class="row">
 				<% for (var i=0; i<((roomDetails.length) ); i+=3){ %> 
 					<%if(i<roomDetails.length){%>
@@ -120,7 +186,8 @@
 
 		</div>
 	</div>
-
+</div>
+</div>
 	
 	<script src='/javascripts/js/jquery-2.1.4.min.js'></script>
 	<!-- Dropdown Menu -->
