@@ -8394,7 +8394,8 @@ div.cs-select span {
   -o-transition: 0.5s;
   transition: 0.5s;
   font-size: 8px;
-  background-color: #52565b;
+  background-color: white;
+  margin-bottom: 0px;
 }
 
 #tabs {
@@ -8478,7 +8479,7 @@ div.cs-select span {
 }
 #tabs .heading {
   font-size: 40px;
-  color: #e5e8ec;
+  color: black;
   margin: 0 0 30px 0;
   padding: 0;
 }
