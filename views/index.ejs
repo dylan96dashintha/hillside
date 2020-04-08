@@ -387,7 +387,6 @@
 						</div>
 					</div>
 				</footer>
-
 	</div>
 	<!-- END fh5co-page -->
 
@@ -419,27 +418,5 @@
 
 	<script src='/javascripts/js/custom.js'></script>
 
-	<div id="btnTop" class="fixed-action-btn smooth-scroll" style="bottom: 45px; right: 24px;display: none;">
-		<a href="#availability" class="btn-floating btn-large red">
-		  <i class="fa fa-arrow-up"></i>
-		</a>
-	</div>
 </body>
 </html>
-
-<script type="text/javascript">
-	$(function() {
-  
-		var $btn = $('#btnTop');
-		var $home = $('#availability');
-		var startpoint = $home.scrollTop() + $home.height();
-		
-		$(window).on('scroll', function() {
-			if($(window).scrollTop() > startpoint) {
-			$btn.show();
-			} else {
-			$btn.hide();
-			}
-		});
-	});
-</script>
