@@ -27,6 +27,7 @@
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
 	<script src='js/modernizr-2.6.2.min.js'></script>
 	<script type="text/javascript">
@@ -36,361 +37,380 @@
   		}, function(start, end, label) {
 		  });
 		});
-	</script>
+
+		</script>
+		
 			<style>
 				#fav{
 					margin-bottom: 20px;
+				}
+
+				#return-to-top {
+					position: fixed;
+					z-index: 2;
+					bottom: 20px;
+					right: 20px;
+					background: rgba(2, 61, 255, 0.7);
+					width: 50px;
+					height: 50px;
+					display: block;
+					text-decoration: none;
+					-webkit-border-radius: 35px;
+					-moz-border-radius: 35px;
+					border-radius: 35px;
+					display: none;
+					-webkit-transition: all 0.3s linear;
+					-moz-transition: all 0.3s ease;
+					-ms-transition: all 0.3s ease;
+					-o-transition: all 0.3s ease;
+					transition: all 0.3s ease;
+				}
+				#return-to-top i {
+					color: #fff;
+					margin: 0;
+					position: relative;
+					left: 16px;
+					top: 13px;
+					font-size: 19px;
+					-webkit-transition: all 0.3s ease;
+					-moz-transition: all 0.3s ease;
+					-ms-transition: all 0.3s ease;
+					-o-transition: all 0.3s ease;
+					transition: all 0.3s ease;
+				}
+				#return-to-top:hover {
+					background: rgba(0, 0, 0, 0.9);
+				}
+				#return-to-top:hover i {
+					color: #fff;
+					top: 5px;
 				}
 			</style>
 
 </head>
 <body>
 	<div id="fh5co-wrapper">
-	<div id="fh5co-page">
-				<div id="fh5co-header">
-					<header id="fh5co-header-section">
-						<div class="container">
-							<div class="nav-header">
-								<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-								<h1 id="fh5co-logo"><a href="index">Hill Paradise Guest House</a></h1>
-								<nav id="fh5co-menu-wrap" role="navigation">
-									<ul class="sf-menu" id="fh5co-primary-menu">
-										<li><a class="active" href="index">Home</a></li>
-										
-										<li><a href="services.html">Services</a></li>
-										<li><a href="blog.html">Blog</a></li>
-										<li><a href="contact.html">Contact</a></li>
-									</ul>
-								</nav>
-							</div>
+		<div id="fh5co-page">
+
+			<!-- navigation bar -->
+			<div id="fh5co-header">
+				<header id="fh5co-header-section">
+					<div class="container">
+						<div class="nav-header">
+							<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+							<h1 id="fh5co-logo"><a href="index">Hill Paradise Guest House</a></h1>
+							<nav id="fh5co-menu-wrap" role="navigation">
+								<ul class="sf-menu" id="fh5co-primary-menu">
+									<li><a class="active" href="index">Home</a></li>
+									<li><a href="#hotel-facilities">Services</a></li>
+									<li><a href="blog.html">Blog</a></li>
+									<li><a href="contact.html">Contact</a></li>
+								</ul>
+							</nav>
 						</div>
-					</header>
-					
-				</div>
-	
-					<aside id="fh5co-hero" class="js-fullheight">
-						<div class="flexslider js-fullheight">
-							<ul class="slides">
-							<li style="background-image: url(images/img1.jpg);">
-								<div class="overlay-gradient"></div>
-								<div class="container">
-									<div class="col-md-12 col-md-offset-0 text-center slider-text">
-										<div class="slider-text-inner js-fullheight">
-											<div class="desc">
-												<p><span>Hill Side Guesthouse</span></p>
-												<h2>Reserve Room for Family Vacation</h2>
-												<p>
-													<a href='bookNow' class="btn btn-primary btn-lg">Book Now</a>
-												</p>
-											</div>
+					</div>
+				</header>	
+			</div>
+
+			<!-- welcome screen with image rotation -->
+			<aside id="fh5co-hero" class="js-fullheight">
+				<div class="flexslider js-fullheight">
+					<ul class="slides">
+						<li style="background-image: url(images/img1.jpg);">
+							<div class="overlay-gradient"></div>
+							<div class="container">
+								<div class="col-md-12 col-md-offset-0 text-center slider-text">
+									<div class="slider-text-inner js-fullheight">
+										<div class="desc">
+											<p><span>Hill Side Guesthouse</span></p>
+											<h2>Reserve Room for Family Vacation</h2>
+											<p>
+												<a href='bookNow' class="btn btn-primary btn-lg">Book Now</a>
+											</p>
 										</div>
 									</div>
 								</div>
-							</li>
-							
-							<li style="background-image: url(images/img2.jpg);">
-								<div class="overlay-gradient"></div>
-								<div class="container">
-									<div class="col-md-12 col-md-offset-0 text-center slider-text">
-										<div class="slider-text-inner js-fullheight">
-											<div class="desc">
-												<p><span>Hill Side Guesthouse</span></p>
-												<h2>Make Your Vacation Comfortable</h2>
-												<p>
-													<a href='bookNow'class="btn btn-primary btn-lg">Book Now</a>
-												</p>
-											</div>
+							</div>
+						</li>
+						<li style="background-image: url(images/img2.jpg);">
+							<div class="overlay-gradient"></div>
+							<div class="container">
+								<div class="col-md-12 col-md-offset-0 text-center slider-text">
+									<div class="slider-text-inner js-fullheight">
+										<div class="desc">
+											<p><span>Hill Side Guesthouse</span></p>
+											<h2>Make Your Vacation Comfortable</h2>
+											<p>
+												<a href='bookNow'class="btn btn-primary btn-lg">Book Now</a>
+											</p>
 										</div>
 									</div>
 								</div>
-							</li>
-							<li style="background-image: url(images/img3.jpg);">
-								<div class="overlay-gradient"></div>
-								<div class="container">
-									<div class="col-md-12 col-md-offset-0 text-center slider-text">
-										<div class="slider-text-inner js-fullheight">
-											<div class="desc">
-												<p><span>Hill Side Guesthouse</span></p>
-												<h2>A Best Place To Enjoy Your Life</h2>
-												<p>
-													<a href='bookNow' class="btn btn-primary btn-lg">Book Now</a>
-												</p>
-											</div>
+							</div>
+						</li>
+						<li style="background-image: url(images/img3.jpg);">
+							<div class="overlay-gradient"></div>
+							<div class="container">
+								<div class="col-md-12 col-md-offset-0 text-center slider-text">
+									<div class="slider-text-inner js-fullheight">
+										<div class="desc">
+											<p><span>Hill Side Guesthouse</span></p>
+											<h2>A Best Place To Enjoy Your Life</h2>
+											<p>
+												<a href='bookNow' class="btn btn-primary btn-lg">Book Now</a>
+											</p>
 										</div>
 									</div>
 								</div>
-							</li>
-							
-							</ul>
-						</div>
-					</aside>
-					
-					
-					
-	
-	
-	
-	
-	
-	<div class="wrap">
-		<div class="container">
-			<div class="row">
-				<div id="availability">
-					<form action="index" method="post" >
-
-						<div class="a-col">
-							<section>
-								<select class="cs-select cs-skin-border" name="type">
-									<option value="All"  selected>Select Room</option>
-									<option id='type'  value='D'>Double Room </option>
-									<option id='type'  value='T'>Triple Room</option>
-									<option id='type'  value='F'>Family Room</option>
-								</select>
-							</section>
-						</div>
-						
-						<div class="a-col" >
-							<input type="text" name="daterange"  value=<%=date%> class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-							
-						</div>
-						
-						<div class="a-col" >
-							<button  type="submit" class="btn btn-outline-dark">Check Availability</button>
-						</div>
-
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-
-
-
-
-
-
-
-
-	
-	<div id="featured-hotel" class="fh5co-bg-color">
-		<div class="container">
-			
-			<div class="row">
-				<div class="col-md-12">
-					<div class="section-title text-center">
-						<h2>Featured Rooms</h2>
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="feature-full-1col">
-					<div class="image" style="background-image: url(images/F5.jpeg);">
-						<div class="descrip text-center">
-							<p><small>For as low as</small><span>$100/night</span></p>
-						</div>
-					</div>
-					<div class="desc">
-						<h3>Family Room</h3>
-						<p>Pellentesque habitant morbi tristique senectus et netus ett mauada fames ac turpis egestas. Etiam euismod tempor leo, in suscipit urna condimentum sed. Vivamus augue enim, consectetur ac interdum a, pulvinar ac massa. Nullam malesuada congue </p>
-						<p><a href="#" class="btn btn-primary btn-luxe-primary">Book Now <i class="ti-angle-right"></i></a></p>
-					</div>
-				</div>
-
-				<div class="feature-full-2col">
-					<div class="f-hotel">
-						<div class="image" style="background-image: url(images/D1.jpeg);">
-							<div class="descrip text-center">
-								<p><small>For as low as</small><span>$99/night</span></p>
 							</div>
-						</div>
-						<div class="desc">
-							<h3>Double Room</h3>
-							<p>Pellentesque habitant morbi tristique senectus et netus ett mauada fames ac turpis egestas. Etiam euismod tempor leo, 
-							in suscipit urna condimentum sed. </p>
-							<p><a href="#" class="btn btn-primary btn-luxe-primary">Book Now <i class="ti-angle-right"></i></a></p>
-						</div>
-					</div>
-					<div class="f-hotel">
-						<div class="image" style="background-image: url(images/T3.jpeg);">
-							<div class="descrip text-center">
-								<p><small>For as low as</small><span>$99/night</span></p>
-							</div>
-						</div>
-						<div class="desc">
-							<h3>Triple Room</h3>
-							<p>Pellentesque habitant morbi tristique senectus et netus ett mauada fames ac turpis egestas. Etiam euismod tempor leo, in suscipit urna condimentum sed. </p>
-							<p><a href="#" class="btn btn-primary btn-luxe-primary">Book Now <i class="ti-angle-right"></i></a></p>
-						</div>
-					</div>
+						</li>
+					</ul>
 				</div>
-			</div>
-
-		</div>
-	</div>
-
-					<div id="hotel-facilities">
-						<div class="container">
-							<div class="row">
-								<div class="col-md-12">
-									<div class="section-title text-center">
-										<h2>Hotel Facilities</h2>
-									</div>
-								</div>
-							</div>
-
-							<div id="tabs">
-								<div>
-									<nav class="tabs-nav">
-
-										<a href="#" class="active" data-tab="tab1">
-											<i id="fav" class="fas fa-utensils fa-2x"></i>
-											<span>Restaurant</span>
-										</a>
-										<a href="#" data-tab="tab2">
-											<i id="fav" class="fas fa-fire fa-2x"></i>
-											<span>BBQ</span>
-										</a>
-										<a href="#" data-tab="tab3">
-											<i id="fav" class="fas fa-shower fa-2x"></i>
-											<span>Hot Water</span>
-										</a>
-										<a href="#" data-tab="tab4">
-											
-											<i id="fav" class="fas fa-shield-alt fa-2x"></i>
-											<span>Security</span>
-										</a>
-										
-									</nav>
+			</aside>
+				
+			<!-- choose date range section -->
+			<div class="wrap">
+				<div class="container">
+					<div class="row">
+						<div id="availability">
+							<form action="index" method="post" >
+								<div class="a-col">
+									<section>
+										<select class="cs-select cs-skin-border" name="type">
+											<option value="All"  selected>Select Room</option>
+											<option id='type'  value='D'>Double Room </option>
+											<option id='type'  value='T'>Triple Room</option>
+											<option id='type'  value='F'>Family Room</option>
+										</select>
+									</section>
 								</div>
 								
-								<div class="tab-content-container">
-									<div class="tab-content active show" data-tab-content="tab1">
-										<div class="container">
-											<div class="row">
-												<div class="col-md-6">
-													<img  src="images\dine.jpg" class="img-responsive" alt="Image">
-												</div>
-												<div class="col-md-6">
-													<span class="super-heading-sm">World Class</span>
-													<h3 class="heading">Restaurant</h3>
-													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias officia perferendis modi impedit, rem quasi veritatis. Consectetur obcaecati incidunt, quae rerum, accusamus sapiente fuga vero at. Quia, labore, reprehenderit illum dolorem quae facilis reiciendis quas similique totam sequi ducimus temporibus ex nemo, omnis perferendis earum fugit impedit molestias animi vitae.</p>
-													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam neque blanditiis eveniet nesciunt, beatae similique doloribus, ex impedit rem officiis placeat dignissimos molestias temporibus, in! Minima quod, consequatur neque aliquam.</p>
-													<p class="service-hour">
-														<span>Service Hours</span>
-														<strong>7:30 AM - 8:00 PM</strong>
-													</p>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="tab-content" data-tab-content="tab2">
-										<div class="container">
-											<div class="row">
-												<div class="col-md-6">
-													<img src="images\bbq.jpg" class="img-responsive" alt="Image">
-												</div>
-												<div class="col-md-6">
-													<span class="super-heading-sm">World Class</span>
-													<h3 class="heading">Bars</h3>
-													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias officia perferendis modi impedit, rem quasi veritatis. Consectetur obcaecati incidunt, quae rerum, accusamus sapiente fuga vero at. Quia, labore, reprehenderit illum dolorem quae facilis reiciendis quas similique totam sequi ducimus temporibus ex nemo, omnis perferendis earum fugit impedit molestias animi vitae.</p>
-													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam neque blanditiis eveniet nesciunt, beatae similique doloribus, ex impedit rem officiis placeat dignissimos molestias temporibus, in! Minima quod, consequatur neque aliquam.</p>
-													<p class="service-hour">
-														<span>Service Hours</span>
-														<strong>7:30 AM - 8:00 PM</strong>
-													</p>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="tab-content" data-tab-content="tab3">
-										<div class="container">
-											<div class="row">
-												<div class="col-md-6">
-													<img src="images\hotwater.jpg" class="img-thumbnail" alt="Cinque Terre">
-												</div>
-												<div class="col-md-6">
-													<span class="super-heading-sm"></span>
-													<h3 class="heading">Hot Water</h3>
-													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias officia perferendis modi impedit, rem quasi veritatis. Consectetur obcaecati incidunt, quae rerum, accusamus sapiente fuga vero at. Quia, labore, reprehenderit illum dolorem quae facilis reiciendis quas similique totam sequi ducimus temporibus ex nemo, omnis perferendis earum fugit impedit molestias animi vitae.</p>
-													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam neque blanditiis eveniet nesciunt, beatae similique doloribus, ex impedit rem officiis placeat dignissimos molestias temporibus, in! Minima quod, consequatur neque aliquam.</p>
-													<p class="service-hour">
-														<span>Service Hours</span>
-														<strong>24 Hour</strong>
-													</p>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="tab-content" data-tab-content="tab4">
-										<div class="container">
-											<div class="row">
-												<div class="col-md-6">
-													<img src="images\security.jpg" class="img-responsive" alt="Image">
-												</div>
-												<div class="col-md-6">
-													<span class="super-heading-sm">24 Hour</span>
-													<h3 class="heading">Security</h3>
-													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias officia perferendis modi impedit, rem quasi veritatis. Consectetur obcaecati incidunt, quae rerum, accusamus sapiente fuga vero at. Quia, labore, reprehenderit illum dolorem quae facilis reiciendis quas similique totam sequi ducimus temporibus ex nemo, omnis perferendis earum fugit impedit molestias animi vitae.</p>
-													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam neque blanditiis eveniet nesciunt, beatae similique doloribus, ex impedit rem officiis placeat dignissimos molestias temporibus, in! Minima quod, consequatur neque aliquam.</p>
-													<p class="service-hour">
-														<span>Service Hours</span>
-														<strong>7:30 AM - 8:00 PM</strong>
-													</p>
-												</div>
-											</div>
-										</div>
-									</div>
+								<div class="a-col" >
+									<input type="text" name="daterange"  value=<%=date%> class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
 									
 								</div>
+								
+								<div class="a-col" >
+									<button  type="submit" class="btn btn-outline-dark">Check Availability</button>
+								</div>
+
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- rooms section -->
+			<div id="featured-hotel" class="fh5co-bg-color">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="section-title text-center">
+								<h2>Featured Rooms</h2>
 							</div>
 						</div>
 					</div>
 
-	
-
-				<footer id="footer" class="fh5co-bg-color">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-3">
-								<div class="copyright">
-									<p><small>&copy; 2020 4NoteFourSolutions. <br> All Rights Reserved. <br>
-									Designed by <a href=# target="_blank">4NoteFourSolutions.co</a> <br></small></p>
+					<div class="row">
+						<div class="feature-full-1col">
+							<div class="image" style="background-image: url(images/F5.jpeg);">
+								<div class="descrip text-center">
+									<p><small>For as low as</small><span>$100/night</span></p>
 								</div>
 							</div>
-							<div class="col-md-6">
-									<div class="col-md-3">
-										<h3>Our Facilities</h3>
-										<ul class="link">
-											<li><a href="#">Resturant</a></li>
-											<li><a href="#">Bars</a></li>
-											<li><a href="#">Pick-up</a></li>
-											<li><a href="#">Swimming Pool</a></li>
-											<li><a href="#">Spa</a></li>
-											<li><a href="#">Gym</a></li>
-										</ul>
+							<div class="desc">
+								<h3>Family Room</h3>
+								<p>Pellentesque habitant morbi tristique senectus et netus ett mauada fames ac turpis egestas. Etiam euismod tempor leo, in suscipit urna condimentum sed. Vivamus augue enim, consectetur ac interdum a, pulvinar ac massa. Nullam malesuada congue </p>
+								<p><a href="#" class="btn btn-primary btn-luxe-primary">Book Now <i class="ti-angle-right"></i></a></p>
+							</div>
+						</div>
+
+						<div class="feature-full-2col">
+							<div class="f-hotel">
+								<div class="image" style="background-image: url(images/D1.jpeg);">
+									<div class="descrip text-center">
+										<p><small>For as low as</small><span>$99/night</span></p>
+									</div>
+								</div>
+								<div class="desc">
+									<h3>Double Room</h3>
+									<p>Pellentesque habitant morbi tristique senectus et netus ett mauada fames ac turpis egestas. Etiam euismod tempor leo, 
+									in suscipit urna condimentum sed. </p>
+									<p><a href="#" class="btn btn-primary btn-luxe-primary">Book Now <i class="ti-angle-right"></i></a></p>
+								</div>
+							</div>
+							<div class="f-hotel">
+								<div class="image" style="background-image: url(images/T3.jpeg);">
+									<div class="descrip text-center">
+										<p><small>For as low as</small><span>$99/night</span></p>
+									</div>
+								</div>
+								<div class="desc">
+									<h3>Triple Room</h3>
+									<p>Pellentesque habitant morbi tristique senectus et netus ett mauada fames ac turpis egestas. Etiam euismod tempor leo, in suscipit urna condimentum sed. </p>
+									<p><a href="#" class="btn btn-primary btn-luxe-primary">Book Now <i class="ti-angle-right"></i></a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- services section -->
+			<div id="hotel-facilities">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="section-title text-center">
+								<h2>Hotel Facilities</h2>
+							</div>
+						</div>
+					</div>
+
+					<div id="tabs">
+						<div>
+							<nav class="tabs-nav">
+								<a href="#" class="active" data-tab="tab1">
+									<i id="fav" class="fas fa-utensils fa-2x"></i>
+									<span>Restaurant</span>
+								</a>
+								<a href="#" data-tab="tab2">
+									<i id="fav" class="fas fa-fire fa-2x"></i>
+									<span>BBQ</span>
+								</a>
+								<a href="#" data-tab="tab3">
+									<i id="fav" class="fas fa-shower fa-2x"></i>
+									<span>Hot Water</span>
+								</a>
+								<a href="#" data-tab="tab4">
+									
+									<i id="fav" class="fas fa-shield-alt fa-2x"></i>
+									<span>Security</span>
+								</a>	
+							</nav>
+						</div>
+						
+						<div class="tab-content-container">
+							<div class="tab-content active show" data-tab-content="tab1">
+								<div class="container">
+									<div class="row">
+										<div class="col-md-6">
+											<img  src="images\dine.jpg" class="img-responsive" alt="Image">
+										</div>
+										<div class="col-md-6">
+											<span class="super-heading-sm">World Class</span>
+											<h3 class="heading">Restaurant</h3>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias officia perferendis modi impedit, rem quasi veritatis. Consectetur obcaecati incidunt, quae rerum, accusamus sapiente fuga vero at. Quia, labore, reprehenderit illum dolorem quae facilis reiciendis quas similique totam sequi ducimus temporibus ex nemo, omnis perferendis earum fugit impedit molestias animi vitae.</p>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam neque blanditiis eveniet nesciunt, beatae similique doloribus, ex impedit rem officiis placeat dignissimos molestias temporibus, in! Minima quod, consequatur neque aliquam.</p>
+											<p class="service-hour">
+												<span>Service Hours</span>
+												<strong>7:30 AM - 8:00 PM</strong>
+											</p>
+										</div>
 									</div>
 								</div>
 							</div>
+							<div class="tab-content" data-tab-content="tab2">
+								<div class="container">
+									<div class="row">
+										<div class="col-md-6">
+											<img src="images\bbq.jpg" class="img-responsive" alt="Image">
+										</div>
+										<div class="col-md-6">
+											<span class="super-heading-sm">World Class</span>
+											<h3 class="heading">Bars</h3>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias officia perferendis modi impedit, rem quasi veritatis. Consectetur obcaecati incidunt, quae rerum, accusamus sapiente fuga vero at. Quia, labore, reprehenderit illum dolorem quae facilis reiciendis quas similique totam sequi ducimus temporibus ex nemo, omnis perferendis earum fugit impedit molestias animi vitae.</p>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam neque blanditiis eveniet nesciunt, beatae similique doloribus, ex impedit rem officiis placeat dignissimos molestias temporibus, in! Minima quod, consequatur neque aliquam.</p>
+											<p class="service-hour">
+												<span>Service Hours</span>
+												<strong>7:30 AM - 8:00 PM</strong>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tab-content" data-tab-content="tab3">
+								<div class="container">
+									<div class="row">
+										<div class="col-md-6">
+											<img src="images\hotwater.jpg" class="img-thumbnail" alt="Cinque Terre">
+										</div>
+										<div class="col-md-6">
+											<span class="super-heading-sm"></span>
+											<h3 class="heading">Hot Water</h3>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias officia perferendis modi impedit, rem quasi veritatis. Consectetur obcaecati incidunt, quae rerum, accusamus sapiente fuga vero at. Quia, labore, reprehenderit illum dolorem quae facilis reiciendis quas similique totam sequi ducimus temporibus ex nemo, omnis perferendis earum fugit impedit molestias animi vitae.</p>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam neque blanditiis eveniet nesciunt, beatae similique doloribus, ex impedit rem officiis placeat dignissimos molestias temporibus, in! Minima quod, consequatur neque aliquam.</p>
+											<p class="service-hour">
+												<span>Service Hours</span>
+												<strong>24 Hour</strong>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tab-content" data-tab-content="tab4">
+								<div class="container">
+									<div class="row">
+										<div class="col-md-6">
+											<img src="images\security.jpg" class="img-responsive" alt="Image">
+										</div>
+										<div class="col-md-6">
+											<span class="super-heading-sm">24 Hour</span>
+											<h3 class="heading">Security</h3>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias officia perferendis modi impedit, rem quasi veritatis. Consectetur obcaecati incidunt, quae rerum, accusamus sapiente fuga vero at. Quia, labore, reprehenderit illum dolorem quae facilis reiciendis quas similique totam sequi ducimus temporibus ex nemo, omnis perferendis earum fugit impedit molestias animi vitae.</p>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam neque blanditiis eveniet nesciunt, beatae similique doloribus, ex impedit rem officiis placeat dignissimos molestias temporibus, in! Minima quod, consequatur neque aliquam.</p>
+											<p class="service-hour">
+												<span>Service Hours</span>
+												<strong>7:30 AM - 8:00 PM</strong>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- footer section -->
+			<footer id="footer" class="fh5co-bg-color">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3">
+							<div class="copyright">
+								<p><small>&copy; 2020 4NoteFourSolutions. <br> All Rights Reserved. <br>
+								Designed by <a href=# target="_blank">4NoteFourSolutions.co</a> <br></small></p>
+							</div>
+						</div>
+						<div class="col-md-6">
 							<div class="col-md-3">
-								<ul class="social-icons">
-									<li>
-										<a href="#"><i class="icon-twitter-with-circle"></i></a>
-										<a href="#"><i class="icon-facebook-with-circle"></i></a>
-										<a href="#"><i class="icon-instagram-with-circle"></i></a>
-										<a href="#"><i class="icon-linkedin-with-circle"></i></a>
-									</li>
+								<h3>Our Facilities</h3>
+								<ul class="link">
+									<li><a href="#">Resturant</a></li>
+									<li><a href="#">Bars</a></li>
+									<li><a href="#">Pick-up</a></li>
+									<li><a href="#">Swimming Pool</a></li>
+									<li><a href="#">Spa</a></li>
+									<li><a href="#">Gym</a></li>
 								</ul>
 							</div>
 						</div>
 					</div>
-				</footer>
+					<div class="col-md-3">
+						<ul class="social-icons">
+							<li>
+								<a href="#"><i class="icon-twitter-with-circle"></i></a>
+								<a href="#"><i class="icon-facebook-with-circle"></i></a>
+								<a href="#"><i class="icon-instagram-with-circle"></i></a>
+								<a href="#"><i class="icon-linkedin-with-circle"></i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</footer>
+		</div>
+		<!-- END fh5co-page -->
 	</div>
-	<!-- END fh5co-page -->
-
-</div>
 	<!-- END fh5co-wrapper -->
 	
 	<!-- Javascripts -->
@@ -417,6 +437,24 @@
 	<script src='/javascripts/js/jquery.flexslider-min.js'></script>
 
 	<script src='/javascripts/js/custom.js'></script>
+
+	<a  id="return-to-top"><i class="icon-chevron-up"></i></a>
+	<script>
+		// ===== Scroll to Top ==== 
+		$(window).scroll(function() {
+			if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+				$('#return-to-top').fadeIn(200);    // Fade in the arrow
+			} else {
+				$('#return-to-top').fadeOut(200);   // Else fade out the arrow
+			}
+		});
+		
+		$('#return-to-top').click(function() {      // When arrow is clicked
+			$('body,html').animate({
+				scrollTop : 0                       // Scroll to top of body
+			}, 500);
+		});
+	</script>
 
 </body>
 </html>
