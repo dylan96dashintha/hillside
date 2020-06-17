@@ -15,7 +15,10 @@ router.get('/:id',function(req,res){
     checkinDate = str.substring(2,12);
     checkOutDate = str.substring(14,24);
     type = str.substring(24);
-    console.log(rid,checkinDate,checkOutDate,type);
+
+   
+    
+    
     res.render('addUserDetails',{
         rid: rid,
         checkinDate: checkinDate,

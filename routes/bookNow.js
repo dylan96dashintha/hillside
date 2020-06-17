@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-//var conn = require('./connection');
+var conn = require('./connection');
 var rid;//roomId
 var checkinDate;//checkin date number format
 var checkoutDate;//checkout date number format
@@ -26,12 +26,24 @@ router.get('/:od', function (req, res, next) {
     sess.checkoutDate = checkoutDate;
     sess.rid = rid;
 
-    console.log(sess)
+     //get room details from room type
+     conn.query(`SELECT des FROM roomdet WHERE roomId='${rid}'` , function(err , result){
+      if (err) {
+          console.log(err);
+      }else {
+          const des = result[0].des;
+
+          //create session for room details
+          var sess = req.session;
+          sess.des = des;
+      }
+  });
 
     output = {mailmessage: '',
              passmessage: '',
              mobilemessage:''}
     res.render('register',output)
+
 
 });
 

@@ -1,6 +1,7 @@
-const router = require('express').Router()
+const router = require('express').Router();
 const bcrypt = require('bcrypt');
-var connection = require('../config/sqlconnection')
+var nodemailer = require('./nodemailerWithTemp');
+var connection = require('../config/sqlconnection');
 
 
 router.get('/',(req,res) =>{
@@ -52,7 +53,8 @@ router.post('/', (req,res) => {
                             }
                             console.log('Transaction Complete.');
                             connection.end();
-                            res.send('task is done');
+                            nodemailer.confirmBooking(sess.email, sess.fname, sess.checkIn, sess.checkOut, sess.des);
+                            res.redirect('/index');
                             });
                         }
                     });

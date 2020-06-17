@@ -55,12 +55,17 @@ router.post('/',function(req,res){
     var checkInDate = date.split('-')[0];
     var checkOutDate = date.split('-')[1];
 
+    //create session for checkIn checkout dates
+    var sess = req.session;
+    sess.checkIn = checkInDate;
+    sess.checkOut = checkOutDate; 
+
     if(Date.parse(checkInDate) < Date.parse(day)){
       res.render('index',{date: dateRange, msg: 'Please input valid date.'});
     }else{
       availableRooms(type,checkInDate,checkOutDate,function(err,result){
         roomDetails(result,function(err,result){
-          console.log(result);
+          
           let orderDetails = {
             ciD : Date.parse(checkInDate),
             coD : Date.parse(checkOutDate)

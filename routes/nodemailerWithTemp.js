@@ -1,0 +1,54 @@
+var nodemailer = require("nodemailer");
+var EmailTemplate = require("email-templates").EmailTemplate;
+
+var sender = 'smtps://hillsideNuwaraeli%40gmail.com' ;
+var psw = 'cxoxfvvjozbdruhk';
+
+var transporter = nodemailer.createTransport(sender + ':' + psw + '@smtp.gmail.com');
+
+var verifyReg = transporter.templateSender(
+    new EmailTemplate('./templates/emailTmp'), {
+          from: '4NoteFour.com',
+    });
+  
+var confirmBooking = transporter.templateSender(
+    new EmailTemplate('./templates/confirmTmp'), {
+        from: '4NoteFour.com',
+    });
+
+exports.verifyReg = function (email, name, code) {
+    // transporter.template
+    verifyReg({
+        to: email,
+        subject: 'Booking- verification'
+    }, {
+        name: name,
+        code: code
+    }, function (err, info) {
+        if (err) {
+            console.log(err)
+        } else {
+            console.log('Link sent\n'+ JSON.stringify(info));
+        }
+    });
+};
+
+exports.confirmBooking = function(email,name,checkIn,checkOut,des) {
+    confirmBooking({
+        to: email,
+        subject: 'Booking -confirmation'
+    }, {
+        name: name,
+        checkIn: checkIn,
+        checkOut: checkOut,
+        des: des
+    }, function(err,info) {
+        if (err) {
+            console.log(err)
+        }else {
+            console.log('Link sent\n'+ JSON.stringify(info));
+        }
+    });
+};
+
+

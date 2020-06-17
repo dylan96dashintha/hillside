@@ -1,9 +1,9 @@
 const router = require('express').Router()
 const bodyParser = require('body-parser')
-const provider = require('../config/provider')
 const randomize = require('randomatic')
 const Validation = require('../config/middleware')
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
+var nodemailer = require('./nodemailerWithTemp')
 
 
 router.get('/',(req,res) => {
@@ -33,47 +33,13 @@ router.post('/',urlencodedParser,(req,res,next) =>{
     sess.address = address;
     sess.mobile = mobile;
     sess.code = code;
+    console.log(code);
     // sess.password = password;
-    next()
-},Validation, (req,res) => {
-
-    // html format of the sending mail
-    const output =  
-        + '<h3> Hey ' + req.session.fname + ' '+ req.session.lname +',</h3>'
-        + '<p>You are Welcome to Visit HILLSIDE Resort</p><br>'
-        + 'Please confirm details you have entered<p>'
-        +'<ul>'
-            +'<li>Address : '+ req.session.address +'</li>'
-            +'<li>Mobile Number : '+ req.session.mobile + '</li>'
-            +'<li>check in Date : '+ req.session.checkinDate + '</li>'
-            +'<li>check out Date : '+ req.session.checkoutDate + '</li>'
-        +'</ul>'
-        +'<p>Your verification key is <h4>' + req.session.code + '</h4><p>'
-    
-    
-    let mailOptiions = {
-        from: '"Administrator" <rashnanayakkara96@gmail.com>', // sender address
-        to: req.session.email, // list of receivers
-        subject: "HILLSIDE RESORT", // Subject line
-        // text: "TESTING",// plain text body
-        html: output // html body
-    }
-    
-    // send mail with defined transport object
-    provider.transporter.sendMail(mailOptiions,(error,info) => {
-        if(error){
-            outputt = {mailmessage: 'Email is Invalid',
-                      passmessage: '',
-                      mobilemessage:''}
-            res.render('register',outputt);
-        }
-    
-    });
-    outputt = {message: '',
-              sent: 'Email has been sent..!'}
-    res.render('verify',outputt);
-})
-
+    nodemailer.verifyReg(sess.email, sess.fname, sess.code);
+    output = {message: '',
+    sent: 'Email has been sent..!'}
+    res.render('verify',output);
+});
 
 
 module.exports = router
