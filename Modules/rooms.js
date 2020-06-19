@@ -29,7 +29,7 @@ function getNotBookedRooms(type,sDate,eDate,callback){
                         }
                     }
 
-                    // console.log(bookedRooms);
+                    console.log(bookedRooms,"booked");
 
                     for( i = 0; i<rooms.length; i++){
                         if( ! bookedRooms.includes(rooms[i].roomId) ){
@@ -37,7 +37,7 @@ function getNotBookedRooms(type,sDate,eDate,callback){
                         }
                     }
 
-                    // console.log(freeRooms);
+                    console.log(freeRooms,"free");
                     // getRoomDetails(freeRooms);
 
                     callback(null,freeRooms);
