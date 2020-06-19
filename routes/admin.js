@@ -42,10 +42,15 @@ router.get('/' , function(req,res,err){
      console.log(flag);
      //var decoded = jwt.verify(token , 'secret');
      if(flag) {
-     res.render('admin' , {count:count[0].num,orderId : orderIdList,firstname :firstNameList , lastname :lastNameList , address : addressList , mobilenum : mobileList , pavement :pavementList});
+         empDet = {
+            unsername : req.session.empUsername,
+            name: req.session.empFirstName + " " + req.session.empLastName,
+            empType: req.session.empType
+         }
+     res.render('admin' , {count:count[0].num,orderId : orderIdList,firstname :firstNameList , lastname :lastNameList , address : addressList , mobilenum : mobileList , pavement :pavementList,empDetails:empDet});
      }else{
         res.status(401);
-        res.render('error401');
+        res.send("Authorization could be granted by 4NoteFour.co");
     }
     });
 });

@@ -15,10 +15,7 @@ router.get('/:id',function(req,res){
     checkinDate = str.substring(2,12);
     checkOutDate = str.substring(14,24);
     type = str.substring(24);
-
-   
-    
-    
+    console.log(rid,checkinDate,checkOutDate,type);
     res.render('addUserDetails',{
         rid: rid,
         checkinDate: checkinDate,
@@ -44,12 +41,24 @@ router.post('/register',function(req,res){
         coD : Date.parse(checkOutDate),
         type :type
     };
+    console.log(orderDetails,"aaaaaaaaaaaaaaaaaaaa")
+    
+    // addRecord(orderDetails,function(err,result){
+    //     console.log(err,"error")
+    //     console.log(result,"result")
+    //     if(result != null){
+    //         res.redirect('/admin');
+    //     }
+    // }); 
 
     addRecord(orderDetails,function(err,result){
-        if(result != null){
+        if(result){
+            res.redirect('/admin');
+        }else{
             res.redirect('/admin');
         }
-    }); 
+
+    })
     
     
 });
