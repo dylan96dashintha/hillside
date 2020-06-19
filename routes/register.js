@@ -1,7 +1,7 @@
 const router = require('express').Router()
 const bodyParser = require('body-parser')
 const randomize = require('randomatic')
-const Validation = require('../config/middleware')
+// const Validation = require('../config/middleware')
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 var nodemailer = require('./nodemailerWithTemp')
 

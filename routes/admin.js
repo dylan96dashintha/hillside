@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var conn = require('./connection');
+// var conn = require('./connection');
+var conn = require('../config/sqlconnection');
 var jwt = require('jsonwebtoken');
 var token1 = require('./adminAuth');
 
