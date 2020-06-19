@@ -63,7 +63,7 @@ function getRoomsDetails(rooms,callback){
     conn.query(`SELECT * FROM roomdet WHERE roomId in (${roomsStr})`,function(err,result){
         if(err){callback(err,null);}
         else{
-            console.log(result)
+            // console.log(result)
             var roomDetails = result;
             var details=[];
             for(var j=0; j<roomDetails.length; j++){
