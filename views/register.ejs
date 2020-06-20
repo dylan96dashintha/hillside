@@ -1,23 +1,12 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
 		<title>RegistrationForm</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<!-- <script>
-			function showPassword() {
-				var x = document.getElementById("password");
-				if (x.type === "password") {
-				  x.type = "text";
-				} else {
-				  x.type = "password";
-				}
-			  }
-			</script> -->
-		<!-- MATERIAL DESIGN ICONIC FONT -->
+		
     <link rel="stylesheet" href="/stylesheets/css/material-design-iconic-font.min.css">
 
-		<!-- STYLE CSS -->
     <link rel="stylesheet" href="/stylesheets/css/registerstyle.css">
 	</head>
 
@@ -56,31 +45,68 @@
 							<input type="text" class="form-control" id="mobile" name="mobile" required>
 							<p id="invalidemail"><span style="color:brown"><%= mobilemessage %></span></p>
 						</div>
-						<!-- <div class="form-wrapper">
-							<label for="pass">Password</label>
-							<input type="password" class="form-control" id="password" name="password" required>
-							<p id="invalidpass" ><span style="color:brown"><%= passmessage %></span></p>
-						</div>
-						<div class = "checkbox">
-							<label>
-								<input type="checkbox" onclick="showPassword()">Show Password
-								<span class="checkmark"></span>
-							</label>
-						</div> -->
-						<!-- <div class="form-wrapper">
-							<label for="confirmpass">Confirm Password</label>
-							<input type="password" class="form-control" name = confirmpass required>
-						</div> -->
-						<!-- <div class="checkbox">
-							<label>
-								<input type="checkbox"> I caccept the Terms of Use & Privacy Policy.
-								<span class="checkmark"></span>
-							</label>
-						</div> -->
+						
 						<button type="submit" name="submit" id="submit">Register Now</button>
 					</form>
 				</div>
 		</div>
 		
 	</body>
-	</html>
+	</html> -->
+
+	<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registration</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="\fonts\material-icon\css\material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="\css\style.css">
+</head>
+
+<body>
+
+    <div class="main">
+
+        <div class="container">
+            <form method="POST" action="/register" class="appointment-form" id="appointment-form">
+                <h2>Registration</h2>
+                <div class="form-group-1">
+                    <input type="text" name="fname" id="title" placeholder="First Name" required>
+                </div>
+                <div class="form-group-1">
+                    <input type="text" name="lname" id="name" placeholder="Last Name" required />
+                </div>
+                <div class="form-group-1">
+                    <p id="invalidemail"><span style="color:brown"><%= mailmessage %></span></p>
+                    <input type="email" name="email" id="email" placeholder="Email" required />
+                </div>
+                <div class="form-group-1">
+                    <input type="text" name="address" id="phone_number" placeholder="Address" required />
+                </div>
+                <div class="form-group-1">
+                    <p id="invalidemail"><span style="color:brown"><%= mobilemessage %></span></p>
+                    <input type="text" name="mobile" id="phone_number" placeholder="Mobile Number" required />
+                </div>
+                <div class="form-submit">
+					<input type="submit" name="submit" id="submit" class="submit" value="Register" />
+					
+					 <!-- <button type="submit" name="submit" id="submit">Register Now</button>	 -->
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="\vendor\jquery\jquery.min.js"></script>
+    <script src="\js\main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>

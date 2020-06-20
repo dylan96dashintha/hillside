@@ -7,7 +7,6 @@ var jwt = require('jsonwebtoken');
 var bodyparser = require('body-parser');
 var session = require('express-session');
 
-
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var bookNowRouter = require('./routes/bookNow');
@@ -20,6 +19,7 @@ var adminRouter = require('./routes/admin');
 var registeruser = require('./routes/register');
 var verifyuser = require('./routes/verify');
 var error = require('./routes/error');
+var logOut = require('./routes/logoutAdmin');
 var app = express();
 
 require("firebase/firestore");
@@ -67,6 +67,7 @@ app.use('/admin' , adminRouter);
 app.use('/register', registeruser);
 app.use('/verify',verifyuser);
 app.use('/error',error);
+app.use('/logout',logOut);
 //Jwt configuration
 app.use(bodyparser.json());
 

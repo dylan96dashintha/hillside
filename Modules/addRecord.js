@@ -4,17 +4,22 @@ var oid = require('./createOrderId');
 
 function addRecord(od,callback){
     var orderId = oid();
-    conn.query(`INSERT INTO customerdet VALUES ('${orderId}','${od.fname}','${od.lname}','${od.address}','${od.tel}',"Not paied")`,function(err,res){
-        if(err){callback(err,null);}
+    console.log(orderId)
+    // var orderId = "ssssssssssssssssssssssssssssssssssss";
+    console.log(od)
+    console.log("inside")
+    conn.query(`INSERT INTO customerdet VALUES ('${orderId}','${od.fname}','${od.lname}','${od.address}','${null}','${od.tel}',"Not paied")`,function(err,res){
+        if(err){callback(err,false);}
         else{
             conn.query(`INSERT INTO orderdetails VALUES ('${od.ciD}','${od.coD}','${orderId}','${od.rid}')`,function(err,result){
-                if(err){callback(err,null);}
+                if(err){callback(err,false);}
                 else{
                     callback(null,true);
                 }
             });
         }
     });
+    // callback(true,true)
 }
 
 module.exports = addRecord;
