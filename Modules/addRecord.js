@@ -1,4 +1,5 @@
-var conn= require('./connection');
+// var conn= require('./connection');
+var conn = require('../config/sqlconnection');
 var oid = require('./createOrderId');
 
 function addRecord(od,callback){

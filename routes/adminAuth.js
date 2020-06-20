@@ -2,8 +2,10 @@ var express = require('express');
 var router = express.Router();
 const accessTokenSecret = 'secret';
 var jwt = require('jsonwebtoken');
+
 var conn = require('./connection');
 var adminAuth = require('../Modules/adminAuth')
+
 
 router.get('/', function (req, res, next) {
     res.render('adminAuth')

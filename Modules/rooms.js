@@ -1,4 +1,5 @@
-var conn= require('./connection');
+// var conn= require('./connection');
+var conn = require('../config/sqlconnection');
 
 //return awailable room ids, acording to time period;
 function getNotBookedRooms(type,sDate,eDate,callback){
@@ -6,9 +7,10 @@ function getNotBookedRooms(type,sDate,eDate,callback){
     var endDate = Date.parse(eDate);
     var today = Date.parse(new Date());
 
-    conn.query(`SELECT * FROM orderdetails WHERE checkIn > '${today}'`,function(err,result){
+    conn.query('SELECT * FROM orderdetails WHERE checkIn > ?',[today],function(err,result){
         if(err){callback(err,false)}
         else{
+            // console.log(result)
             var orderDetails = result;
             if(type=='All'){var q = `SELECT roomId FROM roomdet`;}
             if(type=='F'){var q= `SELECT roomId FROM roomdet WHERE roomId LIKE 'F%'` ;}
@@ -37,7 +39,12 @@ function getNotBookedRooms(type,sDate,eDate,callback){
                         }
                     }
 
+
                     console.log(freeRooms,"free");
+
+                    
+                    // console.log(bookedRooms);
+
                     // getRoomDetails(freeRooms);
 
                     callback(null,freeRooms);
@@ -56,9 +63,11 @@ function getRoomsDetails(rooms,callback){
         roomsStr+="'"+rooms[j]+"',";
     }
     roomsStr+="'"+rooms[rooms.length-1]+"'";
+
     conn.query(`SELECT * FROM roomdet WHERE roomId in (${roomsStr})`,function(err,result){
         if(err){callback(err,null);}
         else{
+            // console.log(result)
             var roomDetails = result;
             var details=[];
             for(var j=0; j<roomDetails.length; j++){

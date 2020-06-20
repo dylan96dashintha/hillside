@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var conn = require('./connection');
+// var conn = require('./connection');
+var conn = require('../config/sqlconnection');
 var checkIn = require('../Modules/checkInOut').getCheckInDate;
 var checkOut = require('../Modules/checkInOut').getCheckOutDate;
 // var freeRoomsList = require('../Modules/checkAvailableRooms').getNotBookedRooms;

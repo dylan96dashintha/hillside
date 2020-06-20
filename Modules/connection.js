@@ -1,12 +1,12 @@
-var mysql = require('mysql');
+// var mysql = require('mysql');
 
-//create connection
-var conn = mysql.createPool({
-  connectionLimit: 10,
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'hillside'
-});
+// //create connection
+// var conn = mysql.createPool({
+//   connectionLimit: 10,
+//   host: 'localhost',
+//   user: 'root',
+//   password: '',
+//   database: 'hillside'
+// });
 
-module.exports = conn;
+// module.exports = conn;
