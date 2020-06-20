@@ -1,4 +1,6 @@
-const conn = require('../routes/connection')
+// const conn = require('../routes/connection')
+var conn = require('../config/sqlconnection');
+
 
 function adminLogin(uname,psswrd,callback){
     conn.query(`SELECT firstname, lastname, emptype, username, COUNT(id) as count FROM admin WHERE username = '${uname}' AND password = '${psswrd}'`,function(err,result){

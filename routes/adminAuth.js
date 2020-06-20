@@ -3,7 +3,9 @@ var router = express.Router();
 const accessTokenSecret = 'secret';
 var jwt = require('jsonwebtoken');
 
-var conn = require('./connection');
+// var conn = require('./connection');
+var conn = require('../config/sqlconnection');
+
 var adminAuth = require('../Modules/adminAuth')
 
 
