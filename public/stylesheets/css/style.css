@@ -4812,6 +4812,17 @@ tbody.collapse.in {
   }
 }
 
+#img1{
+  
+  background-image: url("../../images/img1.jpg");
+
+}
+@media only screen and (max-width: 600px) {
+  #img1 {
+    background-image: url("../../images/rm.jpg");
+  }
+}
+
 .navbar-toggle {
   position: relative;
   float: right;
@@ -7623,9 +7634,9 @@ figure {
 }
 
 #fh5co-logo {
-  font-size: 20px;
+  font-size: 30px;
   text-transform: uppercase;
-  font-weight: 300;
+  font-weight: 450;
   float: left;
   margin-bottom: 0;
   margin-top: 1.4em;
@@ -7758,6 +7769,7 @@ figure {
   z-index: 2;
   display: block;
   float: right;
+  margin-top: 1.7em;
 }
 
 #fh5co-primary-menu > li > .sf-with-ul:after {
@@ -7878,11 +7890,11 @@ figure {
   background: #fff url(../images/loader.gif) no-repeat center center;
   margin-bottom: 0 !important;
   position: relative;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
+  /* display: -webkit-box; 
+   display: -moz-box;
+   display: -ms-flexbox;
   display: -webkit-flex;
-  display: flex;
+  display: flex; */
   flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
   -moz-flex-wrap: wrap;
@@ -7947,7 +7959,7 @@ figure {
 #fh5co-hero .flexslider .flex-control-nav li a.flex-active {
   cursor: pointer;
   border: 2px solid white;
-  background: transparent;
+  background: blue;
 }
 #fh5co-hero .flexslider .flex-direction-nav {
   display: none;
@@ -8397,6 +8409,7 @@ div.cs-select span {
 }
 #footerdetails{
   /* margin-top: inherit; */
+  float: left;
   background-color:#292f35;
   box-shadow:0 1px 1px 0 rgba(0,0,0,.12);
   box-sizing:border-box;
@@ -8404,10 +8417,12 @@ div.cs-select span {
   text-align:left;
   font:700 16px sans-serif;
   padding:55px 50px;
-  margin-top:1500px;
+  margin-top:1px;
   margin-bottom:0px;
   color:#fff
-}.fa.footer-contacts-icon,.social-links a{
+}
+
+.fa.footer-contacts-icon,.social-links a{
   background-color:#33383b;text-align:center
 }.footer-navigation h3{
   margin:0 0 20px;font:400 36px Cookie,cursive;color:#fff
@@ -8472,6 +8487,7 @@ div.cs-select span {
 }
 #hotel-facilities {
   float: left;
+  max-height: 900px;
   width: 100%;
   position: relative;
   -webkit-transition: 0.5s;
@@ -8479,7 +8495,7 @@ div.cs-select span {
   transition: 0.5s;
   font-size: 8px;
   background-color: white;
-  margin-bottom: 100px;
+  margin-bottom: 0px;
 }
 #tabs {
   float: left;
@@ -8604,6 +8620,7 @@ div.cs-select span {
   position: relative;
   display: block;
   overflow: hidden;
+  
 }
 #fh5co-hotel-section .hotel-content .hotel-grid .price small {
   color: rgba(255, 255, 255, 0.5);
@@ -8677,114 +8694,6 @@ div.cs-select span {
   -ms-box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.06);
   -o-box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.06);
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.06);
-}
-
-#testimonial {
-  background: #FF5722;
-  float: left;
-  width: 100%;
-  color: #52565b;
-}
-#testimonial .section-title h2 {
-  color: #f8e69f;
-  font-size: 20px;
-  font-weight: 300;
-  letter-spacing: 3px;
-}
-#testimonial blockquote {
-  border-left: none;
-  padding: 20px;
-  background: #fff;
-  -webkit-box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.2);
-  -ms-box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.2);
-  -o-box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.2);
-  box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.2);
-  position: relative;
-}
-#testimonial blockquote:after {
-  content: '';
-  position: absolute;
-  border-style: solid;
-  border-width: 12px 12px 0 12px;
-  border-color: #fff transparent;
-  display: block;
-  width: 0;
-  z-index: 1;
-  bottom: -12px;
-  left: 10%;
-}
-#testimonial .author {
-  margin-bottom: 0;
-  margin-left: 10px;
-  color: #f8e69f;
-}
-
-#fh5co-blog-section {
-  width: 100%;
-  float: left;
-}
-#fh5co-blog-section .blog-grid {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  width: 100%;
-  height: 300px;
-  position: relative;
-}
-#fh5co-blog-section .blog-grid .date {
-  width: 80px;
-  padding: 10px 20px;
-  background: #fff;
-}
-#fh5co-blog-section .blog-grid .date span, #fh5co-blog-section .blog-grid .date small {
-  display: block;
-  text-transform: uppercase;
-}
-#fh5co-blog-section .blog-grid .date small {
-  font-size: 12px;
-  letter-spacing: 2px;
-}
-#fh5co-blog-section .desc {
-  border: 1px solid #e6e6e6;
-  border-top: 0;
-  padding: 20px;
-  margin-bottom: 40px;
-}
-@media screen and (max-width: 992px) {
-  #fh5co-blog-section .desc {
-    margin-bottom: 40px;
-  }
-}
-#fh5co-blog-section .desc h3 {
-  font-size: 20px;
-  margin: 0;
-}
-#fh5co-blog-section .desc h3 a {
-  color: rgba(0, 0, 0, 0.7);
-}
-
-.services {
-  position: relative;
-  margin-bottom: 60px;
-}
-.services span {
-  position: absolute;
-  top: 15px;
-  left: 0;
-}
-.services span > i {
-  font-size: 50px;
-  color: #FF5722;
-  padding: 15px;
-  background: rgba(0, 0, 0, 0.1);
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  border-radius: 50%;
-}
-.services .desc {
-  padding-left: 100px;
 }
 
 .contact-info {
