@@ -4811,6 +4811,8 @@ tbody.collapse.in {
     margin-left: -20px;
   }
 }
+/* 
+This should be inserted with scaled photoshoped images */
 
 #img1{
   
@@ -4819,6 +4821,26 @@ tbody.collapse.in {
 }
 @media only screen and (max-width: 600px) {
   #img1 {
+    background-image: url("../../images/rm.jpg");
+  }
+}
+#img2{
+  
+  background-image: url("../../images/img2.jpg");
+
+}
+@media only screen and (max-width: 600px) {
+  #img2 {
+    background-image: url("../../images/rm.jpg");
+  }
+}
+#img3{
+  
+  background-image: url("../../images/img3.jpg");
+
+}
+@media only screen and (max-width: 600px) {
+  #img3 {
     background-image: url("../../images/rm.jpg");
   }
 }
@@ -8496,6 +8518,21 @@ div.cs-select span {
   font-size: 8px;
   background-color: white;
   margin-bottom: 0px;
+}
+
+@media only screen and (max-width: 600px) {
+  #hotel-facilities {
+  float: left;
+  max-height: 1450px;
+  width: 100%;
+  position: relative;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  font-size: 8px;
+  background-color: white;
+  margin-bottom: 0px;
+  }
 }
 #tabs {
   float: left;
