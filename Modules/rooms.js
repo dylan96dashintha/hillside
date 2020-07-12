@@ -12,6 +12,7 @@ function getNotBookedRooms(type,sDate,eDate,callback){
         else{
             // console.log(result)
             var orderDetails = result;
+            console.log(orderDetails,"order details");
             if(type=='All'){var q = `SELECT roomId FROM roomdet`;}
             if(type=='F'){var q= `SELECT roomId FROM roomdet WHERE roomId LIKE 'F%'` ;}
             if(type=='T'){var q= `SELECT roomId FROM roomdet WHERE roomId LIKE 'T%'` ;}
@@ -24,9 +25,24 @@ function getNotBookedRooms(type,sDate,eDate,callback){
                     freeRooms = []
 
                     for(var i=0 ; i<orderDetails.length; i++){
-                        if(((orderDetails[i].checkIn < startDate) &&(startDate < orderDetails[i].chechout))  || ((orderDetails[i].checkIn < endDate) &&(endDate < orderDetails[i].chechout))){
+                        // console.log(startDate)
+                        console.log(parseInt(orderDetails[i].checkIn))
+                        console.log(startDate)
+                        console.log(endDate)
+                        console.log(parseInt(orderDetails[i].checkout))
+                        console.log(  startDate <= parseInt(orderDetails[i].checkout) && (parseInt(orderDetails[i].checkout) <= endDate ))
+                        // if(((parseInt(orderDetails[i].checkIn) < startDate) &&(startDate < parseInt(orderDetails[i].chechout)))  || ((parseInt(orderDetails[i].checkIn) < endDate) &&(endDate < parseInt(orderDetails[i].chechout)))){
+                        //     bookedRooms.push(orderDetails[i].roomId);
+                        // }else if((startDate < parseInt(orderDetails[i].checkIn)) && (parseInt(orderDetails[i].chechout) < endDate)){
+                        //     bookedRooms.push(orderDetails[i].roomId);
+                        // }
+                        if((startDate <= parseInt(orderDetails[i].checkIn)) && (parseInt(orderDetails[i].checkIn)) <= endDate){
                             bookedRooms.push(orderDetails[i].roomId);
-                        }else if((startDate < orderDetails[i].checkIn) && (orderDetails[i].chechout < endDate)){
+                        }else if((parseInt(orderDetails[i].checkIn) <= startDate) && (endDate <= parseInt(orderDetails[i].checkout))){
+                            bookedRooms.push(orderDetails[i].roomId);
+                        }else if(  startDate <= parseInt(orderDetails[i].checkout) && (parseInt(orderDetails[i].checkout) <= endDate )){
+                            bookedRooms.push(orderDetails[i].roomId);
+                        }else if((startDate <= parseInt(orderDetails[i].checkIn)) && (parseInt(orderDetails[i].checkout) <= endDate)){
                             bookedRooms.push(orderDetails[i].roomId);
                         }
                     }

@@ -76,6 +76,7 @@
 				border-radius: 50px;
 				background-color: rgba(211, 74, 5, 0.966);
 			}
+			
 		</style>
 	</head>
 	<body>
@@ -152,29 +153,39 @@
 				</aside>
 
 				<!-- choose date range section -->
-				<!-- <div class="wrap">
-					<div class="container">
-						<div class="row">
-							<div class="input-form-cont">
-							<div class="col-12 col-sm-4">
-								<section>
-									<select class="room-select" name="type">
-										<option value="All"  selected>Select Room</option>
-										<option id='type'  value='D'>Double Room </option>
-										<option id='type'  value='T'>Triple Room</option>
-										<option id='type'  value='F'>Family Room</option>
-									</select>
-								</section>
+				<div class="wrap">
+					<div class="container booking-form">
+						<form action="/" method="post">
+							<div class="row">
+								<div class="input-form-cont">
+									<div class="col-12 col-sm-3">
+										<label for="room">Room</label>
+										<select name="type" id="type" class="form-control">
+											<option value="All">Select Room</option>
+											<option value="D">Double Room</option>
+											<option value="T">Triple Room</option>
+											<option value="F">Family Room</option>
+										</select>
+									</div>
+							<div class="col-12 col-sm-3">
+								<label for="checkIn">Check In</label>
+                                <input type="date" class="form-control" id="checkIn" name="checkin">
 							</div>
-							<div class="col-12 col-sm-4"><input type="text" name="daterange"  style="font-size: medium;text-align: center;" value=<%=date%> class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+							<div class="col-12 col-sm-3">
+								<label for="checkIn">Check Out</label>
+								<input type="date" class="form-control" id="checkIn" name="checkout">
 							</div>
-							<div class="col-12 col-sm-4">a</div>
-						</div>
+							<div class="col-12 col-sm-3">
+								<label for="checkIn"> </label>
+								<button type="submit" class="form-control btn btn-info">Check Availability</button>
+							</div>
 						</div>
 					</div>
-				</div> -->
+						</form>
+					</div>
+				</div>
 
-				<div class="wrap">
+				<!-- <div class="wrap">
 					<div class="container">
 						<div class="row">
 							<div id="availability">
@@ -203,7 +214,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 
 				<!-- rooms section -->
 				<div id="featured-hotel" class="fh5co-bg-color">
