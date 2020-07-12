@@ -4821,7 +4821,8 @@ This should be inserted with scaled photoshoped images */
 }
 @media only screen and (max-width: 600px) {
   #img1 {
-    background-image: url("../../images/rm.jpg");
+    
+    background-image: url("../../images/img1-small.jpg");
   }
 }
 #img2{
@@ -4831,7 +4832,7 @@ This should be inserted with scaled photoshoped images */
 }
 @media only screen and (max-width: 600px) {
   #img2 {
-    background-image: url("../../images/rm.jpg");
+    background-image: url("../../images/img2-small.jpg");
   }
 }
 #img3{
@@ -4841,7 +4842,7 @@ This should be inserted with scaled photoshoped images */
 }
 @media only screen and (max-width: 600px) {
   #img3 {
-    background-image: url("../../images/rm.jpg");
+    background-image: url("../../images/img3-small.jpg");
   }
 }
 
@@ -9239,3 +9240,30 @@ input[type="text"] {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+.input-form-cont{
+  width: 90%;
+  background: #33028d;
+  top: -20vh;
+  z-index: 99;
+  position: relative;
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+  -webkit-box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.2);
+  -ms-box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.2);
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+}
+
+.room-select{
+  width: 80%;
+  height: 5vh;
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+  border-color: white;
+  text-align: center;
+}

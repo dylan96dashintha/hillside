@@ -57,7 +57,7 @@ router.post('/', (req,res) => {
                                 console.log('Transaction Complete.');
                                 // connection.end();
                                 nodemailer.confirmBooking(sess.email, sess.fname, sess.checkIn, sess.checkOut, sess.des);
-                                res.redirect('/index');
+                                res.render('successBooking');
                                 });
                             }
                         });
@@ -65,6 +65,10 @@ router.post('/', (req,res) => {
                 });
             });
         });
+    }else{
+        outputt = {message: '',
+              sent: 'You Entered Code is Wrong'}
+    res.render('verify',outputt)
     }
     /* End transaction */
 });
