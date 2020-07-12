@@ -137,7 +137,11 @@
 									<div class="slider-text-inner js-fullheight">
 										<div class="desc">
 											<p><span>Hill Side Guesthouse</span></p>
+											<%if(roomDetails.length > 0){%>
 											<h2>Available Rooms</h2>
+											<%}else{%>
+												<h2 style="color:red;">Available Rooms</h2>
+												<%}%>
 											</div>
 									</div>
 								</div>
@@ -151,7 +155,11 @@
 									<div class="slider-text-inner js-fullheight">
 										<div class="desc">
 											<p><span>Hill Side Guesthouse</span></p>
-											<h2>Available Rooms</h2>
+											<%if(roomDetails.length > 0){%>
+												<h2>Available Rooms</h2>
+												<%}else{%>
+													<h2 style="color:red;">Available Rooms</h2>
+													<%}%>
 											
 										</div>
 									</div>
@@ -165,7 +173,11 @@
 									<div class="slider-text-inner js-fullheight">
 										<div class="desc">
 											<p><span>Hill Side Guesthouse</span></p>
-											<h2>Available Rooms</h2>
+											<%if(roomDetails.length > 0){%>
+												<h2>Available Rooms</h2>
+												<%}else{%>
+													<h2 style="color:red;">Available Rooms</h2>
+													<%}%>
 										</div>
 									</div>
 								</div>
@@ -176,6 +188,7 @@
 			</aside>
 			
 			<!-- rooms section -->
+			<%if(roomDetails.length >0){%>
 			<div id="room-models" class="fh5co-bg-color">
 				<div class="container">
 					<div class="row">
@@ -227,6 +240,7 @@
 					</div>
 				</div>
 			</div>
+			<%}%>
 		</div>
 	</div>
 </div>

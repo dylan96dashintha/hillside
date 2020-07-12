@@ -26,11 +26,11 @@ function getNotBookedRooms(type,sDate,eDate,callback){
 
                     for(var i=0 ; i<orderDetails.length; i++){
                         // console.log(startDate)
-                        console.log(parseInt(orderDetails[i].checkIn))
-                        console.log(startDate)
-                        console.log(endDate)
-                        console.log(parseInt(orderDetails[i].checkout))
-                        console.log(  startDate <= parseInt(orderDetails[i].checkout) && (parseInt(orderDetails[i].checkout) <= endDate ))
+                        // console.log(parseInt(orderDetails[i].checkIn))
+                        // console.log(startDate)
+                        // console.log(endDate)
+                        // console.log(parseInt(orderDetails[i].checkout))
+                        // console.log(  startDate <= parseInt(orderDetails[i].checkout) && (parseInt(orderDetails[i].checkout) <= endDate ))
                         // if(((parseInt(orderDetails[i].checkIn) < startDate) &&(startDate < parseInt(orderDetails[i].chechout)))  || ((parseInt(orderDetails[i].checkIn) < endDate) &&(endDate < parseInt(orderDetails[i].chechout)))){
                         //     bookedRooms.push(orderDetails[i].roomId);
                         // }else if((startDate < parseInt(orderDetails[i].checkIn)) && (parseInt(orderDetails[i].chechout) < endDate)){
