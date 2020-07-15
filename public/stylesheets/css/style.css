@@ -9256,7 +9256,7 @@ input[type="text"] {
   display: inline-block;
   margin-top: 0;
   margin-bottom: 0;
-  margin-left: 50px;
+  /* margin-left: 50px; */
   -webkit-box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.2);
   -ms-box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.2);
@@ -9279,7 +9279,6 @@ input[type="text"] {
     text-align: left !important;
     font-size: 14px;
     padding: 0 20px;
-  
 }
 
 .datepicker {
