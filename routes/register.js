@@ -1,14 +1,13 @@
 const router = require('express').Router()
 const bodyParser = require('body-parser')
 const randomize = require('randomatic')
-// const Validation = require('../config/middleware')
+const Validation = require('../config/middleware')
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 var nodemailer = require('./nodemailerWithTemp')
 
 
 router.get('/',(req,res) => {
     output = {mailmessage: '',
-            passmessage: '',
             mobilemessage:''}
     res.render('register',output);
 })
@@ -33,12 +32,14 @@ router.post('/',urlencodedParser,(req,res,next) =>{
     sess.address = address;
     sess.mobile = mobile;
     sess.code = code;
-    console.log(code);
+    // console.log(code);
     // sess.password = password;
-    nodemailer.verifyReg(sess.email, sess.fname, sess.code);
-    output = {message: '',
-    sent: 'Email has been sent..!'}
-    res.render('verify',output);
+    next();
+    },Validation,(req,res) => {
+        nodemailer.verifyReg(sess.email, sess.fname, sess.code);
+        output = {message: '',
+        sent: 'Email has been sent..!'}
+        res.render('verify',output);
 });
 
 

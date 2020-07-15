@@ -62,7 +62,7 @@ router.post('/',function(req,res){
     sess.checkOut = checkOutDate; 
 
     if(Date.parse(checkInDate) < Date.parse(day)){
-      res.render('index',{date: dateRange, msg: 'Please input valid date.'});
+      res.render('index',{date: dateRange, msg: 'Please input valid dates !'});
     }else{
       availableRooms(type,checkInDate,checkOutDate,function(err,result){
         roomDetails(result,function(err,result){

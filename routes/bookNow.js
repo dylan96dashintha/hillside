@@ -27,7 +27,7 @@ router.get('/:od', function (req, res, next) {
     sess.checkoutDate = checkoutDate;
     sess.rid = rid;
 
-     //get room details from room type
+    //get room details from room type
     // conn.query(`SELECT des FROM roomdet WHERE roomId='${rid}'` , function(err , result){
     conn.query('SELECT `des` FROM `roomdet` WHERE `roomId`=?',[rid], function(err , result){
       if (err) {
@@ -42,7 +42,6 @@ router.get('/:od', function (req, res, next) {
   });
 
     output = {mailmessage: '',
-             passmessage: '',
              mobilemessage:''}
     res.render('register',output)
 

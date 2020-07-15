@@ -32,10 +32,9 @@ const Validation = (req,res,next) =>{
         //               mobilemessage:''}
         if (emailValidator.validate(mail) && validatePhoneNumber.validate(mobile) && (mobile.length <=13)){
             next();
-        }else if(!emailValidator.validate(mail) && !validatePhoneNumber.validate(mobile)){
+        }else if(!emailValidator.validate(mail) && !validatePhoneNumber.validate(mobile) && !(mobile.length <=13)){
             output = {mailmessage: 'Email is Invalid',
-                      passmessage: '',
-                      mobilemessage:'Lenght of mobile number should be 10 as well as not to be Letters'}
+                      mobilemessage:'Contact Number is Invalid'}
         // }else if(!schema.validate(pass) && !validatePhoneNumber.validate(mobile) && !(mobile.length == 10)){
         //     output = {mailmessage: '',
         //               passmessage: 'Password should include atleast Lowercase letter, Uppercase letter and Digit as well as atleast 6 length',
@@ -46,12 +45,10 @@ const Validation = (req,res,next) =>{
         //              mobilemessage:''}
         }else if(!emailValidator.validate(mail)){
             output = {mailmessage: 'Email is Invalid',
-                      passmessage: '',
                       mobilemessage:''}
         }else{
             output = {mailmessage: '',
-                      passmessage: '',
-                      mobilemessage:'Lenght of mobile number should be 10 as well as not to be Letters'}
+                      mobilemessage:'Contact Number is Invalid'}
         }
 
         res.render('register',output);

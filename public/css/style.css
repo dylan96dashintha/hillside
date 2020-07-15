@@ -91,7 +91,9 @@ figure {
   margin: 0; }
 
 p {
-  margin-bottom: 0px; }
+  margin-bottom: 0px;
+  font-size: 17px; 
+}
 
 input:-webkit-autofill {
   box-shadow: 0 0 0 30px white inset;
@@ -107,7 +109,7 @@ h2 {
   font-weight: bold;
   color: #222;
   font-family: 'Roboto Slab';
-  font-size: 20px;
+  font-size: 30px;
   margin-bottom: 30px;
   text-transform: uppercase; }
 
@@ -163,7 +165,8 @@ input, select {
   padding: 5px 0;
   color: #222;
   margin-bottom: 31px;
-  font-family: 'Roboto Slab'; }
+  font-family: 'Roboto Slab';
+  font-size: 18px; }
   input:focus, select:focus {
     color: #222;
     border-bottom: 2px solid #4966b1; }
@@ -172,7 +175,7 @@ input[type=checkbox]:not(old) {
   width: 2em;
   margin: 0;
   padding: 0;
-  font-size: 1em;
+  font-size: 5px;
   display: none; }
 
 input[type=checkbox]:not(old) + label {
@@ -223,7 +226,7 @@ input[type=checkbox]:not(old):checked + label > span:before {
   background: #4966b1;
   color: #fff;
   padding: 16px 17px;
-  font-size: 13px;
+  font-size: 16px;
   border: none;
   border-radius: 5px;
   -moz-border-radius: 5px;

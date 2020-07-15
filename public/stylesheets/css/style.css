@@ -8224,12 +8224,18 @@ div.cs-select span {
   outline: none;
 }
 
+.invalidmsg{
+  color: #000;
+  text-emphasis: inherit;
+  font-size: medium;
+}
 
 #featured-hotel {
   float: left;
   width: 100%;
-  margin-top: -107px;
+  margin-top: -137px;
   background-color: #d4dae0;
+  position: initial;
 }
 #room-models {
   float: left;
