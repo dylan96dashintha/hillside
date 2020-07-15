@@ -76,6 +76,7 @@
 				border-radius: 50px;
 				background-color: rgba(211, 74, 5, 0.966);
 			}
+			
 		</style>
 	</head>
 	<body>
@@ -119,7 +120,7 @@
 									</div>
 								</div>
 							</li>
-							<li style="background-image: url(images/img2.jpg);">
+							<li id="img2">
 								<div class="overlay-gradient"></div>
 								<div class="container">
 									<div class="col-md-12 col-md-offset-0 text-center slider-text">
@@ -133,7 +134,7 @@
 									</div>
 								</div>
 							</li>
-							<li style="background-image: url(images/img3.jpg);">
+							<li id="img3">
 								<div class="overlay-gradient"></div>
 								<div class="container">
 									<div class="col-md-12 col-md-offset-0 text-center slider-text">
@@ -153,10 +154,42 @@
 
 				<!-- choose date range section -->
 				<div class="wrap">
+					<div class="container booking-form">
+						<form action="/" method="post">
+							<div class="row">
+								<div class="input-form-cont">
+									<div class="col-12 col-sm-3">
+										<label for="room">Room</label>
+										<select name="type" id="type" class="form-control">
+											<option value="All">Select Room</option>
+											<option value="D">Double Room</option>
+											<option value="T">Triple Room</option>
+											<option value="F">Family Room</option>
+										</select>
+									</div>
+							<div class="col-12 col-sm-3">
+								<label for="checkIn">Check In</label>
+                                <input type="date" class="form-control" id="checkIn" name="checkin">
+							</div>
+							<div class="col-12 col-sm-3">
+								<label for="checkIn">Check Out</label>
+								<input type="date" class="form-control" id="checkIn" name="checkout">
+							</div>
+							<div class="col-12 col-sm-3">
+								<label for="checkIn"> </label>
+								<button type="submit" class="form-control btn btn-info">Check Availability</button>
+							</div>
+						</div>
+					</div>
+						</form>
+					</div>
+				</div>
+
+				<!-- <div class="wrap">
 					<div class="container">
 						<div class="row">
 							<div id="availability">
-								<form action="index" method="post" >
+								<form action="/" method="post" >
 									<div class="a-col">
 										<section>
 											<select class="cs-select cs-skin-border" name="type">
@@ -181,7 +214,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 
 				<!-- rooms section -->
 				<div id="featured-hotel" class="fh5co-bg-color">

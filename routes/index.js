@@ -51,18 +51,18 @@ router.get('/', function (req, res, next) {
 router.post('/',function(req,res){
 
     let type = req.body.type;
-    let date = req.body.daterange;
+    // let date = req.body.daterange;
 
-    var checkInDate = date.split('-')[0];
-    var checkOutDate = date.split('-')[1];
+    var checkInDate = req.body.checkin;
+    var checkOutDate = req.body.checkout;
 
     //create session for checkIn checkout dates
     var sess = req.session;
     sess.checkIn = checkInDate;
     sess.checkOut = checkOutDate; 
 
-    if(Date.parse(checkInDate) < Date.parse(day)){
-      res.render('index',{date: dateRange, msg: 'Please input valid dates !'});
+    if((Date.parse(checkInDate) < Date.parse(day)) || Date.parse(checkInDate) >= Date.parse(checkOutDate)){
+      res.render('index',{date: dateRange, msg: 'Please input valid date.'});
     }else{
       availableRooms(type,checkInDate,checkOutDate,function(err,result){
         roomDetails(result,function(err,result){
@@ -75,6 +75,7 @@ router.post('/',function(req,res){
         });
       });
     }
+    // res.send(req.body);
 
 
 

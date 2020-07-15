@@ -4811,6 +4811,8 @@ tbody.collapse.in {
     margin-left: -20px;
   }
 }
+/* 
+This should be inserted with scaled photoshoped images */
 
 #img1{
   
@@ -4819,7 +4821,28 @@ tbody.collapse.in {
 }
 @media only screen and (max-width: 600px) {
   #img1 {
-    background-image: url("../../images/rm.jpg");
+    
+    background-image: url("../../images/img1-small.jpg");
+  }
+}
+#img2{
+  
+  background-image: url("../../images/img2.jpg");
+
+}
+@media only screen and (max-width: 600px) {
+  #img2 {
+    background-image: url("../../images/img2-small.jpg");
+  }
+}
+#img3{
+  
+  background-image: url("../../images/img3.jpg");
+
+}
+@media only screen and (max-width: 600px) {
+  #img3 {
+    background-image: url("../../images/img3-small.jpg");
   }
 }
 
@@ -8503,6 +8526,21 @@ div.cs-select span {
   background-color: white;
   margin-bottom: 0px;
 }
+
+@media only screen and (max-width: 600px) {
+  #hotel-facilities {
+  float: left;
+  max-height: 1450px;
+  width: 100%;
+  position: relative;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  font-size: 8px;
+  background-color: white;
+  margin-bottom: 0px;
+  }
+}
 #tabs {
   float: left;
   width: 100%;
@@ -9208,3 +9246,51 @@ input[type="text"] {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+.input-form-cont{
+  width: 90%;
+  background: #f4eeff;
+  top: -40vh;
+  z-index: 99;
+  position: relative;
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+  -webkit-box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.2);
+  -ms-box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.2);
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
+
+.room-select{
+  width: 80%;
+  height: 5vh;
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+  border-color: white;
+  text-align: center;
+}
+.booking-form .form-control{
+    height: 30px;
+    text-align: left !important;
+    font-size: 14px;
+    padding: 0 20px;
+  
+}
+
+.datepicker {
+  padding: 15px;
+  -webkit-box-shadow: 0 2px 40px 8px rgba(15, 15, 15, 0.15);
+  box-shadow: 0 2px 40px 8px rgba(15, 15, 15, 0.15); }
+  .datepicker.dropdown-menu {
+    font-size: 14px;
+    color: #636a76;
+    font-weight: 400; }
+
+label{
+  font-size: 2vh;
+  color: #245269;
+}

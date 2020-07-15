@@ -15,7 +15,7 @@
     "email-validator": "^2.0.4",
     "express": "~4.16.1",
     "express-session": "^1.17.0",
-    "firebase": "^7.11.0",
+    "firebase": "^7.16.0",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
     "jsonwebtoken": "^8.5.1",
