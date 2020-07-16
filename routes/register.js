@@ -32,13 +32,14 @@ router.post('/',urlencodedParser,(req,res,next) =>{
     sess.address = address;
     sess.mobile = mobile;
     sess.code = code;
-    // console.log(code);
+    // console.log("************************");
     // sess.password = password;
     next();
+    // console.log("//////////////////////////");
     },Validation,(req,res) => {
-        nodemailer.verifyReg(sess.email, sess.fname, sess.code);
+        nodemailer.verifyReg(req.session.email, req.session.fname, req.session.code);
         output = {message: '',
-        sent: 'Email has been sent..!'}
+                  sent: 'Email has been sent..!'}
         res.render('verify',output);
 });
 
