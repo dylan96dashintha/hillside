@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jun 20, 2020 at 06:42 PM
--- Server version: 8.0.13-4
--- PHP Version: 7.2.24-0ubuntu0.18.04.6
+-- Host: 127.0.0.1
+-- Generation Time: Jul 17, 2020 at 11:20 AM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.4.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `jhgiTddws2`
+-- Database: `hillside`
 --
 
 -- --------------------------------------------------------
@@ -48,29 +47,34 @@ INSERT INTO `admin` (`id`, `firstname`, `lastname`, `username`, `password`, `emp
 -- --------------------------------------------------------
 
 --
--- Table structure for table `customerdet`
+-- Table structure for table `customerdetails`
 --
 
-CREATE TABLE `customerdet` (
-  `orderId` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `firstname` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `lastname` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `address` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `email` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `mobilenum` varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `pavement` varchar(5) COLLATE utf8_unicode_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+CREATE TABLE `customerdetails` (
+  `customerid` varchar(10) NOT NULL,
+  `fname` varchar(20) NOT NULL,
+  `lname` varchar(20) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `mobile` varchar(12) NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `pavement` varchar(3) NOT NULL DEFAULT 'no'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `customerdet`
+-- Dumping data for table `customerdetails`
 --
 
-INSERT INTO `customerdet` (`orderId`, `firstname`, `lastname`, `address`, `email`, `mobilenum`, `pavement`) VALUES
-('-SkonPAXc', 'rashmika', 'nanayakkara', 'ahangama,galle', 'rashnanayakkara.17@cse.mrt.ac.lk', '0771818735', NULL),
-('1000', 'dilan', 'dashintha', 'no.07,mihindu mawatha,mampitiya,galle', '', '0711810983', '1'),
-('Irmmy8O0h', 'pasindu', 'sudesh', 'hathapalana, kadurugas yaya, imaduwa', 'rashnanayakkara.17@cse.mrt.ac.lk', '0771816482', NULL),
-('LuuhY80p8', 'john', 'wick', 'GGGGGGG', 'rashnanayakkara.17@cse.mrt.ac.lk', '87876767', NULL),
-('Ur78e9hZN', 'john', 'wick', 'GGGGGGG', 'rashnanayakkara.17@cse.mrt.ac.lk', '87876767', NULL);
+INSERT INTO `customerdetails` (`customerid`, `fname`, `lname`, `email`, `mobile`, `address`, `pavement`) VALUES
+('chwkJRHPaF', 'asas', 'asssa', 'none', 'dff', 'ad', 'no'),
+('CKgqzgyuab', 'sandun ', 'perera', 'sapsdilshan@gmail.com', '0766688703', 'f', 'no'),
+('dZ9RP0Ritm', 'pasindu', 'sudesh', 'none', 're', 'vr;lk', 'no'),
+('EiT73RuJvv', 'AA', 'AA', 'sapsdilshan@gmail.com', 'ad', 'aaa', 'no'),
+('fqpi1sa-i1', 'kamal', 'perera', 'asw@gmail.com', '0458877565', 'galle vanchawala', 'yes'),
+('GGK_mRzHoJ', 'kamal', 'perera', 'asw@gmail.com', '0458877565', 'galle vanchawala', 'yes'),
+('H2KGAix7YO', 'sdfdddddddddd', 'sdfdf', 'none', 'efgt', 'frftgt', 'no'),
+('iqo87_-nZo', 'kamal', 'perera', 'asw@gmail.com', '0458877565', 'galle vanchawala', 'yes'),
+('qr4O3RpTwK', 'sudesh', 'dilshan', 'sapsdilshan@gmail.com', '0766688703', 'chinthamaniya galle', 'no'),
+('R9JqSBJx1A', 'kamal', 'perera', 'asw@gmail.com', '0458877565', 'galle vanchawala', 'yes');
 
 -- --------------------------------------------------------
 
@@ -79,23 +83,30 @@ INSERT INTO `customerdet` (`orderId`, `firstname`, `lastname`, `address`, `email
 --
 
 CREATE TABLE `orderdetails` (
-  `checkIn` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `checkout` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `checkIn` date NOT NULL,
+  `checkout` date NOT NULL,
   `orderId` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `roomId` varchar(10) COLLATE utf8_unicode_ci NOT NULL
+  `roomId` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `bookDate` datetime NOT NULL DEFAULT current_timestamp(),
+  `customerid` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `ordertype` varchar(6) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `orderdetails`
 --
 
-INSERT INTO `orderdetails` (`checkIn`, `checkout`, `orderId`, `roomId`) VALUES
-('1594578600000', '1594665000000', '-SkonPAXc', 'T1'),
-('1516127400000', '1516386600000', '2', 'F3'),
-('1587291363000', '1588291363000', 'ed', 'T1'),
-('1595289600000', '1595376000000', 'Irmmy8O0h', 'D1'),
-('1594492200000', '1594492200000', 'LuuhY80p8', 'F1'),
-('1594492200000', '1594492200000', 'Ur78e9hZN', 'F1');
+INSERT INTO `orderdetails` (`checkIn`, `checkout`, `orderId`, `roomId`, `bookDate`, `customerid`, `ordertype`) VALUES
+('2020-02-12', '2020-02-12', '9ObIxX58m', 'D1', '2020-02-06 12:12:12', 'iqo87_-nZo', 'online'),
+('2020-07-24', '2020-07-30', 'HTeb8N3JA', 'D4', '2020-07-17 14:47:57', 'CKgqzgyuab', 'online'),
+('2020-02-12', '2020-02-12', 'irU4a5mGw', 'D1', '2020-07-17 14:44:09', 'qr4O3RpTwK', 'online'),
+('2020-04-16', '2020-05-10', 'j4r1hmcwq', 'F3', '2020-07-17 14:08:32', 'H2KGAix7YO', 'manual'),
+('2020-02-12', '2020-02-12', 'JdaVjNTFN', 'D1', '0000-00-00 00:00:00', 'fqpi1sa-i1', 'online'),
+('2020-02-12', '2020-02-12', 'MbEUH9HmO', 'D1', '2020-02-06 12:12:12', 'GGK_mRzHoJ', 'online'),
+('2020-02-12', '2020-02-12', 'mF43hm7t1', 'D1', '2020-02-06 12:12:12', 'R9JqSBJx1A', 'online'),
+('0000-00-00', '0000-00-00', 'mVw0ohKVt', 'F2', '0000-00-00 00:00:00', 'dZ9RP0Ritm', 'manual'),
+('2020-07-29', '2020-08-08', 'o96wLIQME', 'D1', '2020-07-17 14:49:50', 'EiT73RuJvv', 'online'),
+('0000-00-00', '0000-00-00', 'VL_iIzs7d', 'F3', '0000-00-00 00:00:00', 'chwkJRHPaF', 'manual');
 
 -- --------------------------------------------------------
 
@@ -105,9 +116,9 @@ INSERT INTO `orderdetails` (`checkIn`, `checkout`, `orderId`, `roomId`) VALUES
 
 CREATE TABLE `roomdet` (
   `roomId` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
-  `roomName` varchar(15) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `img` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `des` varchar(500) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `roomName` varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `img` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `des` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
   `fulldescription` text COLLATE utf8_unicode_ci NOT NULL,
   `price` float(8,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -142,10 +153,10 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `customerdet`
+-- Indexes for table `customerdetails`
 --
-ALTER TABLE `customerdet`
-  ADD PRIMARY KEY (`orderId`);
+ALTER TABLE `customerdetails`
+  ADD PRIMARY KEY (`customerid`);
 
 --
 -- Indexes for table `orderdetails`
@@ -168,7 +179,7 @@ ALTER TABLE `roomdet`
 -- Constraints for table `orderdetails`
 --
 ALTER TABLE `orderdetails`
-  ADD CONSTRAINT `orderdetails_ibfk_1` FOREIGN KEY (`roomId`) REFERENCES `roomdet` (`roomid`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `orderdetails_ibfk_1` FOREIGN KEY (`roomId`) REFERENCES `roomdet` (`roomId`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
