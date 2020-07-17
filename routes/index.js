@@ -43,8 +43,10 @@ router.get('/', function (req, res, next) {
   //     console.log(result);
   //   });
   // });
- 
-  res.render('index',{date: dateRange, msg: null});
+  // console.log(res)
+  // res.render('index',{date: dateRange, msg: null});
+  res.render('index',{checkinmsg:null, checkoutmsg:null});
+
 
 });
 

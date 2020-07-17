@@ -6,7 +6,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>Hotel Hill Paradise &mdash; </title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="keywords" content="hii Side,4NoteFourSolutions" />
+		<meta name="keywords" content="hill Side,4NoteFourSolutions" />
 		<meta name="4NoteFourSolutions" content="travel" />
 		<link rel="shortcut icon" href="favicon.ico">
 		<link rel='stylesheet' href='/stylesheets/css/superfish.css'>
@@ -169,11 +169,13 @@
 									</div>
 							<div class="col-12 col-sm-3">
 								<label for="checkIn">Check In</label>
-                                <input type="date" class="form-control" id="checkIn" name="checkin">
+								<input type="date" class="form-control" id="checkIn" name="checkin">
+								<p id="invalidemail"><span style="color:brown"><%= checkinmsg %></span></p>
 							</div>
 							<div class="col-12 col-sm-3">
 								<label for="checkIn">Check Out</label>
 								<input type="date" class="form-control" id="checkIn" name="checkout">
+								<p id="invalidemail"><span style="color:brown"><%= checkoutmsg %></span></p>
 							</div>
 							<div class="col-12 col-sm-3">
 								<label for="checkIn"> </label>
