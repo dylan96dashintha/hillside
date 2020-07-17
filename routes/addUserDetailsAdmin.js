@@ -2,7 +2,9 @@ var express = require('express');
 var router  = express.Router();
 // var conn = require('./connection');
 var conn = require('../config/sqlconnection');
-var addRecord = require('../Modules/addRecord');
+const { response } = require('express');
+// var addRecord = require('../Modules/addRecord');
+var addRecord = require('../Modules/booking').creaetBooking;
 var rid;
 var checkinDate;
 var checkOutDate;
@@ -31,18 +33,35 @@ router.post('/register',function(req,res){
     var lastName = req.body.lname;
     var address = req.body.address;
     var telephone = req.body.tele;
+    var now = new Date()
 
-    var orderDetails = {
-        fname : firstName,
-        lname : lastName,
-        address : address,
-        tel : telephone,
-        rid : rid,
-        ciD : Date.parse(checkinDate),
-        coD : Date.parse(checkOutDate),
-        type :type
-    };
-    console.log(orderDetails,"aaaaaaaaaaaaaaaaaaaa")
+    var bookingDet = {
+        orderId: false,
+        checkinData: checkinDate.split("-")[2]+"-"+checkinDate.split("-")[0]+"-"+checkinDate.split("-")[1],
+        checkoutDate: checkOutDate.split("-")[2]+"-"+checkOutDate.split("-")[0]+"-"+checkOutDate.split("-")[1],
+        bookingTime: now.getFullYear() +"-"+ (now.getMonth()+1) +"-"+ now.getDate() +" "+now.getHours() +":"+now.getMinutes()+":"+now.getSeconds(),
+        roomId: rid,
+        orderType: "manual",
+        customerId: false,
+        customerFName: firstName,
+        customerLName: lastName,
+        customerEmail: "none",
+        customerMobile: telephone,
+        customerAddress: address,
+        pavementStat: "no"
+    }
+
+    // var orderDetails = {
+    //     fname : firstName,
+    //     lname : lastName,
+    //     address : address,
+    //     tel : telephone,
+    //     rid : rid,
+    //     ciD : Date.parse(checkinDate),
+    //     coD : Date.parse(checkOutDate),
+    //     type :type
+    // };
+    console.log(bookingDet,"aaaaaaaaaaaaaaaaaaaa")
     
     // addRecord(orderDetails,function(err,result){
     //     console.log(err,"error")
@@ -52,7 +71,7 @@ router.post('/register',function(req,res){
     //     }
     // }); 
 
-    addRecord(orderDetails,function(err,result){
+    addRecord(bookingDet,function(err,result){
         if(result){
             res.redirect('/admin');
         }else{

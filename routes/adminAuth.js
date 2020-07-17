@@ -20,6 +20,7 @@ router.post('/' ,function(req,res){
     console.log(psw)
     adminAuth.adminLogin(username,psw,function(err,result){
         if(err){
+            console.log(err);
             res.redirect('/adminAuth');
         }
         else if(result){
@@ -30,6 +31,7 @@ router.post('/' ,function(req,res){
             req.session.empLastName = result.lastname;
             res.redirect('/admin');
         }else{
+            console.log("wrong")
             res.redirect('/adminAuth');
         }
     });

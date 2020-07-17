@@ -14,14 +14,14 @@ router.get('/' , function(req,res,err){
     var mobileList = [];
     var pavementList = [];
 
-    var count_query=`SELECT COUNT(*) as num from customerdet`;
+    var count_query=`SELECT COUNT(*) as num from customerdetails`;
     conn.query(count_query,function(err,result){
     
         if (err) throw error;
     
         const count = JSON.parse(JSON.stringify(result));
     
-    conn.query(`SELECT * FROM customerdet` , function(err , result){
+    conn.query(`SELECT * FROM customerdetails NATURAL JOIN orderdetails ORDER BY bookDate ASC` , function(err , result){
         if (err) {
             console.log(err);
         }else {
@@ -29,13 +29,15 @@ router.get('/' , function(req,res,err){
     
     
     const response = JSON.parse(JSON.stringify(result));  
+
+    console.log(response);
  
     for(x=0 ; x<response.length ; x++){
         orderIdList.push(response[x].orderId);
-        firstNameList.push(response[x].firstname);
-        lastNameList.push(response[x].lastname);
+        firstNameList.push(response[x].fname);
+        lastNameList.push(response[x].lname);
         addressList.push(response[x].address);
-        mobileList.push(response[x].mobilenum);
+        mobileList.push(response[x].mobile);
         pavementList.push(response[x].pavement);
      
      }
