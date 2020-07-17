@@ -43,8 +43,10 @@ router.get('/', function (req, res, next) {
   //     console.log(result);
   //   });
   // });
- 
-  res.render('index',{date: dateRange, msg: null});
+  // console.log(res)
+  // res.render('index',{date: dateRange, msg: null});
+  res.render('index',{checkinmsg: null, checkoutmsg: null});
+
 
 });
 
@@ -62,7 +64,8 @@ router.post('/',function(req,res){
     sess.checkOut = checkOutDate; 
 
     if((Date.parse(checkInDate) < Date.parse(day)) || Date.parse(checkInDate) >= Date.parse(checkOutDate)){
-      res.render('index',{date: dateRange, msg: 'Please input valid date.'});
+      // res.render('index',{date: dateRange, msg: 'Please input valid date.'});
+      res.render('index',{checkinmsg: null, checkoutmsg: null});
     }else{
       availableRooms(type,checkInDate,checkOutDate,function(err,result){
         roomDetails(result,function(err,result){
