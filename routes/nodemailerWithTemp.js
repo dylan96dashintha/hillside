@@ -16,6 +16,29 @@ var confirmBooking = transporter.templateSender(
         from: '4NoteFour.com',
     });
 
+var reminder = transporter.templateSender(
+    new EmailTemplate('./templates/reminder'), {
+        from: '4NOteFour.com',
+});
+
+exports.reminder = function (email, name, orderId, paymentDate) {
+    // transporter.template
+    reminder({
+        to: email,
+        subject: 'Payment-Reminder'
+    }, {
+        name: name,
+        orderId: orderId,
+        paymentDate: paymentDate
+    }, function (err, info) {
+        if (err) {
+            console.log(err)
+        } else {
+            console.log('Link sent\n'+ JSON.stringify(info));
+        }
+    });
+};
+
 exports.verifyReg = function (email, name, code) {
     // transporter.template
     verifyReg({
