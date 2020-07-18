@@ -22,6 +22,7 @@ var error = require('./routes/error');
 var logOut = require('./routes/logoutAdmin');
 var test = require('./routes/test');
 var removetask = require('./Modules/removeRecords')
+var reminder = require('./Modules/emailReminder');
 var app = express();
 removetask;  //execute removeRecords function
 
@@ -53,6 +54,10 @@ app.use(session(
     }
   }
 ))
+
+//send reminder mail
+reminder();
+
 
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
