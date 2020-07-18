@@ -21,7 +21,9 @@ var verifyuser = require('./routes/verify');
 var error = require('./routes/error');
 var logOut = require('./routes/logoutAdmin');
 var test = require('./routes/test');
+var removetask = require('./Modules/removeRecords')
 var app = express();
+removetask;  //execute removeRecords function
 
 require("firebase/firestore");
 // view engine setup
