@@ -153,11 +153,11 @@
 				</aside>
 
 				<!-- choose date range section -->
-				<div class="wrap">
-					<div class="container booking-form">
-						<form action="/" method="post">
-							<div class="row justify-content-center">
-								<div class="input-form-cont">
+				<div  class="wrap">
+					<div id="checkAvailability" class="container booking-form">
+						<form  action="/" method="post">
+							<div  class="row justify-content-center">
+								<div id="checkAvailabilityForm" class="input-form-cont">
 									<div class="col-12 col-sm-3">
 										<label for="room">Room</label>
 										<select name="type" id="type" class="form-control">
@@ -167,20 +167,27 @@
 											<option value="F">Family Room</option>
 										</select>
 									</div>
-							<div class="col-12 col-sm-3">
-								<label for="checkIn">Check In</label>
-								<input type="date" class="form-control" id="checkIn" name="checkin">
-								<p id="invalidemail"><span style="color:brown"><%= checkinmsg %></span></p>
-							</div>
-							<div class="col-12 col-sm-3">
-								<label for="checkIn">Check Out</label>
-								<input type="date" class="form-control" id="checkIn" name="checkout">
-								<p id="invalidemail"><span style="color:brown"><%= checkoutmsg %></span></p>
-							</div>
-							<div class="col-12 col-sm-3">
-								<label for="checkIn"> </label>
-								<button type="submit" class="form-control btn btn-info">Check Availability</button>
-							</div>
+
+									<div class="col-12 col-sm-3">
+										<label for="checkIn">Check In</label>
+										<input type="date" class="form-control" id="checkIn" name="checkin">
+										<p id="invalidemail"><span style="color:brown"><%= checkinmsg %></span></p>
+									</div>
+
+									<div class="col-12 col-sm-3">
+										<label for="checkIn">Check Out</label>
+										<input type="date" class="form-control" id="checkIn" name="checkout">
+										<p id="invalidemail"><span style="color:brown"><%= checkoutmsg %></span></p>
+									</div>
+									
+									<div class="col-12 col-sm-3">
+										<div class="col-12 col-sm-1"></div>
+										<div class="col-12 col-sm-10">
+											<label id="checkFont" for="checkIn">Check</label>
+											<button id="check-button" type="submit" class="form-control btn btn-info">Check Availability</button>
+										</div>
+										<div class="col-12 col-sm-1"></div>
+									</div>
 						</div>
 					</div>
 						</form>
@@ -212,7 +219,7 @@
 									<h3>Family Room</h3>
 									<p>This family room has a balcony, soundproofing and private entrance.
 									</p>
-									<p><a href="#" class="btn btn-primary btn-luxe-primary">Book Now <i class="ti-angle-right"></i></a></p>
+									<p><a href="#" id="check-button-sub" class="btn btn-primary btn-luxe-primary">Book Now <i class="ti-angle-right"></i></a></p>
 								</div>
 							</div>
 
@@ -227,7 +234,7 @@
 										<h3>Double Room</h3>
 										<p>Pellentesque habitant morbi tristique senectus et netus ett mauada fames ac turpis egestas. Etiam euismod tempor leo, 
 										in suscipit urna condimentum sed. </p>
-										<p><a href="#" class="btn btn-primary btn-luxe-primary">Book Now <i class="ti-angle-right"></i></a></p>
+										<p><a href="#" id="check-button-sub" class="btn btn-primary btn-luxe-primary">Book Now <i class="ti-angle-right"></i></a></p>
 									</div>
 								</div>
 								<div class="f-hotel">
@@ -240,7 +247,7 @@
 									<div class="desc">
 										<h3>Triple Room</h3>
 										<p>Pellentesque habitant morbi tristique senectus et netus ett mauada fames ac turpis egestas. Etiam euismod tempor leo, in suscipit urna condimentum sed. </p>
-										<p><a href="#" class="btn btn-primary btn-luxe-primary">Book Now <i class="ti-angle-right"></i></a></p>
+										<p><a href="#" id="check-button-sub" class="btn btn-primary btn-luxe-primary">Book Now <i class="ti-angle-right"></i></a></p>
 									</div>
 								</div>
 							</div>
