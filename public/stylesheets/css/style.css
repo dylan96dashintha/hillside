@@ -3152,6 +3152,7 @@ output {
   height: 50px;
   padding: 14px 12px;
   font-size: 14px;
+  text-align-last:center ;
   line-height: 1.42857;
   color: #555555;
   background-color: #fff;
@@ -4823,16 +4824,18 @@ This should be inserted with scaled photoshoped images */
   #img1 {
     
     background-image: url("../../images/img1-small.jpg");
+    
   }
 }
 #img2{
   
   background-image: url("../../images/img2.jpg");
-
+  
 }
 @media only screen and (max-width: 600px) {
   #img2 {
     background-image: url("../../images/img2-small.jpg");
+    
   }
 }
 #img3{
@@ -4843,7 +4846,62 @@ This should be inserted with scaled photoshoped images */
 @media only screen and (max-width: 600px) {
   #img3 {
     background-image: url("../../images/img3-small.jpg");
+    
+
   }
+}
+
+#checkAvailability{
+  background-color: #d4dae0;
+}
+
+@media only screen and (max-width: 600px) {
+  #checkAvailability{
+    opacity: 1;
+    margin-bottom: -140px;
+  }
+}
+
+#checkAvailabilityForm{
+  background-color: rgba(212, 218, 224, 0.88) ;
+  border-radius: 10px;
+  padding: 18px;
+}
+@media only screen and (max-width: 600px) {
+  #checkAvailabilityForm{
+    background-color: rgba(212, 218, 224, 0.91) ;
+    padding: 11px;
+  }
+}
+
+#checkFont{
+  color:  rgba(212, 218, 224, 0);
+}
+@media only screen and (max-width: 600px) {
+  #checkFont{
+  font-size: 0.5px;
+  }
+}
+
+#check-button {
+  background: radial-gradient(90px circle at top center, rgba(28, 54, 201, 0.733) 30%, rgba(255,255,255,0));
+  background-color: rgba(28, 134, 158);
+  border-radius: 11px;
+  letter-spacing: 0.7px;
+}
+#check-button:hover {
+  background-color: #0c4957;
+}
+
+#check-button-sub {
+  background: radial-gradient(30px circle at top center, rgba(28, 54, 201, 0.733) 30%, rgba(255,255,255,0));
+  background-color: rgba(28, 134, 158);
+  border-radius: 11px;
+  padding: 8px;
+  font-size: 11px;
+}
+#check-button-sub:hover {
+  background-color: #0c4957;
 }
 
 .navbar-toggle {
@@ -7592,9 +7650,8 @@ figure {
 
 .btn-luxe-primary {
   background: #3c4146;
-  font-size: 14px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 0.7px;
   border: transparent;
   overflow: hidden;
   padding: 10px 20px;
@@ -7614,12 +7671,10 @@ figure {
   transition: 0.3s;
 }
 .btn-luxe-primary:hover {
-  background: #191b1d;
+  background: #0c4957;
   padding-right: 40px;
 }
-.btn-luxe-primary:hover i {
-  right: 10px;
-}
+
 .btn-luxe-primary:focus, .btn-luxe-primary:active {
   background: #1e2123 !important;
 }
@@ -7992,7 +8047,7 @@ figure {
   display: table;
   height: auto;
   z-index: 999;
-  min-height: 700px;
+  min-height: 600px;
   width: 100%;
 }
 .slider-text > .slider-text-inner {
@@ -8009,7 +8064,8 @@ figure {
 }
 @media screen and (max-width: 768px) {
   .slider-text > .slider-text-inner h2 {
-    font-size: 24px;
+    font-size: 25px;
+    line-height: 1.4;
   }
 }
 .slider-text > .slider-text-inner p {
@@ -8256,9 +8312,17 @@ div.cs-select span {
 #featured-hotel {
   float: left;
   width: 100%;
-  margin-top: -205px;
+  margin-top: -175px;
   background-color: #d4dae0;
   position: initial;
+}
+
+@media only screen and (max-width: 600px) {
+  #featured-hotel {
+    margin-top: -220px;
+    padding-bottom: 10px;
+    background-color: #d3e0e3;   /*color div */
+  }
 }
 #room-models {
   float: left;
@@ -8286,6 +8350,7 @@ div.cs-select span {
     flex-wrap: wrap;
     position: relative;
     width: 100%;
+    background-color: #d3e0e3;   /*color div */
   }
 }
 .feature-full-1col .image {
@@ -8330,6 +8395,7 @@ div.cs-select span {
 @media screen and (max-width: 768px) {
   .feature-full-1col .desc {
     padding: 30px;
+    background-color: #d3e0e3;   /*color div */
   }
 }
 .feature-full-1col:hover .image .descrip, .feature-full-1col:focus .image .descrip {
@@ -8348,6 +8414,8 @@ div.cs-select span {
   .feature-full-2col {
     flex-wrap: wrap;
     width: 100%;
+    margin-bottom: -105px;
+    background-color: #d3e0e3;   /*color div */
   }
 }
 .feature-full-2col .f-hotel {
@@ -8413,12 +8481,20 @@ div.cs-select span {
 @media screen and (max-width: 480px) {
   .feature-full-2col .f-hotel .image, .feature-full-2col .f-hotel .desc {
     width: 100%;
+    
   }
 }
 .feature-full-2col .f-hotel .desc {
   padding: 30px;
-  background: #fff;
+  background-color: white;
 }
+@media screen and (max-width: 600px) {
+  .feature-full-2col .f-hotel .desc {
+    padding: 30px;
+    background-color: #d3e0e3;   /*color div */
+  }
+}
+
 .feature-full-2col .f-hotel:hover .image .descrip, .feature-full-2col .f-hotel:focus .image .descrip {
   right: 0;
 }
@@ -8530,7 +8606,7 @@ div.cs-select span {
 @media only screen and (max-width: 600px) {
   #hotel-facilities {
   float: left;
-  max-height: 1450px;
+  max-height: 1350px;
   width: 100%;
   position: relative;
   -webkit-transition: 0.5s;
@@ -8539,6 +8615,8 @@ div.cs-select span {
   font-size: 8px;
   background-color: white;
   margin-bottom: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
   }
 }
 #tabs {
@@ -8566,6 +8644,12 @@ div.cs-select span {
   -o-transition: 0.3s;
   transition: 0.3s;
 }
+
+@media only screen and (max-width: 600px) {
+  #tabs .tabs-nav > a {
+    font-size: 11px;
+  }
+
 #tabs .tabs-nav > a > .icon {
   margin-bottom: 20px;
   -webkit-transition: 0.3s;
@@ -8574,6 +8658,9 @@ div.cs-select span {
 }
 #tabs .tabs-nav > a > .icon:before {
   font-size: 40px;
+}
+
+  
 }
 #tabs .tabs-nav > a > .icon, #tabs .tabs-nav > a > span {
   display: block;
@@ -9249,7 +9336,7 @@ input[type="text"] {
 
 .input-form-cont{
   width: 90%;
-  background: #f4eeff;
+  background-color: black;
   top: -40vh;
   z-index: 99;
   position: relative;
@@ -9276,7 +9363,7 @@ input[type="text"] {
 }
 .booking-form .form-control{
     height: 30px;
-    text-align: left !important;
+    text-align: center !important;
     font-size: 14px;
     padding: 0 20px;
 }
