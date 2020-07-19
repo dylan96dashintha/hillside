@@ -23,6 +23,11 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="./">Home <span class="sr-only">(current)</span></a>
                 </li>
+                <%if(empDetails.empType === "owner"){%>
+                <li class="nav-item">
+                    <a class="nav-link" href="/editRoomDetails">Change Room Details</a>
+                </li>
+                <%}%>
                 <li class="nav-item">
                     <a class="nav-link" href="/logout">Log Out</a>
                 </li>
@@ -64,6 +69,12 @@
                     <form action="/deleteRecord" method="POST">
                         <button type="submit" class="btn btn-danger" value="<%= orderId[i] %>"
                             name="del">Delete</button>
+                    </form>
+                </td>
+                <td>
+                    <form action="/viewOrder" method="POST">
+                        <button type="submit" class="btn btn-danger" value="<%= orderId[i] %>"
+                            name="order">View</button>
                     </form>
                 </td>
             </tr>
