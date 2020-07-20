@@ -87,18 +87,7 @@ router.post('/',function(req,res){
     res.render('index',{checkinmsg: "Invalid Check In Date !", checkoutmsg: "Invalid Check Out Date !"});
   }
     // res.send(req.body);
-
-
-
-
-
 // res.send('ok');
-
-  
-  
-
-
-
 });
 //TODO- input validation
 
