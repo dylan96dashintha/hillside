@@ -21,7 +21,7 @@ router.get('/' , function(req,res,err){
     
         const count = JSON.parse(JSON.stringify(result));
     
-    conn.query(`SELECT * FROM customerdetails NATURAL JOIN orderdetails ORDER BY bookDate ASC` , function(err , result){
+    conn.query(`SELECT * FROM customerdetails NATURAL JOIN orderdetails ORDER BY bookDate DESC` , function(err , result){
         if (err) {
             console.log(err);
         }else {

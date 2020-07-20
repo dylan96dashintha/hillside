@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel='stylesheet' href='/stylesheets/admin.css'>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+        <a class="navbar-brand" href="#">HillSide</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+               
+                <li class="nav-item">
+                    <a class="nav-link" href="/editRoomDetails">Change Room Details</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin">Dashboard</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Log Out</a>
+                </li>
+            </ul>
+        </div>
+        <span class="navbar-text">
+            
+        </span>
+    </nav>
+    <h3 class="topic">ROOM DETAILS</h3>
+    <table class="table table-striped p-2 table-s">
+        <thead>
+          <tr>
+            <th scope="col">RoomID</th>
+            <th scope="col">RoomName</th>
+            <th scope="col">Description</th>
+            <th scope="col">Price</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% for(var x =0; x<roomDetails.length; x++){%>
+          <tr>
+            <th scope="row"><%=roomDetails[x].roomId%></th>
+            <td><%=roomDetails[x].roomName%></td>
+            <td><%=roomDetails[x].des%></td>
+            <td><%=roomDetails[x].price%></td>
+            <td>
+                <form action="/editRoomDetails/edit" method="GET">
+                    <button type="submit" class="btn btn-success" value="<%=roomDetails[x].roomId%>" name="rid">Edit</button>
+                </form>
+            </td>
+          </tr>
+          <%}%>
+          
+        </tbody>
+      </table>
+      
+</body>
+
+</html>

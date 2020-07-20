@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel='stylesheet' href='/stylesheets/admin.css'>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+        <a class="navbar-brand" href="#">HillSide</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin">Dashboard</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Log Out</a>
+                </li>
+            </ul>
+        </div>
+        <span class="navbar-text">
+
+        </span>
+    </nav>
+
+
+    
+    <%if(order.pavement === 'yes'){%>
+        <h3 class="topic">ORDER DETAIS (PAID)</h3>
+    <%}else{%>
+        <h3 class="topic">ORDER DETAIS (NOT PAID)</h3>
+        <%}%>
+    <form class="edit-room-form center" action="editRoomDetails" method="POST">
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="exampleFormControlInput1">Order ID</label>
+                <input type="text" class="form-control" value="<%=order.orderId%>" name="roomId" readonly>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="exampleFormControlInput1">Customer ID</label>
+                <input type="text" class="form-control" value="<%=order.customerid%>" name="roomId" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Customer Name</label>
+            <input type="text" class="form-control" value="<%=order.fname + ' ' + order.lname%>" name="roomId" readonly>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Customer Address</label>
+            <input type="text" class="form-control" value="<%=order.address%>" name="roomId" readonly>
+        </div>
+        <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="exampleFormControlInput1">Customer Mobile</label>
+            <input type="text" class="form-control" value="<%=order.mobile%>" name="roomId" readonly>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="exampleFormControlInput1">Customer Email</label>
+            <input type="text" class="form-control" value="<%=order.email%>" name="roomId" readonly>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="exampleFormControlInput1">Checkin Date</label>
+            <input type="text" class="form-control" value="<%=order.checkIn%>" name="roomId" readonly>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="exampleFormControlInput1">Checkout Date</label>
+            <input type="text" class="form-control" value="<%=order.checkout%>" name="roomId" readonly>
+        </div>
+    </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Book Date & Time</label>
+            <input type="text" class="form-control" value="<%=order.bookDate%>" name="roomId" readonly>
+        </div>
+        <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="exampleFormControlInput1">Room Type</label>
+            <input type="text" class="form-control" value="<%=order.roomName%>" name="roomId" readonly>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="exampleFormControlInput1">Room</label>
+            <input type="text" class="form-control" value="<%=order.des%>" name="roomId" readonly>
+        </div>
+    </div>
+
+
+
+    </form>
+</body>
+
+</html>

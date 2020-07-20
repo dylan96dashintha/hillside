@@ -20,8 +20,10 @@ var registeruser = require('./routes/register');
 var verifyuser = require('./routes/verify');
 var error = require('./routes/error');
 var logOut = require('./routes/logoutAdmin');
+var editRoomeDetails = require('./routes/editRooms');
+var viewOrder = require('./routes/viewOrder');
 var test = require('./routes/test');
-var removetask = require('./Modules/removeRecords')
+var removetask = require('./Modules/removeRecords');
 var reminder = require('./Modules/emailReminder');
 var app = express();
 removetask;  //execute removeRecords function
@@ -76,6 +78,8 @@ app.use('/register', registeruser);
 app.use('/verify',verifyuser);
 app.use('/error',error);
 app.use('/logout',logOut);
+app.use('/editRoomDetails',editRoomeDetails);
+app.use('/viewOrder',viewOrder);
 app.use('/test',test);
 //Jwt configuration
 app.use(bodyparser.json());

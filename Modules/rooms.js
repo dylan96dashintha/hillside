@@ -100,9 +100,24 @@ function getRoomsDetails(rooms,callback){
         }
     });
 }
+function getOrderDetailsById(orderId, callback){
+    var query = `SELECT * FROM orderdetails NATURAL JOIN customerdetails NATURAL JOIN roomdet WHERE orderId = '${orderId}'`;
+    console.log(query);
+    conn.query(query, function(err,result){
+        if(err){
+            console.log(err)
+            callback(err.message,false);
+        }else{
+            console.log(result)
+            callback(false, result[0])
+        }
+    })
+    // console.log("ssssssaaasa")
+    // callback(false,true);
+}
 
 
-module.exports = {getNotBookedRooms, getRoomsDetails};
+module.exports = {getNotBookedRooms, getRoomsDetails,getOrderDetailsById};
 
 
 
