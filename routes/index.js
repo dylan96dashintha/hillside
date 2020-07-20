@@ -45,27 +45,27 @@ router.get('/', function (req, res, next) {
   // });
   // console.log(res)
   // res.render('index',{date: dateRange, msg: null});
-  res.render('index',{checkinmsg: null, checkoutmsg: null});
+  res.render('index',{checkinmsg: '', checkoutmsg: ''});
 
 
 });
 
 router.post('/',function(req,res){
 
-    let type = req.body.type;
-    // let date = req.body.daterange;
+  let type = req.body.type;
+  // let date = req.body.daterange;
 
-    var checkInDate = req.body.checkin;
-    var checkOutDate = req.body.checkout;
+  var checkInDate = req.body.checkin;
+  var checkOutDate = req.body.checkout;
 
+  if (checkInDate != '' && checkOutDate != ''){
     //create session for checkIn checkout dates
     var sess = req.session;
     sess.checkIn = checkInDate;
-    sess.checkOut = checkOutDate; 
+    sess.checkOut = checkOutDate;
 
     if((Date.parse(checkInDate) < Date.parse(day)) || Date.parse(checkInDate) >= Date.parse(checkOutDate)){
-      // res.render('index',{date: dateRange, msg: 'Please input valid date.'});
-      res.render('index',{checkinmsg: null, checkoutmsg: null});
+      res.render('index',{checkinmsg: "Invalid Check In Date !", checkoutmsg: ''});
     }else{
       availableRooms(type,checkInDate,checkOutDate,function(err,result){
         roomDetails(result,function(err,result){
@@ -78,6 +78,14 @@ router.post('/',function(req,res){
         });
       });
     }
+
+  }else if(checkInDate == '' && checkOutDate != ''){
+    res.render('index',{checkinmsg: "Invalid Check In Date !", checkoutmsg: null});
+  }else if(checkInDate != '' && checkOutDate == ''){
+    res.render('index',{checkinmsg: null, checkoutmsg: "Invalid Check Out Date !"});
+  }else{
+    res.render('index',{checkinmsg: "Invalid Check In Date !", checkoutmsg: "Invalid Check Out Date !"});
+  }
     // res.send(req.body);
 
 
