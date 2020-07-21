@@ -12,6 +12,20 @@ console.log(dateRange);
 
 
 router.get('/', function (req, res, next) {
+
+  // (async ()=>{
+  //   console.log(await freeRoomsList());
+  // })
+
+  // var freeRooms = freeRoomsList();
+  // var roomDetail = ;
+  // availableRooms('3/5/2020','6/5/2020',function(err,result){
+  //   roomDetails(result,function(err,result){
+  //     console.log(result);
+  //   });
+  // });
+  // console.log(res)
+  // res.render('index',{date: dateRange, msg: null});
   res.render('index',{checkinmsg: null, checkoutmsg: null});
 
 
