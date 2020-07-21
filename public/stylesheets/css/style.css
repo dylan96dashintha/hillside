@@ -4884,7 +4884,6 @@ This should be inserted with scaled photoshoped images */
 }
 
 #check-button {
-  background: radial-gradient(90px circle at top center, rgba(28, 54, 201, 0.733) 30%, rgba(255,255,255,0));
   background-color: rgba(28, 134, 158);
   border-radius: 11px;
   letter-spacing: 0.7px;
@@ -4894,7 +4893,6 @@ This should be inserted with scaled photoshoped images */
 }
 
 #check-button-sub {
-  background: radial-gradient(30px circle at top center, rgba(28, 54, 201, 0.733) 30%, rgba(255,255,255,0));
   background-color: rgba(28, 134, 158);
   border-radius: 11px;
   padding: 8px;
@@ -7965,7 +7963,7 @@ figure {
 
 #fh5co-hero {
   margin-bottom: 0;
-  background: #fff url(../images/loader.gif) no-repeat center center;
+  /* background: #fff url(../images/loader.gif) no-repeat center center; */
   margin-bottom: 0 !important;
   position: relative;
   /* display: -webkit-box; 
@@ -8023,21 +8021,22 @@ figure {
 }
 #fh5co-hero .flexslider .flex-control-nav li a {
   display: block !important;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.0);
   box-shadow: none;
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   cursor: pointer;
   border: 2px solid transparent;
 }
 #fh5co-hero .flexslider .flex-control-nav li a:active, #fh5co-hero .flexslider .flex-control-nav li a:focus {
   outline: none;
-  border: 2px solid white !important;
+  border: transparent !important;
+  background-color: transparent;
 }
 #fh5co-hero .flexslider .flex-control-nav li a.flex-active {
   cursor: pointer;
-  border: 2px solid white;
-  background: blue;
+  border: 2px transparent;
+  background: transparent;
 }
 #fh5co-hero .flexslider .flex-direction-nav {
   display: none;
