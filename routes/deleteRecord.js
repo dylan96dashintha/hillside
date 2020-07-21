@@ -5,7 +5,7 @@ var conn = require('../config/sqlconnection');
 
 router.post('/' , function(req,res){
     let delId = req.body.del;
-    conn.query(`DELETE FROM customerdet where orderId = '${delId}'` , function(err,result){
+    conn.query(`DELETE FROM customerdetails where customerid IN (SELECT customerid FROM orderdetails WHERE orderid = '${delId}')` , function(err,result){
         if (err) {
             console.log(err);
         }else{

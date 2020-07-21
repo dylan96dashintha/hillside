@@ -37,8 +37,8 @@ router.post('/register',function(req,res){
 
     var bookingDet = {
         orderId: false,
-        checkinData: checkinDate.split("-")[2]+"-"+checkinDate.split("-")[0]+"-"+checkinDate.split("-")[1]+" 00:00:00",
-        checkoutDate: checkOutDate.split("-")[2]+"-"+checkOutDate.split("-")[0]+"-"+checkOutDate.split("-")[1]+" 00:00:00",
+        checkinData: checkinDate.split("-")[2]+"-"+checkinDate.split("-")[0]+"-"+checkinDate.split("-")[1],
+        checkoutDate: checkOutDate.split("-")[2]+"-"+checkOutDate.split("-")[0]+"-"+checkOutDate.split("-")[1],
         bookingTime: now.getFullYear() +"-"+ (now.getMonth()+1) +"-"+ now.getDate() +" "+now.getHours() +":"+now.getMinutes()+":"+now.getSeconds(),
         roomId: rid,
         orderType: "manual",

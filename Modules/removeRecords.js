@@ -65,7 +65,9 @@ var date = new Date(2020, 6, 19, 0, 0, 0);
 
 var removetask = schedule.scheduleJob(date, function(){
     console.log("started");
-    var k = schedule.scheduleJob('*/23 * * *',  function(){
+    // var k = schedule.scheduleJob('*/23 * * *',  function(){
+    var k = schedule.scheduleJob('*/7 * * * *',  function(){
+        console.log("ss=tart");
         removebookings();
     });
 });
