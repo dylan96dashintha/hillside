@@ -82,11 +82,11 @@ function sendRemainder(){
 
 
 var schedule = require('node-schedule') ;
-var date = new Date(2020, 6, 24, 1, 30, 0);
-
+var date = new Date(2020, 6, 24, 3, 0, 0);
+// console.log(date)
 var emailremaind = schedule.scheduleJob(date, function(){
     console.log("started");
-    var k = schedule.scheduleJob('5 * * * *',  function(){
+    var k = schedule.scheduleJob('0 0 * * *',  function(){
         console.log("email"+new Date());
         sendRemainder();
     });
