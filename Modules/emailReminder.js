@@ -42,20 +42,20 @@ month = {0:"January",1:"February",2:"March",3:"April",4:"May",5:"June",6:"July",
 var today = new Date();
 today.setHours(today.getHours()+5);
 today.setMinutes(today.getMinutes()+30);
-// console.log(today);
+console.log(today);
 
 var paymentdate = new Date();
 paymentdate.setDate(paymentdate.getDate()+ 1);
 paymentdate.setHours(paymentdate.getHours()+5);
 paymentdate.setMinutes(paymentdate.getMinutes()+30);
-// console.log(paymentdate)
+console.log(paymentdate)
 payday = "11.59PM of "+paymentdate.getDate()+"("+week[paymentdate.getDay()]+") "+month[paymentdate.getMonth()]+" "+paymentdate.getFullYear();
 
 var findchekin = new Date();
 findchekin.setDate(findchekin.getDate()+ 3);
 findchekin.setHours(findchekin.getHours()+5);
 findchekin.setMinutes(findchekin.getMinutes()+30);
-// console.log(findchekin)
+console.log(findchekin)
 
 function sendRemainder(){
   conn.query('SELECT * FROM `customerdetails` INNER JOIN `orderdetails` ON customerdetails.customerid = orderdetails.customerid WHERE `pavement`="no" AND CONVERT(`checkIn`, DATE) = CONVERT(?, DATE) AND CONVERT(`bookDate`, DATE) <= CONVERT(?, DATE)',[findchekin,today],function(err,result){
@@ -82,11 +82,11 @@ function sendRemainder(){
 
 
 var schedule = require('node-schedule') ;
-var date = new Date(2020, 6, 24, 19, 0, 0);
+var date = new Date(2020, 6, 24, 1, 30, 0);
 
 var emailremaind = schedule.scheduleJob(date, function(){
     console.log("started");
-    var k = schedule.scheduleJob('1 0 0 * * *',  function(){
+    var k = schedule.scheduleJob('5 * * * *',  function(){
         console.log("email"+new Date());
         sendRemainder();
     });
