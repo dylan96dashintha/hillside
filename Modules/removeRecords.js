@@ -67,7 +67,7 @@ function removebookings(){
 
         
 var schedule = require('node-schedule') ;
-var date = new Date(2020, 6, 25, 3, 15, 0);
+var date = new Date(2020, 6, 25, 3, 20, 0);
 
 var removetask = schedule.scheduleJob(date, function(){
     console.log("started");
