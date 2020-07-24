@@ -4,8 +4,8 @@ install dependancies which already used,
 localhost -> run sourcecode,
     * npm start
 
-modules -> removeRecord.js
-    * before you have to schedule the starting date of recurrence process of removing data.
+modules -> removeRecord.js, emailRemainder.js
+    * first, you have to schedule the starting date of recurrence process of removing data or email remainder.
     * for this, change parameters of "date" variable.
                 var date = new Date(2020, 6, 18, 19, 16, 0);
                     2020 - year
