@@ -5461,10 +5461,10 @@ a.label:hover, a.label:focus {
 }
 
 .label-default {
-  background-color: rgb(82, 121, 129);
+    background-color: rgb(82, 121, 129);
 }
 .label-default[href]:hover, .label-default[href]:focus {
-  background-color: #5e5e5e;
+  background-color: #08a8cf;
 }
 
 .label-primary {
@@ -7962,9 +7962,8 @@ figure {
 }
 
 #fh5co-hero {
-  margin-bottom: 0;
   /* background: #fff url(../images/loader.gif) no-repeat center center; */
-  margin-bottom: 0 !important;
+  margin-bottom: 30px!important;
   position: relative;
   /* display: -webkit-box; 
    display: -moz-box;
@@ -7975,16 +7974,22 @@ figure {
   -webkit-flex-wrap: wrap;
   -moz-flex-wrap: wrap;
 }
-#fh5co-hero .btn {
-  font-size: 24px;
+.label-default {
+    display: none;
 }
-#fh5co-hero .btn.btn-primary {
-  padding: 14px 30px !important;
+@media screen and (max-width: 768px) {
+    .label-default {
+        display: block;
+        text-align: center;
+        width: 140px;
+    }
 }
+
+
 #fh5co-hero .flexslider {
   border: none;
   z-index: 1;
-  margin-bottom: 0;
+  margin-bottom: ;
 }
 #fh5co-hero .flexslider .slides {
   position: relative;
@@ -8413,7 +8418,7 @@ div.cs-select span {
   .feature-full-2col {
     flex-wrap: wrap;
     width: 100%;
-    margin-bottom: -105px;
+    margin-bottom: -50px;
     background-color: #d3e0e3;   /*color div */
   }
 }
@@ -8442,7 +8447,7 @@ div.cs-select span {
   top: 0;
   right: -180px;
   padding: 10px;
-  background-color: rgba(28, 134, 158);
+  background: #FF5722;
   -webkit-transition: 0.2s;
   -o-transition: 0.2s;
   transition: 0.2s;
@@ -9379,19 +9384,4 @@ input[type="text"] {
 label{
   font-size: 2vh;
   color: #245269;
-}
-#invalidemail{
-  color: #d70000;
-  font-size: small;
-}
-.label-default {
-  display: none;
-}
-@media screen and (max-width: 768px) {
-  .label-default {
-      display: block;
-      text-align: center;
-      width: 240px;
-      font-size: 14px;
-  }
 }
