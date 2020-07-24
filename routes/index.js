@@ -46,7 +46,7 @@ router.post('/',function(req,res){
     sess.checkOut = checkOutDate;
 
     if((Date.parse(checkInDate) < Date.parse(day)) || Date.parse(checkInDate) >= Date.parse(checkOutDate)){
-      res.render('index',{checkinmsg: "Invalid Check In Date !", checkoutmsg: ''});
+      res.render('index',{checkinmsg: "Invalid Check-In Date !", checkoutmsg: ''});
     }else{
       availableRooms(type,checkInDate,checkOutDate,function(err,result){
         roomDetails(result,function(err,result){
@@ -61,11 +61,11 @@ router.post('/',function(req,res){
     }
 
   }else if(checkInDate == '' && checkOutDate != ''){
-    res.render('index',{checkinmsg: "Invalid Check In Date !", checkoutmsg: null});
+    res.render('index',{checkinmsg: "Required !", checkoutmsg: null});
   }else if(checkInDate != '' && checkOutDate == ''){
-    res.render('index',{checkinmsg: null, checkoutmsg: "Invalid Check Out Date !"});
+    res.render('index',{checkinmsg: null, checkoutmsg: "Required !"});
   }else{
-    res.render('index',{checkinmsg: "Invalid Check In Date !", checkoutmsg: "Invalid Check Out Date !"});
+    res.render('index',{checkinmsg: "Required !", checkoutmsg: "Required !"});
   }
     // res.send(req.body);
 // res.send('ok');

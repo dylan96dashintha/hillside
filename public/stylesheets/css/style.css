@@ -9380,3 +9380,7 @@ label{
   font-size: 2vh;
   color: #245269;
 }
+#invalidemail{
+  color: #d70000;
+  font-size: small;
+}

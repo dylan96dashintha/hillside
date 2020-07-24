@@ -322,3 +322,7 @@ li.init {
     padding: 50px 30px 70px 30px; } }
 
 /*# sourceMappingURL=style.css.map */
+#invalidemail{
+  color: #d70000;
+  font-size: small;
+}

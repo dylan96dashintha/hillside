@@ -27,6 +27,7 @@ var removetask = require('./Modules/removeRecords');
 var reminder = require('./Modules/emailReminder');
 var app = express();
 removetask;  //execute removeRecords function
+reminder;  //send reminder mail
 
 require("firebase/firestore");
 // view engine setup
@@ -57,8 +58,6 @@ app.use(session(
   }
 ))
 
-//send reminder mail
-reminder();
 
 
 app.use(express.urlencoded({ extended: false }));

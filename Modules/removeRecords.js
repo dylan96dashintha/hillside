@@ -1,16 +1,22 @@
 var conn = require('../config/sqlconnection');
 
 var today = new Date();
+today.setHours(today.getHours()+5);
+today.setMinutes(today.getMinutes()+30);
+// console.log(today);
+
 var findchekin = new Date();
 findchekin.setDate(findchekin.getDate()+ 2);
-// console.log(today);
-// console.log(findchekin);
+findchekin.setHours(findchekin.getHours()+5);
+findchekin.setMinutes(findchekin.getMinutes()+30);
+// console.log(findchekin)
 
 function removebookings(){
-    conn.query('SELECT * FROM `customerdetails` INNER JOIN `orderdetails` ON customerdetails.customerid = orderdetails.customerid WHERE `pavement`="no" AND `checkIn`= CONVERT(?, DATE) AND CONVERT(`bookDate`, DATE)< CONVERT(?, DATE)',[findchekin,today],function(err,result){
+    conn.query('SELECT * FROM `customerdetails` INNER JOIN `orderdetails` ON customerdetails.customerid = orderdetails.customerid WHERE `pavement`="no" AND CONVERT(`checkIn`, DATE) = CONVERT(?, DATE) AND CONVERT(`bookDate`, DATE) < CONVERT(?, DATE)',[findchekin,today],function(err,result){
         if(err){
-            console.log("there is an error !(1)");
+            console.log("there is an error !(1r)");
             // console.log('5555555555555555555555');
+            console.log(err)
             conn.end();
             return false;
         }else if(result.length == 0){
@@ -42,7 +48,7 @@ function removebookings(){
                             conn.end();
                             return false; 
                         }else{
-                            console.log("task completed");
+                            console.log("removing task completed");
                             // conn.end();
                             return true;
                         }
@@ -61,15 +67,14 @@ function removebookings(){
 
         
 var schedule = require('node-schedule') ;
-var date = new Date(2020, 6, 21, 4, 30, 0);
+var date = new Date(2020, 6, 24, 19, 0, 0);
 
 var removetask = schedule.scheduleJob(date, function(){
     console.log("started");
-    var k = schedule.scheduleJob('23 * * *',  function(){
-        // console.log(new Date());
+    var k = schedule.scheduleJob('1 10 0 * * *',  function(){
+        console.log("remove"+new Date());
         removebookings();
     });
 });
-
 
 module.exports = {removetask}

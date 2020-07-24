@@ -41,15 +41,15 @@ router.post('/', function(req,res,next){
                 res.render('successBooking');
             }else{
                 outputt = {message: '',
-                sent: err}
-      res.render('verify',outputt)
+                        sent: err}
+                res.render('verify',outputt)
             }
             
         })
 
     }else{
         outputt = {message: '',
-              sent: 'You Entered Code is Wrong'}
+              sent: 'Verifcation code is Invalid !'}
     res.render('verify',outputt)
     }
 })

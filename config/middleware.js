@@ -32,13 +32,13 @@ const Validation = (req,res,next) =>{
         //     output = {mailmessage: 'Email is Invalid',
         //               passmessage: 'Password should include atleast Lowercase letter, Uppercase letter and Digit as well as atleast 6 length',
         //               mobilemessage:''}
-        if (emailValidator.validate(mail) && validatePhoneNumber.validate(mobile) && (mobile.length <=13)){
-            console.log("0000")
+        if (emailValidator.validate(mail) && validatePhoneNumber.validate(mobile) && (/^\d+$/.test(mobile)) && (mobile.length <=13)){
+            // console.log("0000")
             next();
-        }else if(!emailValidator.validate(mail) && !validatePhoneNumber.validate(mobile) && !(mobile.length <=13)){
+        }else if(!emailValidator.validate(mail) && (!validatePhoneNumber.validate(mobile) || !(/^\d+$/.test(mobile)) || !(mobile.length <=13)) ){
             output = {mailmessage: 'Email is Invalid',
                       mobilemessage:'Contact Number is Invalid'}
-            console.log("1111")
+            // console.log("1111")
             return res.render('register',output);
         // }else if(!schema.validate(pass) && !validatePhoneNumber.validate(mobile) && !(mobile.length == 10)){
         //     output = {mailmessage: '',
@@ -51,12 +51,12 @@ const Validation = (req,res,next) =>{
         }else if(!emailValidator.validate(mail)){
             output = {mailmessage: 'Email is Invalid',
                       mobilemessage:''}
-            console.log("2222")
+            // console.log("2222")
             return res.render('register',output);
         }else{
             output = {mailmessage: '',
-                      mobilemessage:'Contact Number is Invalid'}
-            console.log("3333")
+                      mobilemessage:'Contact Number is Invalid !'}
+            // console.log("3333")
             return res.render('register',output);
         }
     // }
