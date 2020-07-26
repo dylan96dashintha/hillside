@@ -25,6 +25,7 @@ var viewOrder = require('./routes/viewOrder');
 var test = require('./routes/test');
 var removetask = require('./Modules/removeRecords');
 var reminder = require('./Modules/emailReminder');
+var construction = require('./routes/construction');
 var app = express();
 removetask;  //execute removeRecords function
 reminder;  //send reminder mail
@@ -36,11 +37,6 @@ app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 
-// app.use(session({
-//   secret :'ssshhhhh',
-//   resave : false,
-//   saveUninitialized : true,
-//   }));
 app.use(express.json());
 
 //session configuration
@@ -80,6 +76,7 @@ app.use('/logout',logOut);
 app.use('/editRoomDetails',editRoomeDetails);
 app.use('/viewOrder',viewOrder);
 app.use('/test',test);
+app.use('/pending',construction);
 //Jwt configuration
 app.use(bodyparser.json());
 

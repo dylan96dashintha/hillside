@@ -6,7 +6,8 @@
 body {
   padding: 0;
   margin: 0;
-  background-color: rgba(44, 37, 37, 0.267);
+  /* background-color: rgba(44, 37, 37, 0.267); */
+  background-color: #FCE4EC;
 }
 
 #notfound {

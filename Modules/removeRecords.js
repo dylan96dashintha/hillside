@@ -67,11 +67,11 @@ function removebookings(){
 
         
 var schedule = require('node-schedule') ;
-var date = new Date(2020, 6, 25, 3, 20, 0);
+var date = new Date(2020, 6, 25, 14, 20, 0);
 
 var removetask = schedule.scheduleJob(date, function(){
     console.log("started");
-    var k = schedule.scheduleJob('10 5 * * *',  function(){
+    var k = schedule.scheduleJob('10 15 * * *',  function(){
         console.log("remove"+new Date());
         removebookings();
     });
