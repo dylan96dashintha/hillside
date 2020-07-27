@@ -87,9 +87,21 @@ function creaetBooking(bookingDet, callback) {
 
 }
 
+function getDeleted(callback){
+    var query = `SELECT * FROM discardeddetails NATURAL JOIN orderdetails`;
+    conn.query(query, function(err,result){
+        if(err){
+            callback(err.message, false);
+        }else{
+            console.log(result);
+            callback(false, result);
+        }
+    })
+}
+
 function ses(a,callback){
     console.log(a);
     callback(false,"okkkkk");
 }
 
-module.exports = {creaetBooking,ses};
+module.exports = {creaetBooking,ses,getDeleted};

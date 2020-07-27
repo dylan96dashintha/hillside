@@ -22,6 +22,7 @@ var error = require('./routes/error');
 var logOut = require('./routes/logoutAdmin');
 var editRoomeDetails = require('./routes/editRooms');
 var viewOrder = require('./routes/viewOrder');
+var deletedRecordes = require('./routes/deletedRooms');
 var test = require('./routes/test');
 var removetask = require('./Modules/removeRecords');
 var reminder = require('./Modules/emailReminder');
@@ -77,6 +78,7 @@ app.use('/editRoomDetails',editRoomeDetails);
 app.use('/viewOrder',viewOrder);
 app.use('/test',test);
 app.use('/pending',construction);
+app.use('/deleted',deletedRecordes);
 //Jwt configuration
 app.use(bodyparser.json());
 

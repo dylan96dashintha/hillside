@@ -9512,3 +9512,10 @@ label{
   }
 }
 /* construction end */
+
+.footer-logo{
+  height: 9vh;
+  /* text-align: center; */
+  /* margin: auto; */
+  bottom: 0;
+}
