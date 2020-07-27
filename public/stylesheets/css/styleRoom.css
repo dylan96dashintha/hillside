@@ -4895,8 +4895,11 @@ This should be inserted with scaled photoshoped images */
 #check-button-sub {
   background-color: rgba(28, 134, 158);
   border-radius: 11px;
+  border-color: rgba(28, 134, 158);
   padding: 8px;
-  font-size: 11px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-style: inherit;
+  font-size: 14px;
 }
 #check-button-sub:hover {
   background-color: #0c4957;
@@ -7963,44 +7966,35 @@ figure {
 
 #fh5co-hero {
   /* background: #fff url(../images/loader.gif) no-repeat center center; */
-  margin-bottom: 30px!important;
   position: relative;
   /* display: -webkit-box; 
    display: -moz-box;
    display: -ms-flexbox;
   display: -webkit-flex;
   display: flex; */
+  
   flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
   -moz-flex-wrap: wrap;
 }
-.label-default {
-    display: none;
-}
-@media screen and (max-width: 768px) {
-    .label-default {
-        display: block;
-        text-align: center;
-        width: 140px;
-    }
-}
-
 
 #fh5co-hero .flexslider {
   border: none;
   z-index: 1;
-  margin-bottom: ;
+  
 }
 #fh5co-hero .flexslider .slides {
   position: relative;
   overflow: hidden;
+  
 }
 #fh5co-hero .flexslider .slides li {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  min-height: 700px;
+  min-height: 750px;
   position: relative;
+  
 }
 #fh5co-hero .flexslider .slides li:after {
   position: absolute;
@@ -8018,6 +8012,7 @@ figure {
   right: 20px;
   width: 25px;
   float: right;
+  
 }
 #fh5co-hero .flexslider .flex-control-nav li {
   display: block !important;
@@ -8053,6 +8048,7 @@ figure {
   z-index: 999;
   min-height: 600px;
   width: 100%;
+  
 }
 .slider-text > .slider-text-inner {
   display: table-cell;
@@ -8091,6 +8087,7 @@ figure {
   -moz-border-radius: 30px;
   -ms-border-radius: 30px;
   border-radius: 30px;
+  
 }
 .slider-text > .slider-text-inner p .btn:hover {
   color: #fff !important;
@@ -8098,6 +8095,9 @@ figure {
 
 div.cs-select span {
   padding: 5px 10px;
+  
+
+
 }
 
 .cs-skin-border {
@@ -8331,8 +8331,8 @@ div.cs-select span {
 #room-models {
   float: left;
   width: 100%;
-  margin-top: 85px;
-  background-color: #d4dae0;
+  position: initial;
+  background-color: #d3e0e3;
 }
 
 .feature-full-1col {
@@ -8341,9 +8341,16 @@ div.cs-select span {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  margin-top: 80px;
   flex-flow: row wrap;
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
+  position: initial;
+}
+@media only screen and (max-width: 600px) {
+  .feature-full-1col {
+    margin-top: 10px;
+  }
 }
 .feature-full-1col .image, .feature-full-1col .desc {
   float: left;

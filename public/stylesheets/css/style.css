@@ -4886,6 +4886,7 @@ This should be inserted with scaled photoshoped images */
 #check-button {
   background-color: rgba(28, 134, 158);
   border-radius: 11px;
+  border-color: rgba(28, 134, 158);
   letter-spacing: 0.7px;
 }
 #check-button:hover {
@@ -4895,8 +4896,11 @@ This should be inserted with scaled photoshoped images */
 #check-button-sub {
   background-color: rgba(28, 134, 158);
   border-radius: 11px;
+  border-color: rgba(28, 134, 158);
   padding: 8px;
-  font-size: 11px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-style: inherit;
+  font-size: 14px;
 }
 #check-button-sub:hover {
   background-color: #0c4957;
