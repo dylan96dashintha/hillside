@@ -1,6 +1,7 @@
 // const passwordValidator = require('password-validator');
 const emailValidator = require("email-validator");
-const validatePhoneNumber = require('validate-phone-number-node-js')
+const validatePhoneNumber = require('validate-phone-number-node-js');
+const emailExcistance = require('email-existence');
 
 const Validation = (req,res,next) =>{
     //passowrd validation, email and phone number
@@ -34,7 +35,17 @@ const Validation = (req,res,next) =>{
         //               mobilemessage:''}
         if (emailValidator.validate(mail) && validatePhoneNumber.validate(mobile) && (/^\d+$/.test(mobile)) && (mobile.length <=13)){
             // console.log("0000")
-            next();
+            emailExcistance.check(mail, function(error, response){
+                console.log(response);
+                if(response){
+                    next();
+                }else{
+                    output = {mailmessage: 'Email is not Existance',
+                      mobilemessage:''};
+                      return res.render('register',output);
+                }
+            })
+            
         }else if(!emailValidator.validate(mail) && (!validatePhoneNumber.validate(mobile) || !(/^\d+$/.test(mobile)) || !(mobile.length <=13)) ){
             output = {mailmessage: 'Email is Invalid',
                       mobilemessage:'Contact Number is Invalid'}
