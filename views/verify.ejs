@@ -52,7 +52,7 @@
     <link rel="stylesheet" href="\fonts\material-icon\css\material-design-iconic-font.min.css">
 
     <!-- Main css -->
-    <link rel="stylesheet" href="\css\style.css">
+    <link rel="stylesheet" href="\css\styleVerify.css">
 </head>
 
 <body>
@@ -61,27 +61,36 @@
 
         <div class="container">
             <form method="POST" action="/verify" class="appointment-form" id="appointment-form">
-                <h2>Verification</h2>
+                <div class="header">
+                    <h2>Verification</h2>
+                </div>
                
                 <div class="form-group-1">
-					<p>Please check email address that you have entered and enter the Verification key that have been sent and make sure entered details are correct.
-					</p>
+                    <div class="des">
+                        <p>Please check your email that have entered and enter the Verification key that have been sent and make sure entered details are correct.
+                        </p>
+                    </div>
+	
                     <p id="invalidemail"><span><%= sent %></span></p>                   
 				</div>
 				
                
                 <div class="form-group-1">
                     <p id="invalidemail"><span><%= message %></span></p>
-                    <input type="text" name="verify" id="phone_number" placeholder="Verification Key" required />
+                    <input type="text" class="passcode" name="verify" id="phone_number" placeholder="Verification Key" required />
+                    
                 </div>
                 <div class="form-submit">
-					<input type="submit" name="submit" id="submit" class="submit" value="Verify" />
+					<input type="submit" class="btn" name="submit" id="submit" class="submit" value="Verify" />
 					
 					 <!-- <button type="submit" name="submit" id="submit">Register Now</button>	 -->
                 </div>
             </form>
+            
         </div>
-
+        <div class="card-footer text-muted">
+            <h4>POWERED BY <Br>4NoteFourSolutions© 2020</Br></h4>
+        </div>
     </div>
 
     <!-- JS -->
