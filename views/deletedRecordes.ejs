@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+        <a class="navbar-brand" href="#">HillSide</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="./">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <%if(empDetails.empType === "owner"){%>
+                <li class="nav-item">
+                    <a class="nav-link" href="/editRoomDetails">Change Room Details</a>
+                </li>
+                <%}%>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin">Dash Board</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Log Out</a>
+                </li>
+            </ul>
+        </div>
+        <span class="navbar-text">
+            Logged In: <%=empDetails.name%>
+        </span>
+    </nav>
+
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Order Id</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Adddress</th>
+            <th scope="col">Mobile Number</th>
+            <th scope="col">Check In Date</th>
+            <th scope="col">Check Out Date</th>
+            <th scope="col">Book Date</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+            <% for(var x=0; x<rooms.length; x++ ){%>
+          <tr>
+            <th scope="row"><%=rooms[x].orderId%></th>
+            <td><%=rooms[x].fname%></td>
+            <td><%=rooms[x].lname%></td>
+            <td><%=rooms[x].address%></td>
+            <td><%=rooms[x].mobile%></td>
+            <td><%=rooms[x].checkin%></td>
+            <td><%=rooms[x].checkout%></td>
+            <td><%=rooms[x].bookDate%></td>
+            <td></td>
+          </tr>
+
+          <%}%>
+         
+        </tbody>
+      </table>
+      
+     
+
+    
+</body>
+
+</html>

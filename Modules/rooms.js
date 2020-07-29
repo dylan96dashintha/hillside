@@ -3,9 +3,10 @@ var conn = require('../config/sqlconnection');
 
 //return awailable room ids, acording to time period;
 function getNotBookedRooms(type,sDate,eDate,callback){
+    console.log(sDate,"sDate")
     var startDate = Date.parse(sDate);
     var endDate = Date.parse(eDate);
-    var today = Date.parse(new Date());
+    var today = new Date();
 
     conn.query('SELECT * FROM orderdetails WHERE checkIn > ?',[today],function(err,result){
         if(err){callback(err,false)}
@@ -36,13 +37,20 @@ function getNotBookedRooms(type,sDate,eDate,callback){
                         // }else if((startDate < parseInt(orderDetails[i].checkIn)) && (parseInt(orderDetails[i].chechout) < endDate)){
                         //     bookedRooms.push(orderDetails[i].roomId);
                         // }
-                        if((startDate <= parseInt(orderDetails[i].checkIn)) && (parseInt(orderDetails[i].checkIn)) <= endDate){
+                        console.log(sDate);
+                        console.log(Date.parse(sDate))
+                        console.log(orderDetails[i].checkIn);
+                        console.log(Date.parse(orderDetails[i].checkIn));
+
+                        // console.log(parseInt(new Date(orderDetails[i].checkIn)));
+
+                        if((startDate <= Date.parse(orderDetails[i].checkIn)) && (Date.parse(orderDetails[i].checkIn)) <= endDate){
                             bookedRooms.push(orderDetails[i].roomId);
-                        }else if((parseInt(orderDetails[i].checkIn) <= startDate) && (endDate <= parseInt(orderDetails[i].checkout))){
+                        }else if((Date.parse(orderDetails[i].checkIn) <= startDate) && (endDate <= Date.parse(orderDetails[i].checkout))){
                             bookedRooms.push(orderDetails[i].roomId);
-                        }else if(  startDate <= parseInt(orderDetails[i].checkout) && (parseInt(orderDetails[i].checkout) <= endDate )){
+                        }else if(  startDate <= Date.parse(orderDetails[i].checkout) && (Date.parse(orderDetails[i].checkout) <= endDate )){
                             bookedRooms.push(orderDetails[i].roomId);
-                        }else if((startDate <= parseInt(orderDetails[i].checkIn)) && (parseInt(orderDetails[i].checkout) <= endDate)){
+                        }else if((startDate <= Date.parse(orderDetails[i].checkIn)) && (Date.parse(orderDetails[i].checkout) <= endDate)){
                             bookedRooms.push(orderDetails[i].roomId);
                         }
                     }
