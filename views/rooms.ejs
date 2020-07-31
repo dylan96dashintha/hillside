@@ -178,6 +178,9 @@
 				opacity: 0;
 			}
 			}
+			html{
+				scroll-behavior: smooth;
+			}
 		</style>
 	</head>
 	<body>
@@ -195,9 +198,9 @@
 									<ul class="sf-menu" id="fh5co-primary-menu">
 										<li><a class="active" href="/">Home</a></li>
 										
-										<li><a href="services.html">Services</a></li>
+										<!-- <li><a href="services.html">Services</a></li> -->
 										<li><a href="pending">Blog</a></li>
-										<li><a href="contact.html">Contact</a></li>
+										<li><a href="#footerdetails">Contact</a></li>
 									</ul>
 								</nav>
 							</div>
@@ -270,6 +273,7 @@
 				<section id="section05" class="demo">
 					<a href="#room-models"><span></span></a>
 				</section>
+
 				<!-- rooms section -->
 				<%if(roomDetails.length >0){%>
 				<div id="room-models" class="fh5co-bg-color" style="margin-top: 0px">
